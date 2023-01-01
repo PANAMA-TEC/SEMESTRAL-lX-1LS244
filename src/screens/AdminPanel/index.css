@@ -1,7 +1,39 @@
 .AdminPanel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   width: 100%;
-  border-style: solid;
+  /* border-style: solid; */
+  margin-top: 14vh;
 }
+
+.AdminPanel .contenedor-tabla {
+  
+  width: 70%;
+  /* border-style: solid; */
+  
+}
+
+.AdminPanel .boton-crear {
+  background-color: #e4b720;
+  padding: 6px 20px;
+ 
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+
+  height: 40px;
+}
+
+.AdminPanel .contenedor-opciones {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 0px;
+}
+
+
 
 
 .contenedor {
@@ -79,13 +111,5 @@
 
 }
 
-.btnCrear {
-  background-color: #e4b720;
-    padding: 6px 20px;
-  margin: 0 4px;
-  border: none;
-  border-radius: 4px;
-  color: white;
-  cursor: pointer;
-}
+
 
