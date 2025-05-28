@@ -1,0 +1,17 @@
+.TodoItem {
+    display: flex;
+    /* border-style: solid; */
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    min-height: 140px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    
+}
+
+.taskName-completed {
+    text-decoration: line-through;
+}

@@ -1,0 +1,16 @@
+.TodoList {
+    /* border-style: solid; */
+    display: flex;
+    flex-direction: column;
+    
+    align-items: center;
+    
+    padding: 30px;
+    height: 50vh;
+    width: 100%;
+    overflow: auto;
+    gap: 40px;  
+
+    
+    
+}

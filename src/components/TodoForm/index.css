@@ -1,0 +1,30 @@
+.formularioTodo {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contenedorInf_formulario {
+
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    justify-content: flex-end;
+
+}
+
+.textArea_formularioTodo{
+    height: 200px;
+}
+
+.titulos_formularioTodo{
+    font-size: 30px;
+}
+
+.btn_formularioTodo{
+
+    height: 50px;
+    width: 200px;
+    cursor: pointer;
+
+}

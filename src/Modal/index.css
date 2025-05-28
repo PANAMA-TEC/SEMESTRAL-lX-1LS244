@@ -1,0 +1,14 @@
+.Modal{
+    padding: 40px;
+    background-color: blue;
+    color: white;
+    position: fixed;
+
+    top:0;
+    z-index:1;
+    right:0;
+
+    width: 30vw;
+    height: 100vh;;
+
+}
