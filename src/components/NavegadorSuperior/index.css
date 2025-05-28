@@ -1,0 +1,39 @@
+.NavegadorSuperior {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #c6e2fe;
+   
+    box-sizing: border-box;
+
+   
+    
+    width: 100vw;
+    height: 15vh;
+    padding: 20px 50px;
+
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    margin-bottom: 30px;
+
+   
+}
+
+.NavegadorSuperiorDirecciones{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+ul {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    font-weight: 600;
+    
+}
+
+li {
+    CURSOR: pointer;
+}

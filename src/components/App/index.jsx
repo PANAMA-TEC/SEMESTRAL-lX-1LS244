@@ -12,7 +12,9 @@ import { TodoContext } from '../TodoContext';
 import { Modal } from '../../Modal';
 import React from 'react';
 import { TodoForm } from '../TodoForm';
-
+import { NavegadorSuperior } from '../NavegadorSuperior';
+import { AppLogo } from '../AppLogo';
+ 
 
 /**
  *
@@ -36,34 +38,36 @@ const App = () =>{
   const { loading, searchedTodo, error, toggleToDo, deleteTodo, openModal } = React.useContext(TodoContext);  
   
   return(
-    
-    
-        <div className='App'>
-          
-          <div className='contenedorPrincipal'>
+      <div className='App'>
         
-            <TodoCounter />
-            <TodoSearch />
-          
-            <TodoList>
-              { loading ? <LoadingsTodo/>  : "" }
-              { error ? <ErrorsTodo/>  : "" }
-              { !loading && searchedTodo.length === 0 ? <EmptyTodos/> : "" }
-              { searchedTodo.map( todo => (  
-                  <TodoItem  mensaje = { todo.text } key = { todo.text } completed ={todo.Completed}
-                    onCompleted = { ()=>{ toggleToDo(todo.text) }}
-                    onDelete = { () => { deleteTodo(todo.text); }} 
-                  /> 
-              ))}
-            </TodoList>
-                    
-            <CreateTodo/>
-
-          </div>
-
-          { openModal ? <Modal> <TodoForm></TodoForm> </Modal>: "" }
+        <NavegadorSuperior />
+         
+        
+        
+        <div className='contenedorPrincipal'>
+      
+          <TodoCounter />
+          <TodoSearch />
+        
+          <TodoList>
+            { loading ? <LoadingsTodo/>  : "" }
+            { error ? <ErrorsTodo/>  : "" }
+            { !loading && searchedTodo.length === 0 ? <EmptyTodos/> : "" }
+            { searchedTodo.map( todo => (  
+                <TodoItem  mensaje = { todo.text } key = { todo.text } completed ={todo.Completed}
+                  onCompleted = { ()=>{ toggleToDo(todo.text) }}
+                  onDelete = { () => { deleteTodo(todo.text); }} 
+                /> 
+            ))}
+          </TodoList>
+                  
+          <CreateTodo/>
 
         </div>
+
+        { openModal ? <Modal> <TodoForm></TodoForm> </Modal>: "" }
+
+      </div>
     )
 
 
