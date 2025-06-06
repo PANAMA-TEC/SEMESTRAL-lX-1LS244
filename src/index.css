@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  border-style: solid;
+  /* border-style: solid; */
   
  
   width: 100vw;

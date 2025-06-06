@@ -14,6 +14,8 @@ import React from 'react';
 import { TodoForm } from '../TodoForm';
 import { NavegadorSuperior } from '../NavegadorSuperior';
 import { AppLogo } from '../AppLogo';
+import {AccountingModule} from '../Contabilidad';
+
  
 
 /**
@@ -41,9 +43,10 @@ const App = () =>{
       <div className='App'>
         
         <NavegadorSuperior />
+        <AccountingModule/>
          
         
-        
+{/*         
         <div className='contenedorPrincipal'>
       
           <TodoCounter />
@@ -66,8 +69,8 @@ const App = () =>{
         </div>
 
         { openModal ? <Modal> <TodoForm></TodoForm> </Modal>: "" }
-
-      </div>
+*/}
+      </div> 
     )
 
 

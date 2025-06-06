@@ -1,0 +1,76 @@
+.contenedorContable{
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+
+    box-sizing: content-box;
+    
+
+    /* border-style: solid; */
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    /* border-style: solid; */
+    background-color: white;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+    border-radius: 5px;
+
+    margin: 50px;
+    text-align: left;
+}
+
+select, input, button{
+    height:50px;
+    width: 300px;
+    border-radius: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+form{
+    /* border-style: solid; */
+    border-radius: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: rgb(199,227,253);
+    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+}
+
+th {
+    /* background-color: blue; */
+    padding: 20px;
+    height: 50px;
+  
+}
+td {
+    padding: 20px;
+    /* color: white; */
+    /* border-style: solid; */
+
+    
+    border-style: solid none none none;
+    border-color: rgb(235,235,235);
+}
+
+h1 {
+    text-align: left;
+    margin: 20px;
+    color: #333;
+    width: 100%;
+}
+
+.formularioContable {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
