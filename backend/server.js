@@ -27,14 +27,19 @@ import fs from 'fs'
 import Fastify from 'fastify'
 // import path from 'path'
 import fastifyStatic from '@fastify/static'
+import path from 'path'
+import { fileURLToPath } from 'url'
 
 const fastify = Fastify({
   logger: true
 })
 
 // Register static plugin to serve files from the root directory
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
+
 fastify.register(fastifyStatic, {
-  root: "/Users/gabrielgarcia/Desktop/02. PERSONAL/10. UTP - PANAMA/DESARROLLO DE SOFTWARE/SEMESTRE 7 - AÑO 4/DESARROLLO lX/garcia-gabriel/semestral/SEMESTRAL-lX-1LS244/dist", // Serve files from the current working directory
+  root: path.join(__dirname, '../dist'), // Serve files from the dist directory
   prefix: '/', // Optional: default is '/'
 });
 
@@ -46,7 +51,8 @@ fastify.get("/", async function handler (request, reply) {
 
 // Run the server!
 try {
-  await fastify.listen({ port: 3000 })
+  await fastify.listen({ port: 8094, host: '0.0.0.0'})
+  
 } catch (err) {
   fastify.log.error(err)
   process.exit(1)
