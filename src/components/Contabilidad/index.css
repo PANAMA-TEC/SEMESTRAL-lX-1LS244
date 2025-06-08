@@ -12,6 +12,14 @@
     /* border-style: solid; */
 }
 
+button {
+    width: 100px;
+    height: 50px;
+    border-radius: 10px;
+    cursor: pointer;
+    text-align: center;
+}
+
 table {
     width: 100%;
     border-collapse: collapse;
@@ -22,15 +30,31 @@ table {
 
     margin: 50px;
     text-align: left;
+    table-layout: fixed;
 }
 
-select, input, button{
+/* Centra el contenido de todas las celdas excepto la primera y la última columna */
+table td:not(:first-child):not(:last-child), 
+table th:not(:first-child):not(:last-child) {
+    text-align: center;
+}
+
+/* Alinea la última columna a la izquierda */
+table td:last-child, table th:last-child {
+    display: flex;
+    justify-content: right;
+    /* text-align: right; */
+}
+
+select, input{
     height:50px;
-    width: 300px;
+    width: 200px;
     border-radius: 20px;
     padding-left: 20px;
     padding-right: 20px;
 }
+
+
 
 form{
     /* border-style: solid; */
@@ -47,6 +71,7 @@ th {
     /* background-color: blue; */
     padding: 20px;
     height: 50px;
+    font-size: 20px;
   
 }
 td {

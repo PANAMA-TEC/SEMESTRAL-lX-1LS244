@@ -68,7 +68,8 @@ const AccountingModule = () => {
                 <button type="submit">Agregar</button>
             </form>
 
-            <table>
+            <table >
+                
                 <thead>
                     <tr>
                         <th>Cuenta</th>
