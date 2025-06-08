@@ -13,8 +13,12 @@ COPY ./dist ./dist
 COPY ./backend ./backend
 
 # Install node packages, install serve, build the app, and remove dependencies at the end
-RUN npm install 
-    
+RUN npm install && \
+    apt-get update && \
+    apt upgrade -y && \
+    apt-get install net-tools && \
+    apt install iputils-ping
+
 
 EXPOSE 8094
 

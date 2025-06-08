@@ -9,7 +9,8 @@
       volumes:
         - mongodb-data:/data/db
       networks:
-        - mongodb-network
+        mongodb-network:
+          ipv4_address: 172.28.0.30
     mongo-client: 
       image: mongo-express:latest
       container_name: mongo-client
@@ -22,7 +23,8 @@
       ports:
         - "8081:8081"
       networks:
-        - mongodb-network
+        mongodb-network:
+          ipv4_address: 172.28.0.20
     web-server:
       image: web_server
       container_name: web-server
@@ -32,10 +34,18 @@
       ports:
         - "80:8094"
       networks:
-        - mongodb-network
+        mongodb-network:
+          ipv4_address: 172.28.0.10
+  
   volumes:
     mongodb-data:
-      
+  
   networks:
     mongodb-network:
+      driver: bridge
+      ipam:
+        config:
+          - subnet: 172.28.0.0/16
+            gateway: 172.28.0.1
+
   
