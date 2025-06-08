@@ -1,7 +1,11 @@
 # SEMESTRAL-lX-1LS244
 SEMESTRAL-lX-1LS244
 
-## Para correr el proyecto es necesario correr el siguiente comando: 
+## Para correr el proyecto en modo depuracion es necesario correr el siguiente comando: 
+npm run dev
+
+
+## Para correr el proyecto desde docker es necesario correr el siguiente comando: 
 npm run des-soft-ix
 
 

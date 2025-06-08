@@ -42,11 +42,11 @@ const App = () =>{
   return(
       <div className='App'>
         
-        <NavegadorSuperior />
-        <AccountingModule/>
+        {/* <NavegadorSuperior />
+        <AccountingModule/> */}
          
         
-{/*         
+        
         <div className='contenedorPrincipal'>
       
           <TodoCounter />
@@ -69,7 +69,7 @@ const App = () =>{
         </div>
 
         { openModal ? <Modal> <TodoForm></TodoForm> </Modal>: "" }
-*/}
+
       </div> 
     )
 
