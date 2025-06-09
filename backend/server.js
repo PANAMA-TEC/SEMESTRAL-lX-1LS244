@@ -51,7 +51,7 @@ fastify.get("/", async function handler (request, reply) {
 
 // Run the server!
 try {
-  await fastify.listen({ port: 8094, host: '0.0.0.0'})
+  await fastify.listen({ port: 80, host: '0.0.0.0'})
   
 } catch (err) {
   fastify.log.error(err)

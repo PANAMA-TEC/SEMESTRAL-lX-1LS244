@@ -40,7 +40,9 @@ const AccountingModule = () => {
 
     return (
         <div className='contenedorContable'>
+            
             <h1 className='table-title'> Contabilidad</h1>
+            
             <form onSubmit={handleAddCuenta} className='formularioContable'>
                 
                 <select value={nombre} onChange={e => setNombre(e.target.value)} required >

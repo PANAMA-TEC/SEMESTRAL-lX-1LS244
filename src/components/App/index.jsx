@@ -71,13 +71,7 @@ const App = () =>{
         { openModal ? <Modal> <TodoForm></TodoForm> </Modal>: "" }
 */}
       </div> 
-    )
-
-
-
-
-   
-  
+    );
 }
 
 export default App;

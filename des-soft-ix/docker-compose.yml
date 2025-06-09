@@ -1,9 +1,9 @@
-  version: '3.9'
+
   services:
     mongo-server:
       image: mongo:latest
       container_name: mongo-server
-      restart: no
+      restart: always
       ports:
         - "27017:27017"
       volumes:
@@ -14,7 +14,7 @@
     mongo-client: 
       image: mongo-express:latest
       container_name: mongo-client
-      restart: no
+      restart: always
       depends_on:
         - mongo-server
       environment:
@@ -28,11 +28,11 @@
     web-server:
       image: web_server
       container_name: web-server
-      restart: no
+      restart: always
       depends_on:
         - mongo-server
       ports:
-        - "80:8094"
+        - "80:80"
       networks:
         mongodb-network:
           ipv4_address: 172.28.0.10

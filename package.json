@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "fastify:start": "cd ./backend; node server.js",
-    "des-soft-ix": "docker build -t web_server . ; cd des-soft-ix; docker compose up -d; echo launched"
+    "des-soft-ix": "vite build; docker build -t web_server .;  cd des-soft-ix; docker compose up d; echo launched"
   },
   "dependencies": {
     "@fastify/static": "^8.2.0",
