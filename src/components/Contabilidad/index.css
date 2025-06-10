@@ -1,3 +1,21 @@
+:root {
+  --elevation-0: none;
+  --elevation-1: 0px 1px 3px rgba(0, 0, 0, 0.2), 
+                 0px 1px 1px rgba(0, 0, 0, 0.14), 
+                 0px 2px 1px rgba(0, 0, 0, 0.12);
+  --elevation-2: 0px 3px 6px rgba(0, 0, 0, 0.16), 
+                 0px 3px 6px rgba(0, 0, 0, 0.23);
+  --elevation-3: 0px 10px 20px rgba(0, 0, 0, 0.19), 
+                 0px 6px 6px rgba(0, 0, 0, 0.23);
+  /* Add more if needed */
+}
+
+.elevation-0 { box-shadow: var(--elevation-0); }
+.elevation-1 { box-shadow: var(--elevation-1); }
+.elevation-2 { box-shadow: var(--elevation-2); }
+.elevation-3 { box-shadow: var(--elevation-3); }
+
+
 .contenedorContable{
     display: flex;
     flex-direction: column;
@@ -25,12 +43,13 @@ table {
     border-collapse: collapse;
     /* border-style: solid; */
     background-color: white;
-    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 3px 3px rgba(0,0,0,0.23);
+    
     border-radius: 5px;
 
-    margin: 50px;
-    text-align: left;
+    margin-top: 10px;
     table-layout: fixed;
+    
+    /* border-style: solid; */
 }
 
 /* Centra el contenido de todas las celdas excepto la primera y la última columna */
@@ -43,18 +62,41 @@ table th:not(:first-child):not(:last-child) {
 table td:last-child, table th:last-child {
     display: flex;
     justify-content: right;
-    /* text-align: right; */
+    
 }
 
-select, input{
+button {
+    border-style: none;
+    
+    transition: transform 0.2s cubic-bezier(.25,.8,.25,1), box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+}
+
+button:hover {
+    transform: scale(1.05);
+    
+    color: black;
+    /* color: black; */
+}
+
+table td button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-style: none;
+   
+}
+
+input, select{
     height:50px;
-    width: 200px;
+    width: 300px;
     border-radius: 20px;
     padding-left: 20px;
     padding-right: 20px;
+    border-style: none;
+    flex-wrap: wrap;
 }
-
-
 
 form{
     /* border-style: solid; */
@@ -64,7 +106,7 @@ form{
     padding-left: 30px;
     padding-right: 30px;
     background-color: rgb(199,227,253);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    
 }
 
 th {
@@ -94,8 +136,30 @@ h1 {
 .formularioContable {
     display: flex;
     flex-direction: row;
+    gap:50px;
     width: 100%;
     align-items: center;
     justify-content: space-between;
 }
 
+.card-view {
+    display: flex;
+    flex-direction: column;
+    box-sizing: content-box;
+    /* border-style: solid; */
+    
+    border-radius: 20px 20px 0px 0px; 
+    
+}
+
+.contabilidadInputs{
+    width: 100%;
+    min-width: 400px;
+    /* border-style: solid; */
+
+    display: flex;
+    justify-content: start;
+    gap: 30px;
+ 
+  
+}
