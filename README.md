@@ -22,4 +22,7 @@ has:
 - web-server 172.28.0.10
 - gateway 172.28.0.1
 
+## To add the submodule to the main repository
+git submodule add https://github.com/PANAMA-TEC/SEMESTRAL-lX-1LS244.git App
+
 
