@@ -47,7 +47,7 @@ const App = () =>{
          
         
         
-        <div className='contenedorPrincipal'>
+        <div className='contenedorPrincipal elevation-1'>
       
           <TodoCounter />
           <TodoSearch />

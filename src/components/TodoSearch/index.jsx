@@ -8,7 +8,7 @@ const TodoSearch = ( ) => {
 
   return(
     <input 
-      className='inputSearch' 
+      className='inputSearch elevation-1' 
       placeholder='Cortar Cebolla' 
       onChange={ (Event) => { setSearchValue( Event.target.value ) } } 
       value ={ searchValue }
