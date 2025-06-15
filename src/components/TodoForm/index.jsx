@@ -1,4 +1,5 @@
 import { TodoContext } from '../TodoContext';
+import { CreateTodo } from '../CreateTodo';
 import './index.css';
 import React from 'react';
 
@@ -31,7 +32,8 @@ const TodoForm = (  ) => {
                 <button className='btn_formularioTodo' onClick={ onCancel }>Cancelar</button>
                 <button className='btn_formularioTodo' onClick={ onSubmitTodo }>Crear Todo</button>
             </div>
-        
+
+            <CreateTodo />
         </form>
         
     );

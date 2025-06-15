@@ -32,17 +32,6 @@ select, input, button{
     padding-right: 20px;
 }
 
-form{
-    /* border-style: solid; */
-    border-radius: 20px;
-    padding: 20px;
-    box-sizing: border-box;
-    padding-left: 30px;
-    padding-right: 30px;
-    background-color: rgb(199,227,253);
-    box-shadow: 0 5px 10px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
-}
-
 th {
     /* background-color: blue; */
     padding: 20px;
@@ -73,4 +62,6 @@ h1 {
     align-items: center;
     justify-content: space-between;
 }
+
+
 

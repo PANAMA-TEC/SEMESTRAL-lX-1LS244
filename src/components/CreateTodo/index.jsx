@@ -7,7 +7,7 @@ const CreateTodo = () => {
 
   return(
    
-    <button className='buttonAgregar' onClick={() => { setOpenModal(!openModal)}}>
+    <button className='buttonAgregar elevation-1' onClick={() => { setOpenModal(!openModal)}}>
       +
    </button>
 
