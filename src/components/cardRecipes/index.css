@@ -1,0 +1,126 @@
+.card-recipe {
+  align-items: flex-start;
+  border: 1px solid;
+  border-color: var(--colecci-n-de-variables-text-input-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  width: 270px;
+}
+
+.card-recipe .image {
+  align-self: stretch;
+  background-image: url(https://c.animaapp.com/SmjW2TTS/img/image-1@2x.png);
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 8px 8px 0px 0px;
+  height: 160px;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.card-recipe .img {
+  height: 160px;
+  left: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  width: 270px;
+}
+
+.card-recipe .body {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex: 0 0 auto;
+  flex-direction: column;
+  gap: 15px;
+  min-width: 160px;
+  padding: 15px;
+  position: relative;
+  width: 100%;
+}
+
+.card-recipe .text {
+  align-items: flex-start;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: var(--size-space-150);
+  height: 108px;
+  position: relative;
+  width: 100%;
+}
+
+.card-recipe .titulo-de-card {
+  color: var(--color-text-default-default);
+  font-family: var(--header-card-font-family);
+  font-size: var(--header-card-font-size);
+  font-style: var(--header-card-font-style);
+  font-weight: var(--header-card-font-weight);
+  letter-spacing: var(--header-card-letter-spacing);
+  line-height: var(--header-card-line-height);
+  margin-right: -1.00px;
+  margin-top: -1.00px;
+  position: relative;
+  width: 241px;
+}
+
+.card-recipe .text-wrapper {
+  align-self: stretch;
+  color: var(--color-text-default-secondary);
+  font-family: var(--body-text-card-font-family);
+  font-size: var(--body-text-card-font-size);
+  font-style: var(--body-text-card-font-style);
+  font-weight: var(--body-text-card-font-weight);
+  letter-spacing: var(--body-text-card-letter-spacing);
+  line-height: var(--body-text-card-line-height);
+  position: relative;
+}
+
+.card-recipe .div {
+  align-self: stretch;
+  color: var(--color-text-default-secondary);
+  font-family: var(--body-text-card-font-family);
+  font-size: var(--body-text-card-font-size);
+  font-style: var(--body-text-card-font-style);
+  font-weight: var(--body-text-card-font-weight);
+  letter-spacing: var(--body-text-card-letter-spacing);
+  line-height: var(--body-text-card-line-height);
+  margin-bottom: -1.00px;
+  position: relative;
+}
+
+.card-recipe .btn-enable {
+  align-items: center;
+  border: 1px solid;
+  border-color: var(--colecci-n-de-variables-text-input-color);
+  border-radius: 8px;
+  display: inline-flex;
+  gap: 8px;
+  height: 30px;
+  justify-content: center;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+}
+
+.card-recipe .button {
+  all: unset;
+  box-sizing: border-box;
+  color: var(--color-text-brand-default);
+  font-family: var(--m3-title-small-font-family);
+  font-size: var(--m3-title-small-font-size);
+  font-style: var(--m3-title-small-font-style);
+  font-weight: var(--m3-title-small-font-weight);
+  letter-spacing: var(--m3-title-small-letter-spacing);
+  line-height: var(--m3-title-small-line-height);
+  margin-bottom: -6.00px;
+  margin-top: -8.00px;
+  position: relative;
+  white-space: nowrap;
+  width: fit-content;
+}
