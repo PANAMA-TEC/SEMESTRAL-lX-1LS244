@@ -7,7 +7,23 @@
                  0px 3px 6px rgba(0, 0, 0, 0.23);
   --elevation-3: 0px 10px 20px rgba(0, 0, 0, 0.19), 
                  0px 6px 6px rgba(0, 0, 0, 0.23);
-  /* Add more if needed */
+                   --body-text-card-font-family: "Inter", Helvetica;
+  --body-text-card-font-size: 13px;
+  --body-text-card-font-style: normal;
+  --body-text-card-font-weight: 400;
+  --body-text-card-letter-spacing: 0px;
+  --body-text-card-line-height: 17px;
+  --colecci-n-de-variables-error-color: rgba(254, 70, 58, 1);
+  --colecci-n-de-variables-input-color: rgba(248, 246, 242, 1);
+  --colecci-n-de-variables-second-color: rgba(237, 175, 30, 1);
+  --colecci-n-de-variables-text-input-color: rgba(74, 74, 74, 1);
+  --header-card-font-family: "Inter", Helvetica;
+  --header-card-font-size: 20px;
+  --header-card-font-style: normal;
+  --header-card-font-weight: 600;
+  --header-card-letter-spacing: -0.4px;
+  --header-card-line-height: 120.00000476837158%;
+  
 }
 
 .elevation-0 { box-shadow: var(--elevation-0); }
@@ -37,6 +53,8 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  background-color: var(--colecci-n-de-variables-input-color);
   
   
 }
