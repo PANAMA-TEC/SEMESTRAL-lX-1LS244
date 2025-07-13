@@ -1,0 +1,20 @@
+.webLogo{
+
+  display: flex;
+  Align-items: center;
+  justify-content: center;
+
+  width: 70%;
+  height: 60%;
+
+  background-color: white;
+  border-radius: 50%;
+  
+
+}
+
+.webLogo .image{
+  
+  object-fit: cover;
+ 
+}

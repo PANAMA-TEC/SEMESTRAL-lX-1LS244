@@ -16,29 +16,29 @@
 
 }
 
-.login-right{
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--colecci-n-de-variables-second-color);
-  height: 100%;
-  width: 50%;
-
-  border-radius: 0px 10px 10px 0px;
-}
-
 .login-left{
   display: flex;
+  flex-direction: column;
 
   height: 100%;
   width: 50%;
   
-  justify-content: center;
+ 
   align-items: center;
+  gap: 30px;
   justify-content: center;
 
   border-radius: 10px 0px 0px 10px;
+  /* border-style: solid; */
+}
+
+
+.login-left  .top{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 400px;
+  /* border-style: solid; */
 }
 
 .login-left .content{
@@ -47,17 +47,32 @@
   
 
   gap:30px;
-  /* border-style: solid; */
-  min-height: 300px;
-  min-width: 350px;
+  
+  height: 400px;
+  
+  width: 400px;
 
 }
 
-.login-left .content .top{
+.login-left .content .option-container{
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 20px;
 
+  align-items: center;
+  /* justify-content: center; */
+
+  height: 300px;
+  overflow-y: scroll;
+  /* border-style: solid; */
+}
+
+.login-left .content .input-container{
+  display: flex;
+  flex-direction: column;
+  color: var(--colecci-n-de-variables-text-input-color);
+  gap: 10px;
+  width: 100%;
 }
 
 .login-left .content input{
@@ -84,33 +99,22 @@
   height: 40px;
   cursor: pointer;
 }
+
+.login-left .register-option a{
+  color: var(--colecci-n-de-variables-second-color);
+  cursor: pointer;
+}
     
-.webLogo{
+.login-right{
 
   display: flex;
-  Align-items: center;
+  align-items: center;
   justify-content: center;
+  background-color: var(--colecci-n-de-variables-second-color);
+  height: 100%;
+  width: 50%;
 
-  width: 70%;
-  height: 60%;
-
-  background-color: white;
-  border-radius: 50%;
-  
-
+  border-radius: 0px 10px 10px 0px;
 }
 
-.webLogo .image{
-  width: 80%;
-  height: 80%;
-  object-fit: cover;
-  border-radius: 50%;
-}
 
-.input-container{
-  display: flex;
-  flex-direction: column;
-  color: var(--colecci-n-de-variables-text-input-color);
-  gap: 10px;
-  width: 100%;
-}
