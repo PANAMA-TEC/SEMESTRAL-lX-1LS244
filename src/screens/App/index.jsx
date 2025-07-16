@@ -7,6 +7,7 @@ import { CookHubImage } from '../../Icons/CookHubImage';
 import { CardContent } from '../../components/cardContent';
 import { CardRecipes } from '../../components/cardRecipes';
 import { CardCategories } from '../../components/cardCategories';
+import recipe_category from '../../assets/recetas.png';
 
 
 import React from 'react';
@@ -25,14 +26,14 @@ const App = () =>{
             <input type="text" placeholder="Buscar recetas, ingredientes o pasos" className="search-bar" />
           </div>
 
-          <CardContent titulo="Categorías" propiedad1="Propiedad 1" >
-            <CardCategories titulo="Postres" />
-            <CardCategories titulo="Entradas" />
-            <CardCategories titulo="Platos Principales" />
-            <CardCategories titulo="Platos Principales" />
+          <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
+            <CardCategories image={recipe_category} titulo="Postres" />
+            <CardCategories image={recipe_category} titulo="Entradas" />
+            <CardCategories image={recipe_category} titulo="Platos Principales" />
+            <CardCategories image={recipe_category} titulo="Platos Principales" />
           </CardContent>
 
-          <CardContent titulo="Recetas" propiedad1="Propiedad 1" >
+          <CardContent titulo="Recetas" propiedad1="Propiedad 1" > 
             <CardRecipes titulo="Receta 1" />
             <CardRecipes titulo="Receta 2" />
             <CardRecipes titulo="Receta 3" />

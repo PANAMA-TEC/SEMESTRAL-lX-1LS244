@@ -1,13 +1,15 @@
 .card-recipe {
   align-items: flex-start;
-  border: 1px solid;
+  /* border: 1px solid; */
   border-color: var(--colecci-n-de-variables-text-input-color);
   border-radius: 8px;
   display: flex;
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  min-width: 270px;
+  width: 16vw;
+  min-width: 230px;
+  cursor: pointer;
 }
 
 .card-recipe .image {
@@ -32,15 +34,15 @@
 }
 
 .card-recipe .body {
+  display: flex;
   align-items: flex-start;
   align-self: stretch;
-  display: flex;
   flex: 0 0 auto;
   flex-direction: column;
-  gap: 15px;
+  gap: 20px;
   min-width: 160px;
   padding: 15px;
-  position: relative;
+  
   width: 100%;
 }
 
@@ -49,8 +51,8 @@
   align-self: stretch;
   display: flex;
   flex-direction: column;
-  gap: var(--size-space-150);
-  height: 108px;
+  gap: 20px;
+  
   position: relative;
   width: 100%;
 }
