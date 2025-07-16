@@ -1,0 +1,48 @@
+.nav-bar-main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 150px;
+  background-color: white;
+  color: black;
+ 
+  
+  height: 12vh;
+  width: 100vw;
+
+
+}
+
+.nav-bar-button{
+  background-color: white;
+  
+  color: black;
+  border-style: solid;
+
+  padding: 10px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+
+  border-width: 1px;
+}
+
+.nav-bar-button-round{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+  background-color: white;
+  border-width: 1px;
+
+}
+
+.nav-bar-links {
+  display: flex;
+  gap: 20px;
+  
+
+}
