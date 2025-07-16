@@ -2,19 +2,16 @@ import { Children } from 'react';
 import './index.css';
 import React from 'react';
 
-export const CardContent = ({titulo, children }) => {
+export const CardContent = ({titulo, children, overflow }) => {
   return (
-    <div className='Categorias'>
-      
+    <div className={`CardContent`}>
       <div className='titulo'>
         {titulo}
       </div>
 
-      <div className='list'>
+      <div className={ `list ${overflow == "true" ? ' overflow' : ''}`}>
         { children }
       </div>
-
     </div>
-
   );
 };
