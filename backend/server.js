@@ -1,59 +1,56 @@
-// import fastify from 'fastify';
-// import path from 'path';
-// import fastifyStatic from '@fastify/static';
+// app.js
+import Fastify from "fastify";
+import path from "path";
+import { fileURLToPath } from "url";
 
-// // Register static plugin to serve files from the root directory
-// fastify.register(fastifyStatic, {
-//   root: path.join(__dirname),
-//   prefix: '/', // optional: default is '/'
-// });
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
-// // Default route to serve index.html
-// fastify.get('/', (request, reply) => {
-//   reply.sendFile('index.html'); // index.html must be in the root folder
-// });
-
-// // Start the server
-// fastify.listen({ port: 3000 }, (err, address) => {
-//   if (err) {
-//     fastify.log.error(err);
-//     process.exit(1);
-//   }
-//   fastify.log.info(`Server listening at ${address}`);
-// });
-
-
-import fs from 'fs'
-import Fastify from 'fastify'
-// import path from 'path'
-import fastifyStatic from '@fastify/static'
-import path from 'path'
-import { fileURLToPath } from 'url'
-
+// Crear instancia de Fastify
 const fastify = Fastify({
-  logger: true
-})
-
-// Register static plugin to serve files from the root directory
-const __filename = fileURLToPath(import.meta.url)
-const __dirname = path.dirname(__filename)
-
-fastify.register(fastifyStatic, {
-  root: path.join(__dirname, '../dist'), // Serve files from the dist directory
-  prefix: '/', // Optional: default is '/'
+  logger: {
+    level: "info",
+  },
 });
 
-// Declare a route
-fastify.get("/", async function handler (request, reply) {
-  // Envía directamente el archivo index.html como respuesta
-  return reply.sendFile('index.html');
-});
-
-// Run the server!
-try {
-  await fastify.listen({ port: 8094, host: '0.0.0.0'})
-  
-} catch (err) {
-  fastify.log.error(err)
-  process.exit(1)
+// Registrar plugins de rutas
+async function registerRoutes() {
+  // Rutas de autenticación con prefijo /api/auth
+  await fastify.register(import("./routes/auth.js"), {
+    prefix: "/api/auth",
+  });
 }
+
+// Ruta de salud del servidor
+fastify.get("/health", async (request, reply) => {
+  return {
+    status: "OK",
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    version: "1.0.0",
+  };
+});
+
+// Registrar todas las rutas
+registerRoutes();
+
+// Función para iniciar el servidor
+const start = async () => {
+  try {
+    await fastify.listen({
+      port: 3000,
+      host: "0.0.0.0",
+    });
+    console.log("🚀 Servidor corriendo en http://localhost:3000");
+    console.log("📍 Rutas disponibles:");
+    console.log("   - GET  /health");
+    console.log("   - /api/usuarios/* ");
+    console.log("   - /api/productos/*");
+    console.log("   - /api/auth/*");
+  } catch (err) {
+    fastify.log.error(err);
+    process.exit(1);
+  }
+};
+
+start();
