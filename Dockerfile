@@ -5,6 +5,9 @@ FROM node:22
 # The /app directory should act as the main application directory
 WORKDIR /app
 
+ENV DEBIAN_FRONTEND=noninteractive
+
+
 # Copy the app package and package-lock.json file
 COPY package*.json ./
 
@@ -16,8 +19,8 @@ COPY ./backend ./backend
 RUN npm install && \
     apt-get update && \
     apt upgrade -y && \
-    apt-get install net-tools && \
-    apt install iputils-ping
+    apt-get install -y net-tools && \
+    apt install -y iputils-ping
 
 
 EXPOSE 8094

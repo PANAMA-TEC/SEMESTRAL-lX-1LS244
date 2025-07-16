@@ -19,8 +19,8 @@ const Login = () => {
       <div className="login-left">
        
         <div className="top">
-          <h2>Login</h2>
-          <div>How to i get started lorem ipsum dolor at?</div>
+          <h2>Inicio de Sessión</h2>
+          
         </div>
 
         <form className="content">
