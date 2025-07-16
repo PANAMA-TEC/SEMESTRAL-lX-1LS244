@@ -1,6 +1,4 @@
-// src/routes/auth.js
 async function authRoutes(fastify, options) {
-  // Simulación de usuarios registrados
   const usuariosRegistrados = [
     { id: 1, username: "admin", password: "admin", role: "admin" },
     { id: 2, username: "usuario", password: "user", role: "user" },
@@ -30,7 +28,6 @@ async function authRoutes(fastify, options) {
       };
     }
 
-    // En un caso real, aquí generarías un JWT
     const token = Buffer.from(
       `${usuario.id}:${usuario.username}:${Date.now()}`
     ).toString("base64");
@@ -47,75 +44,11 @@ async function authRoutes(fastify, options) {
     };
   });
 
-  // POST /api/auth/register - Registrar usuario
-  fastify.post("/register", async (request, reply) => {
-    const { username, password, confirmPassword } = request.body;
-
-    // Validaciones
-    if (!username || !password || !confirmPassword) {
-      reply.code(400);
-      return {
-        error: "Todos los campos son requeridos",
-        status: "error",
-      };
-    }
-
-    if (password !== confirmPassword) {
-      reply.code(400);
-      return {
-        error: "Las contraseñas no coinciden",
-        status: "error",
-      };
-    }
-
-    if (password.length < 6) {
-      reply.code(400);
-      return {
-        error: "La contraseña debe tener al menos 6 caracteres",
-        status: "error",
-      };
-    }
-
-    // Verificar si el usuario ya existe
-    const usuarioExiste = usuariosRegistrados.find(
-      (u) => u.username === username
-    );
-    if (usuarioExiste) {
-      reply.code(409);
-      return {
-        error: "El username ya está registrado",
-        status: "error",
-      };
-    }
-
-    // Registrar nuevo usuario
-    const nuevoUsuario = {
-      id: usuariosRegistrados.length + 1,
-      username,
-      password, // En un caso real, deberías hashear la contraseña
-      role: "user",
-      fechaRegistro: new Date().toISOString(),
-    };
-
-    usuariosRegistrados.push(nuevoUsuario);
-
-    reply.code(201);
-    return {
-      mensaje: "Usuario registrado exitosamente",
-      usuario: {
-        id: nuevoUsuario.id,
-        username: nuevoUsuario.username,
-        role: nuevoUsuario.role,
-      },
-      status: "success",
-    };
-  });
-
   // GET /api/auth/me - Obtener información del usuario actual (requiere token)
   fastify.get("/me", async (request, reply) => {
     const authHeader = request.headers.authorization;
 
-    if (!authHeader || !authHeader.startsWith("Bearer ")) {
+    if (!authHeader?.startsWith("Bearer ")) {
       reply.code(401);
       return {
         error: "Token de autorización requerido",
@@ -127,6 +60,7 @@ async function authRoutes(fastify, options) {
 
     try {
       // Decodificar token simple (en un caso real usarías JWT)
+      // eslint-disable-next-line no-undef
       const decoded = Buffer.from(token, "base64").toString();
       const [userId, username] = decoded.split(":");
 
@@ -151,6 +85,7 @@ async function authRoutes(fastify, options) {
         status: "success",
       };
     } catch (error) {
+      console.error("Error al decodificar el token:", error);
       reply.code(401);
       return {
         error: "Token inválido",
