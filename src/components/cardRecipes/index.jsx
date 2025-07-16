@@ -1,11 +1,12 @@
 import './index.css';
 import React from 'react';
+import recetas_prototype from '../../assets/recetas_prototype.png';
 
 export const CardRecipes = ({ titulo = "Titulo de Card", propiedad1 }) => {
   return (
     <div className="card-recipe elevation-1">
      
-      <img className="image elevation-1" alt="Img" src="https://c.animaapp.com/SmjW2TTS/img/img-67441aca031f06-44669347-1-1@2x.png"/>
+      <img className="image elevation-1" alt="Img" src={recetas_prototype}/>
       
       <div className="body">
         <div className="titulo-de-card">{titulo}</div>
