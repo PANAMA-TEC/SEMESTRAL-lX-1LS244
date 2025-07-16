@@ -8,7 +8,8 @@
     "build": "vite build",
     "lint": "eslint .",
     "preview": "vite preview",
-    "fastify:start": "cd ./backend; node server.js",
+    "fastify:start": "cd ./backend && node server.js",
+    "fastify:dev": "cd ./backend && node --watch server.js",
     "server": "vite build && docker build -t web_server . && cd des-soft-ix && docker compose up -d && echo launched"
   },
   "dependencies": {
