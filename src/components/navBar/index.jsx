@@ -1,22 +1,31 @@
 import './index.css';
+import {Link}  from 'react-router-dom'
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const NavBar = ({ logo, links }) => {
-
+  
+  const navigate = useNavigate();
   links = links || [
     { name: 'Home', href: '/' },
     { name: 'About', href: '/about' },
     { name: 'Recipes', href: '/recipes' }  
   ]
 
+  const handleButtonClick = () => {
+    navigate('/login');
+  }
+    
+
   return (
     <nav className="nav-bar-main elevation-1">
       <img src={logo} alt="Logo" className="nav-bar-logo"  width={'100px'}/>
       
       <div className="nav-bar-links">
-        <button className="nav-bar-button">Inicio</button>
-        <button className="nav-bar-button">Guardar</button>
-        <button className="nav-bar-button">Iniciar sessión</button>
+       
+        <button className="nav-bar-button" onClick={handleButtonClick}>Inicio</button>
+        <button className="nav-bar-button" onClick={handleButtonClick}>Guardar</button>
+        <button className="nav-bar-button" onClick={handleButtonClick}>Iniciar sessión</button>
       
         <button className="nav-bar-button-round">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
