@@ -4,6 +4,7 @@ import logo_nav from '../../assets/image.png';
 import exampleImage from '../../assets/recetas.png';
 
 import React from 'react';
+import { CardList } from '../../components/cardList';
 
 export const DetailRecipe = () =>{
 
@@ -23,23 +24,24 @@ export const DetailRecipe = () =>{
 
                             <div className='contenido1'>
                                     <div>
-                                            <h2>título</h2>
+                                        <h2>Espaguetis con carne</h2>
                                     </div>
+
                                     <div>
-                                            <h3>Descripción</h3>
-                                            mensaje descripción
+                                        <h3>Descripción</h3> <br></br>
+                                        Un plato clásico y reconfortante que combina espaguetis al dente con una sabrosa salsa de carne molida, tomate y especias. Perfecto para compartir en familia y disfrutar de una comida completa y deliciosa.
                                     </div>
 
                                     <div className='tiempoycena'> 
-                                    <div> 
-                                                    <h4>Tiempo</h4>
-                                                    5 min
-                                            </div>
+                                        <div> 
+                                            <h4>Tiempo</h4>
+                                            5 min
+                                        </div>
 
-                                            <div> 
-                                                    <h4>Cenas</h4>
-                                                    cantidad
-                                            </div>
+                                        <div> 
+                                            <h4>Cenas</h4>
+                                            cantidad
+                                        </div>
                                             
                                     </div>
                                     
@@ -64,21 +66,17 @@ export const DetailRecipe = () =>{
                     </div>
 
                     <div className='contenedor-ingredientes'>
+
                         <div className='lista-ingredientes '>
                                 
                             <h3>Ingredientes</h3>
                             
-                            <div className='ingredientes'>
-                                <ul>
-                                    <li>Ingrediente 1</li>
-                                    <li>Ingrediente 2</li>
-                                    <li>Ingrediente 3</li>
-                                    <li>Ingrediente 4</li>
-                                </ul>
-                            </div>
+                            <CardList/>
 
                         </div>
+
                         <button className="submit_formulario" type="submit">Comprar Ingredientes</button>
+                        
                     </div>
                 </div>
                         
