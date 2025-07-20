@@ -26,6 +26,7 @@ const UserView = ( ) => {
           <CardCategories image={recipe_category} titulo="Entradas" />
           <CardCategories image={recipe_category} titulo="Platos Principales" />
           <CardCategories image={recipe_category} titulo="Platos Principales" />
+          <CardCategories image={recipe_category} titulo="Platos Principales" />
         </CardContent>
 
         <CardContent titulo="Recetas" propiedad1="Propiedad 1" > 
