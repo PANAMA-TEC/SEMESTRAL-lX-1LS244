@@ -1,7 +1,8 @@
-// app.js
 import Fastify from "fastify";
+import dotenv from "dotenv";
+import { connectDB } from "./config/DataBase.js";
 
-// Crear instancia de Fastify
+dotenv.config();
 const fastify = Fastify({
   logger: {
     level: "info",
@@ -9,13 +10,14 @@ const fastify = Fastify({
 });
 
 // Rutas de autenticación con prefijo /api/auth
-await fastify.register(import("./routes/auth.js"), {
-  prefix: "/api/auth",
+await fastify.register(import("./routes/users.js"), {
+  prefix: "/api/user",
 });
 
 // Función para iniciar el servidor
 const start = async () => {
   try {
+    await connectDB(); // Conectar a la base de datos
     await fastify.listen({
       port: 3000,
       host: "0.0.0.0",
