@@ -1,48 +1,10 @@
-async function authRoutes(fastify, options) {
-  const usuariosRegistrados = [
-    { id: 1, username: "admin", password: "admin", role: "admin" },
-    { id: 2, username: "usuario", password: "user", role: "user" },
-  ];
+import { login, register } from "../controllers/userController.js";
 
+async function userRoutes(fastify) {
   // POST /api/auth/login - Iniciar sesión
-  fastify.post("/login", async (request, reply) => {
-    const { username, password } = request.body;
-
-    if (!username || !password) {
-      reply.code(400);
-      return {
-        error: "Username y password son requeridos",
-        status: "error",
-      };
-    }
-
-    const usuario = usuariosRegistrados.find(
-      (u) => u.username === username && u.password === password
-    );
-
-    if (!usuario) {
-      reply.code(401);
-      return {
-        error: "Credenciales inválidas",
-        status: "error",
-      };
-    }
-
-    const token = Buffer.from(
-      `${usuario.id}:${usuario.username}:${Date.now()}`
-    ).toString("base64");
-
-    return {
-      mensaje: "Login exitoso",
-      token,
-      usuario: {
-        id: usuario.id,
-        username: usuario.username,
-        role: usuario.role,
-      },
-      status: "success",
-    };
-  });
+  fastify.post("/login", login);
+  // POST /api/auth/register - Registrar nuevo usuario
+  fastify.post("/register", register);
 
   // GET /api/auth/me - Obtener información del usuario actual (requiere token)
   fastify.get("/me", async (request, reply) => {
@@ -95,4 +57,4 @@ async function authRoutes(fastify, options) {
   });
 }
 
-export default authRoutes;
+export default userRoutes;
