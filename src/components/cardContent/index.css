@@ -1,0 +1,37 @@
+.CardContent{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 70%;
+
+  /* border-style: solid; */
+
+  
+}
+
+.CardContent .titulo {
+  
+  font-weight: bold;
+  margin-bottom: 29px;
+ 
+}
+
+.CardContent .list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  
+  /* border-style: solid; */
+  color: black;
+  width: 100%;
+  gap: 40px 10PX;
+  padding: 10px;
+ 
+}
+
+.CardContent .overflow {
+  overflow-x: auto;
+  width: 100%;
+  flex-wrap: nowrap !important;
+}

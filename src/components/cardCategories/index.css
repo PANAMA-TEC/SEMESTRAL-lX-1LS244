@@ -1,0 +1,35 @@
+.card-category {
+  align-items: flex-start;
+  /* border: 1px solid; */
+  border-color: var(--colecci-n-de-variables-text-input-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: relative;
+  width: 16vw;
+  min-width: 230px;
+  cursor: pointer;
+  
+}
+
+.card-category .image {
+  align-self: stretch;
+  
+  background-position: 50% 50%;
+  background-size: cover;
+  border-radius: 8px 8px 0px 0px;
+  height: 18vh;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  cursor: pointer;
+}
+
+.card-category .title {
+  color: var(--color-texto-primario);
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin: 10px;
+  text-align: center;
+}
