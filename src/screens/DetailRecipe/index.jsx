@@ -1,108 +1,91 @@
 import './index.css';
 import { NavBar } from '../../components/navBar';
 import logo_nav from '../../assets/image.png';
+import exampleImage from '../../assets/recetas.png';
 
 import React from 'react';
+import { CardList } from '../../components/cardList';
+import { CommentaryBox } from '../../components/commentaryBox';
 
-const DetailRecipe = () =>{
+export const DetailRecipe = () =>{
 
-  return(
-    <div className='DetailRecipe'>
+    return(
+        <div className='DetailRecipe'>
 
-
-        <NavBar logo={logo_nav}/>
-        <div className='cuadrantes'>
-
-        <div className='receta'>
-            <div className='cuadrante1'>
-
-                <div className='imagen-receta'> </div>
-
-
+            <NavBar logo={logo_nav}/>
             
-                <div className='contenido1'>
-                    <div>
-                         <h2>título</h2>
-                    </div>
-                    <div>
-                         <h3>Descripción</h3>
-                         mensaje descripción
-                    </div>
+            <div className='cuadrantes'>
 
-                    <div className='tiempoycena'> 
-                       <div> 
-                            <h4>Tiempo</h4>
-                            5 min
+                <div className='top-container'>
+                    <div className='receta'>
+                            
+                        <div className='cuadrante1'>
+
+                            <img className='imagen-receta' src={ exampleImage } /> 
+
+                            <div className='contenido1'>
+                                <div>
+                                    <h2>Espaguetis con carne</h2>
+                                </div>
+
+                                <div>
+                                    <h3>Descripción</h3> <br></br>
+                                    Un plato clásico y reconfortante que combina espaguetis al dente con una sabrosa salsa de carne molida, tomate y especias. Perfecto para compartir en familia y disfrutar de una comida completa y deliciosa.
+                                </div>
+
+                                <div className='tiempoycena'> 
+                                    <div> 
+                                        <h4>Tiempo</h4>
+                                        5 min
+                                    </div>
+
+                                    <div> 
+                                        <h4>Cenas</h4>
+                                        cantidad
+                                    </div>
+                                        
+                                </div>
+                                    
+                            </div>
+
                         </div>
 
-                        <div> 
-                            <h4>Cenas</h4>
-                            cantidad
+                        <div className='pasos' style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+                                
+                            <h4>Pasos</h4>
+                            
+                            <div className="paso" style={{display: 'flex', flexDirection: 'column', gap: '10px', textAlign:'justify'}}>
+                                <span>1. Mezcla todos los ingredientes en un bol grande. Asegúrate de que estén bien integrados antes de continuar, esto solo es mas texto.</span>
+                                <span>2. Calienta una sartén a fuego medio y vierte la mezcla poco a poco. Cocina hasta que esté dorado por ambos lados y retira del fuego.</span>
+                                <span>3. Mezcla todos los ingredientes en un bol grande. Puedes añadir especias al gusto para mejorar el sabor, esto solo es mas texto.</span>
+                                <span>4. Mezcla todos los ingredientes en un bol grande. Sirve caliente y acompaña con tu guarnición favorita, esto solo es mas texto.</span>
+                            </div>
+
                         </div>
+                            
+                    </div>
+
+                    <div className='contenedor-ingredientes'>
+
+                        <div className='lista-ingredientes '>
+                                
+                            <h3>Ingredientes</h3>
+                            
+                            <CardList/>
+
+                        </div>
+
+                        <button className="submit_formulario" type="submit">Comprar Ingredientes</button>
                         
                     </div>
-                    
                 </div>
+                        
+                <CommentaryBox/>
 
-                
-
-            
             </div>
 
-
-
-            <div className='ingredientesypasos'>
-
-                <div>
-                    <h4>Ingredientes</h4>
-                    Ingredientes
-                </div>
-                <div>
-                    <h4>Pasos</h4>
-                    Pasos
-
-                </div>
-            </div>
-
-            <div>
-                <button type="submit">Comprar ingredientes</button>
-            </div>
-
-
-        </div>
-
-
-
-        <div className="comentarios">
-            <div>
-                <h3>Comentarios</h3>
-            </div>
-
-
-            <div className="comentario-contenedor">
-                <div className="iconocomentario"></div>
-                <div className="comentario">
-                ¡Esta receta está deliciosa!
-                </div>
-            </div>
-
-
-            <div className="nuevo-comentario-contenedor">
-                <div className="iconocomentarionuevo"></div>
-                <div className="nuevo-comentario-datos">
-                    <h5>Nombre de usuario</h5>
-                    <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo"></textarea>
-                    <button className='boton2'>Enviar</button>
-                </div>
-            </div>
-        </div>
-
-    </div>
-           
-
-    </div>
-         
+        </div>        
     )
 }
 
-export {DetailRecipe};
+

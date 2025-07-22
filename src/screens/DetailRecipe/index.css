@@ -1,8 +1,7 @@
 .DetailRecipe{
-  margin-top: 15vh;
+  margin-top: 12vh;
   padding: 20px;
   width: 70vw;
-
   display: flex;
   /* border-style: solid; */
 }
@@ -10,18 +9,17 @@
 .DetailRecipe .receta {
   display: flex;
   flex-direction: column;
-  gap: 25px; /* Tomamos el mayor de los dos */
-  padding-left: 20px;
-  
+  gap: 40px; /* Tomamos el mayor de los dos */
+  padding: 20px;
 
-  border-style: solid;
+  /* border-style: solid; */
   width: 100%;
 }
 
 .DetailRecipe .cuadrantes {
   display: flex;
   flex-direction: column;
-  gap: 100px; /* Espacio entre título, descripción y tiempo/cena */
+  gap: 40px; /* Espacio entre título, descripción y tiempo/cena */
   width: 100%;
   justify-content: space-between;
   /* border-style: solid; */
@@ -29,9 +27,69 @@
 
 .DetailRecipe .cuadrante1 {
   display: flex;
-  gap: 100px;
+  gap: 20px ;
   
 
+}
+
+.DetailRecipe .submit_formulario {
+  align-self: flex-start;
+  padding: 8px 90px;
+  background-color: #dd7e19;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 50px;
+
+}
+
+.DetailRecipe .top-container{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+
+  padding-bottom: 50px;
+  max-height: 600px;
+  
+ 
+}
+
+.DetailRecipe .contenedor-ingredientes{
+  display: flex;
+  flex-direction: column;
+  /* gap: 20px; */
+  width: 30%;
+
+  
+  /* border-style: solid; */
+  justify-content: space-between;
+  
+ 
+}
+
+.DetailRecipe .lista-ingredientes{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  
+  /* gap: 20px; */
+  
+  /* border-radius: 10px; */
+  /* border-style: solid; */
+
+}
+
+.DetailRecipe .lista-ingredientes h3{
+  padding: 20px 0px;
+  border-style: none none solid none;
+}
+
+.DetailRecipe .lista-ingredientes li {
+  padding: 20px;
+  list-style: none;
+  border-style: solid;
+  border-color: rgb(235, 235, 235);
 }
 
 .contenido1 {
@@ -75,16 +133,14 @@
   margin-bottom: 15px;
 }
 
-.comentario-contenedor,
-.nuevo-comentario-contenedor {
+.comentario-contenedor, .nuevo-comentario-contenedor {
   display: flex;
   align-items: flex-start;
   gap: 15px;
   margin-bottom: 20px;
 }
 
-.iconocomentario,
-.iconocomentarionuevo {
+.iconocomentario, .iconocomentarionuevo {
   width: 30px;
   height: 30px;
   background-color: #bbb;
@@ -92,14 +148,12 @@
   flex-shrink: 0;
 }
 
-
 .comentario {
   background-color: white;
   padding: 10px 15px;
   border-radius: 10px;
   max-width: 250px;
 }
-
 
 .nuevo-comentario-datos {
   flex: 1;
@@ -115,17 +169,6 @@
   min-height: 20px;
   resize: vertical;
 }
-
-button {
-  align-self: flex-start;
-  padding: 8px 90px;
-  background-color: #dd7e19;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
 
 .boton2 {
   align-self: flex-start;
