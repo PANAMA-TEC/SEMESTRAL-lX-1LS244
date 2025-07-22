@@ -5,6 +5,7 @@ import exampleImage from '../../assets/recetas.png';
 
 import React from 'react';
 import { CardList } from '../../components/cardList';
+import { CommentaryBox } from '../../components/commentaryBox';
 
 export const DetailRecipe = () =>{
 
@@ -23,27 +24,27 @@ export const DetailRecipe = () =>{
                             <img className='imagen-receta' src={ exampleImage } /> 
 
                             <div className='contenido1'>
-                                    <div>
-                                        <h2>Espaguetis con carne</h2>
+                                <div>
+                                    <h2>Espaguetis con carne</h2>
+                                </div>
+
+                                <div>
+                                    <h3>Descripción</h3> <br></br>
+                                    Un plato clásico y reconfortante que combina espaguetis al dente con una sabrosa salsa de carne molida, tomate y especias. Perfecto para compartir en familia y disfrutar de una comida completa y deliciosa.
+                                </div>
+
+                                <div className='tiempoycena'> 
+                                    <div> 
+                                        <h4>Tiempo</h4>
+                                        5 min
                                     </div>
 
-                                    <div>
-                                        <h3>Descripción</h3> <br></br>
-                                        Un plato clásico y reconfortante que combina espaguetis al dente con una sabrosa salsa de carne molida, tomate y especias. Perfecto para compartir en familia y disfrutar de una comida completa y deliciosa.
+                                    <div> 
+                                        <h4>Cenas</h4>
+                                        cantidad
                                     </div>
-
-                                    <div className='tiempoycena'> 
-                                        <div> 
-                                            <h4>Tiempo</h4>
-                                            5 min
-                                        </div>
-
-                                        <div> 
-                                            <h4>Cenas</h4>
-                                            cantidad
-                                        </div>
-                                            
-                                    </div>
+                                        
+                                </div>
                                     
                             </div>
 
@@ -60,7 +61,6 @@ export const DetailRecipe = () =>{
                                 <span>4. Mezcla todos los ingredientes en un bol grande. Sirve caliente y acompaña con tu guarnición favorita, esto solo es mas texto.</span>
                             </div>
 
-                                
                         </div>
                             
                     </div>
@@ -80,27 +80,7 @@ export const DetailRecipe = () =>{
                     </div>
                 </div>
                         
-                <div className="comentarios">
-                    <div>
-                        <h3>Comentarios</h3>
-                    </div>
-
-                    <div className="comentario-contenedor">
-                        <div className="iconocomentario"></div>
-                        <div className="comentario">
-                        ¡Esta receta está deliciosa!
-                        </div>
-                    </div>
-
-                    <div className="nuevo-comentario-contenedor">
-                        <div className="iconocomentarionuevo"></div>
-                        <div className="nuevo-comentario-datos">
-                            <h5>Nombre de usuario</h5>
-                            <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo"></textarea>
-                            <button className='boton2'>Enviar</button>
-                        </div>
-                    </div>
-                </div>
+                <CommentaryBox/>
 
             </div>
 

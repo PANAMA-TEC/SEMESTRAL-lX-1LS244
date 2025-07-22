@@ -50,7 +50,8 @@
   gap: 20px;
 
   padding-bottom: 50px;
-  border-style: none none solid none;
+  max-height: 600px;
+  
  
 }
 
@@ -63,7 +64,7 @@
   
   /* border-style: solid; */
   justify-content: space-between;
-  max-height: 500px;
+  
  
 }
 
@@ -76,7 +77,7 @@
   
   /* border-radius: 10px; */
   /* border-style: solid; */
-  max-height: 500px;
+
 }
 
 .DetailRecipe .lista-ingredientes h3{
