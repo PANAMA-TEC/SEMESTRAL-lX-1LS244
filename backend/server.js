@@ -8,16 +8,20 @@ const fastify = Fastify({
     level: "info",
   },
 });
+await fastify.register(import("./plugins/swagger.js"));
 
-// Rutas de autenticación con prefijo /api/auth
-await fastify.register(import("./routes/users.js"), {
+await fastify.register(import("./routes/user.js"), {
   prefix: "/api/user",
+});
+
+await fastify.register(import("./routes/recipe.js"), {
+  prefix: "/api/recipe",
 });
 
 // Función para iniciar el servidor
 const start = async () => {
   try {
-    await connectDB(); // Conectar a la base de datos
+    await connectDB();
     await fastify.listen({
       port: 3000,
       host: "0.0.0.0",

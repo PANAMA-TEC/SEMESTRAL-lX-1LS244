@@ -1,7 +1,8 @@
 // src/models/Usuario.js
 import mongoose from "mongoose";
+const { Schema, model } = mongoose;
 
-const userSchema = new mongoose.Schema(
+const userSchema = new Schema(
   {
     fullname: {
       type: String,
@@ -47,8 +48,7 @@ const userSchema = new mongoose.Schema(
 );
 
 // Índeel para búsquedas rápidas
-userSchema.index({ email: 1 });
-userSchema.index({ activo: 1 });
+userSchema.index({ active: 1 });
 userSchema.index({ role: 1 });
 
 // Método virtual para obtener nombre completo
@@ -81,8 +81,6 @@ userSchema.post("save", function (doc) {
   console.log(`usuario guardado: ${doc.email}`);
 });
 
-const User = mongoose.model("User", userSchema);
-
 /**
  * Represents a User model.
  * @typedef {Object} User
@@ -93,4 +91,18 @@ const User = mongoose.model("User", userSchema);
  * @property {Date} createdAt - The date the user was created.
  * @property {Date} updatedAt - The date the user was last updated.
  */
-export default User;
+export default model("User", userSchema);
+
+export const UserSchema = {
+  $id: "Usuario",
+  type: "object",
+  properties: {
+    _id: { type: "string" },
+    fullname: { type: "string" },
+    email: { type: "string", format: "email" },
+    role: { type: "string", enum: ["admin", "user"] },
+    active: { type: "boolean" },
+    registerDate: { type: "string", format: "date-time" },
+  },
+  required: ["fullname", "email"],
+};

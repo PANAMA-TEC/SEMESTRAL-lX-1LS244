@@ -10,8 +10,6 @@ export const connectDB = async () => {
       process.env.MONGO_URI || "mongodb://localhost:27017",
       {
         dbName: process.env.DB_NAME || "cooking",
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
       }
     );
     console.log("Conectado a MongoDB");
