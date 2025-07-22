@@ -1,5 +1,5 @@
 import { isValidObjectId } from "mongoose";
-import Recipe from "../model/recipeModel.js";
+import Recipe from "../models/recipeModel.js";
 
 export async function getRecipes(request, reply) {
   try {
@@ -74,5 +74,31 @@ export async function updateRecipe(request, reply) {
     return reply
       .code(500)
       .send({ status: "error", error: "Error al actualizar la receta" });
+  }
+}
+
+export async function deleteRecipe(request, reply) {
+  const id = request.params.id;
+  if (!isValidObjectId(id)) {
+    return reply.code(400).send({ status: "error", error: "ID inválido" });
+  }
+
+  try {
+    const deletedRecipe = await Recipe.findByIdAndDelete(id);
+    if (!deletedRecipe) {
+      return reply
+        .code(404)
+        .send({ status: "error", error: "Receta no encontrada" });
+    }
+    return reply.code(200).send({
+      status: "success",
+      message: `Receta con ID: ${id} eliminada`,
+    });
+  } catch (error) {
+    request.log.error("deleteRecipe error:", error);
+    console.error("Error al eliminar la receta:", error);
+    return reply
+      .code(500)
+      .send({ status: "error", error: "Error al eliminar la receta" });
   }
 }

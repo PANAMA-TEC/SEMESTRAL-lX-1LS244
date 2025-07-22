@@ -8,6 +8,8 @@ const fastify = Fastify({
     level: "info",
   },
 });
+
+//implementacion de datos de prueba
 await fastify.register(import("./plugins/swagger.js"));
 
 await fastify.register(import("./routes/user.js"), {
