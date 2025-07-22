@@ -2,6 +2,8 @@ import {
   getRecipes,
   createRecipe,
   getRecipeId,
+  updateRecipe,
+  deleteRecipe,
 } from "../controllers/recipeController.js";
 
 async function recipeRoutes(fastify) {
@@ -14,22 +16,10 @@ async function recipeRoutes(fastify) {
   fastify.post("/", createRecipe);
 
   //PUT to update a recipe by ID
-  fastify.put("/:id", async (request) => {
-    const { id } = request.params;
-    const updatedData = request.body;
-    return {
-      message: `Recipe with ID: ${id} Updated`,
-      data: updatedData,
-    };
-  });
+  fastify.put("/:id", updateRecipe);
 
   //DELETE a recipe by ID
-  fastify.delete("/:id", async (request) => {
-    const { id } = request.params;
-    return {
-      message: `Recipe with ID: ${id} Deleted`,
-    };
-  });
+  fastify.delete("/:id", deleteRecipe);
 }
 
 export default recipeRoutes;

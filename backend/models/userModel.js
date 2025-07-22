@@ -94,7 +94,7 @@ userSchema.post("save", function (doc) {
 export default model("User", userSchema);
 
 export const UserSchema = {
-  $id: "Usuario",
+  $id: "User",
   type: "object",
   properties: {
     _id: { type: "string" },

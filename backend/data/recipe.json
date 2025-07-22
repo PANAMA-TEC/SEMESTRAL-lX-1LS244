@@ -1,0 +1,363 @@
+[
+  {
+    "title": "Panqueques de Avena",
+    "description": "Panqueques saludables hechos con avena y plátano.",
+    "category": "desayuno",
+    "ingredients": [
+      { "ingredient": "Avena" },
+      { "ingredient": "Leche" },
+      { "ingredient": "Plátano" },
+      { "ingredient": "Huevos" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Mezclar avena, leche y huevo en la licuadora." },
+      { "orden": 2, "descripcion": "Agregar puré de plátano y batir bien." },
+      { "orden": 3, "descripcion": "Cocinar la mezcla en sartén antiadherente." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0001",
+    "published": true
+  },
+  {
+    "title": "Ensalada César Clásica",
+    "description": "Ensalada con pollo, lechuga, queso y aderezo César.",
+    "category": "almuerzo",
+    "ingredients": [
+      { "ingredient": "Lechuga romana" },
+      { "ingredient": "Pechuga de pollo" },
+      { "ingredient": "Queso parmesano" },
+      { "ingredient": "Aderezo César" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Asar la pechuga y cortar en tiras." },
+      { "orden": 2, "descripcion": "Lavar y trocear la lechuga." },
+      { "orden": 3, "descripcion": "Mezclar todos los ingredientes y agregar aderezo." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0002",
+    "published": true
+  },
+  {
+    "title": "Omelette de Espinacas",
+    "description": "Tortilla francesa rellena de espinacas y queso.",
+    "category": "desayuno",
+    "ingredients": [
+      { "ingredient": "Huevos" },
+      { "ingredient": "Espinacas" },
+      { "ingredient": "Queso cheddar" },
+      { "ingredient": "Sal y pimienta" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Batir los huevos con sal y pimienta." },
+      { "orden": 2, "descripcion": "Saltear las espinacas en un poco de aceite." },
+      { "orden": 3, "descripcion": "Verter los huevos y añadir queso, doblar y servir." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0003",
+    "published": true
+  },
+  {
+    "title": "Lasaña de Carne",
+    "description": "Capas de pasta, carne molida y queso gratinado.",
+    "category": "cena",
+    "ingredients": [
+      { "ingredient": "Láminas de lasaña" },
+      { "ingredient": "Carne molida" },
+      { "ingredient": "Salsa de tomate" },
+      { "ingredient": "Queso mozzarella" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Preparar la salsa con carne y tomate." },
+      { "orden": 2, "descripcion": "Montar capas de pasta, salsa y queso." },
+      { "orden": 3, "descripcion": "Hornear a 180°C durante 30 minutos." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0004",
+    "published": true
+  },
+  {
+    "title": "Brownies de Chocolate",
+    "description": "Bizcocho denso de chocolate con trozos de nuez.",
+    "category": "postre",
+    "ingredients": [
+      { "ingredient": "Chocolate oscuro" },
+      { "ingredient": "Harina" },
+      { "ingredient": "Azúcar" },
+      { "ingredient": "Huevos" },
+      { "ingredient": "Nueces" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Derretir el chocolate con mantequilla." },
+      { "orden": 2, "descripcion": "Batir huevos y azúcar, añadir harina y chocolate." },
+      { "orden": 3, "descripcion": "Verter en molde y hornear 25 minutos." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0005",
+    "published": true
+  },
+  {
+    "title": "Pollo al Horno con Hierbas",
+    "description": "Muslos de pollo marinados en hierbas y ajo.",
+    "category": "almuerzo",
+    "ingredients": [
+      { "ingredient": "Muslos de pollo" },
+      { "ingredient": "Romero" },
+      { "ingredient": "Tomillo" },
+      { "ingredient": "Ajo" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Marinar el pollo con hierbas y ajo picado." },
+      { "orden": 2, "descripcion": "Hornear a 200°C durante 40 minutos." },
+      { "orden": 3, "descripcion": "Dejar reposar 5 minutos antes de servir." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0006",
+    "published": false
+  },
+  {
+    "title": "Tacos de Pescado",
+    "description": "Tortillas rellenas de pescado empanizado y pico de gallo.",
+    "category": "cena",
+    "ingredients": [
+      { "ingredient": "Filetes de pescado" },
+      { "ingredient": "Harina" },
+      { "ingredient": "Huevo" },
+      { "ingredient": "Tortillas de maíz" },
+      { "ingredient": "Cilantro" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Empanizar el pescado y freír." },
+      { "orden": 2, "descripcion": "Calentar tortillas y rellenar." },
+      { "orden": 3, "descripcion": "Servir con pico de gallo y cilantro." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0007",
+    "published": true
+  },
+  {
+    "title": "Smoothie de Frutos Rojos",
+    "description": "Bebida fría de fresas, arándanos y plátano.",
+    "category": "desayuno",
+    "ingredients": [
+      { "ingredient": "Fresas" },
+      { "ingredient": "Arándanos" },
+      { "ingredient": "Plátano" },
+      { "ingredient": "Yogur natural" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Lavar la fruta y pelar el plátano." },
+      { "orden": 2, "descripcion": "Licuar todo con yogur y hielo." },
+      { "orden": 3, "descripcion": "Servir inmediatamente." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0008",
+    "published": true
+  },
+  {
+    "title": "Sopa de Verduras",
+    "description": "Caldo ligero con zanahoria, papa y calabacín.",
+    "category": "almuerzo",
+    "ingredients": [
+      { "ingredient": "Zanahoria" },
+      { "ingredient": "Papa" },
+      { "ingredient": "Calabacín" },
+      { "ingredient": "Caldo de pollo" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Pelar y cortar las verduras." },
+      { "orden": 2, "descripcion": "Hervir en caldo hasta tiernas." },
+      { "orden": 3, "descripcion": "Licuar parcialmente y servir." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0009",
+    "published": false
+  },
+  {
+    "title": "Empanadas de Queso",
+    "description": "Masa rellena de queso fundido y especias.",
+    "category": "otro",
+    "ingredients": [
+      { "ingredient": "Masa para empanadas" },
+      { "ingredient": "Queso fresco" },
+      { "ingredient": "Orégano" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Rellenar la masa con queso y cerrar." },
+      { "orden": 2, "descripcion": "Hornear a 180°C por 20 minutos." },
+      { "orden": 3, "descripcion": "Espolvorear orégano y servir." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b000a",
+    "published": true
+  },
+  {
+    "title": "Crema de Calabaza",
+    "description": "Sopa suave de calabaza asada con especias.",
+    "category": "almuerzo",
+    "ingredients": [
+      { "ingredient": "Calabaza" },
+      { "ingredient": "Cebolla" },
+      { "ingredient": "Ajo" },
+      { "ingredient": "Nata" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Asar la calabaza, cebolla y ajo en el horno." },
+      { "orden": 2, "descripcion": "Triturar con nata hasta obtener crema." },
+      { "orden": 3, "descripcion": "Calentar al fuego y sazonar al gusto." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b000b",
+    "published": true
+  },
+  {
+    "title": "Tortilla Española",
+    "description": "Clásica tortilla de patata y cebolla.",
+    "category": "almuerzo",
+    "ingredients": [
+      { "ingredient": "Patatas" },
+      { "ingredient": "Huevos" },
+      { "ingredient": "Cebolla" },
+      { "ingredient": "Aceite de oliva" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Cortar patatas y cebolla en rodajas finas." },
+      { "orden": 2, "descripcion": "Freír en aceite hasta dorar." },
+      { "orden": 3, "descripcion": "Batir huevos, mezclar con patatas y cuajar." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b000c",
+    "published": true
+  },
+  {
+    "title": "Pasta Carbonara",
+    "description": "Pasta con salsa cremosa de huevo y panceta.",
+    "category": "cena",
+    "ingredients": [
+      { "ingredient": "Spaghetti" },
+      { "ingredient": "Huevos" },
+      { "ingredient": "Panceta" },
+      { "ingredient": "Queso parmesano" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Cocer la pasta al dente." },
+      { "orden": 2, "descripcion": "Freír la panceta hasta crujir." },
+      { "orden": 3, "descripcion": "Mezclar pasta caliente con huevo y queso." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b000d",
+    "published": true
+  },
+  {
+    "title": "Galletas de Avena y Miel",
+    "description": "Galletas crujientes con avena y un toque de miel.",
+    "category": "postre",
+    "ingredients": [
+      { "ingredient": "Avena" },
+      { "ingredient": "Miel" },
+      { "ingredient": "Mantequilla" },
+      { "ingredient": "Azúcar moreno" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Mezclar avena, miel y mantequilla derretida." },
+      { "orden": 2, "descripcion": "Formar bolitas y aplastar en bandeja." },
+      { "orden": 3, "descripcion": "Hornear a 180°C por 12 minutos." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b000e",
+    "published": true
+  },
+  {
+    "title": "Quiche de Espárragos",
+    "description": "Tarta salada rellena de espárragos y queso.",
+    "category": "almuerzo",
+    "ingredients": [
+      { "ingredient": "Masa quebrada" },
+      { "ingredient": "Espárragos" },
+      { "ingredient": "Nata" },
+      { "ingredient": "Huevos" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Prehornear la masa 10 minutos." },
+      { "orden": 2, "descripcion": "Colocar espárragos y mezclar nata con huevo." },
+      { "orden": 3, "descripcion": "Hornear 25 minutos hasta dorar." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b000f",
+    "published": true
+  },
+  {
+    "title": "Ensalada de Garbanzos",
+    "description": "Ensalada fría con garbanzos, tomate y pepino.",
+    "category": "otro",
+    "ingredients": [
+      { "ingredient": "Garbanzos cocidos" },
+      { "ingredient": "Tomate" },
+      { "ingredient": "Pepino" },
+      { "ingredient": "Cebolla morada" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Mezclar todos los ingredientes en un bol." },
+      { "orden": 2, "descripcion": "Aliñar con aceite, vinagre y sal." },
+      { "orden": 3, "descripcion": "Refrigerar 30 minutos antes de servir." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0010",
+    "published": false
+  },
+  {
+    "title": "Arroz al Curry",
+    "description": "Arroz aromático con especias al estilo hindú.",
+    "category": "cena",
+    "ingredients": [
+      { "ingredient": "Arroz basmati" },
+      { "ingredient": "Curry en polvo" },
+      { "ingredient": "Leche de coco" },
+      { "ingredient": "Cebolla" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Sofreír cebolla y curry." },
+      { "orden": 2, "descripcion": "Añadir arroz y leche de coco." },
+      { "orden": 3, "descripcion": "Cocer tapado hasta absorber líquido." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0011",
+    "published": true
+  },
+  {
+    "title": "Muffins de Arándanos",
+    "description": "Pequeños bizcochos con arándanos frescos.",
+    "category": "postre",
+    "ingredients": [
+      { "ingredient": "Harina" },
+      { "ingredient": "Azúcar" },
+      { "ingredient": "Levadura" },
+      { "ingredient": "Arándanos" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Mezclar ingredientes secos y húmedos." },
+      { "orden": 2, "descripcion": "Incorporar arándanos con cuidado." },
+      { "orden": 3, "descripcion": "Hornear moldes 20 minutos a 190°C." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0012",
+    "published": true
+  },
+  {
+    "title": "Wrap de Pavo y Aguacate",
+    "description": "Tortilla de trigo rellena de pavo y aguacate.",
+    "category": "almuerzo",
+    "ingredients": [
+      { "ingredient": "Tortilla de trigo" },
+      { "ingredient": "Pavo" },
+      { "ingredient": "Aguacate" },
+      { "ingredient": "Lechuga" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Extender tortilla y colocar ingredientes." },
+      { "orden": 2, "descripcion": "Enrollar firmemente y cortar por la mitad." },
+      { "orden": 3, "descripcion": "Servir con salsa de yogur." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0013",
+    "published": true
+  },
+  {
+    "title": "Chocolate Caliente con Especias",
+    "description": "Bebida reconfortante de chocolate y canela.",
+    "category": "desayuno",
+    "ingredients": [
+      { "ingredient": "Leche" },
+      { "ingredient": "Cacao en polvo" },
+      { "ingredient": "Canela" },
+      { "ingredient": "Azúcar" }
+    ],
+    "step": [
+      { "orden": 1, "descripcion": "Calentar leche con cacao y azúcar." },
+      { "orden": 2, "descripcion": "Añadir canela y mezclar bien." },
+      { "orden": 3, "descripcion": "Servir caliente con espuma." }
+    ],
+    "autor": "64c1f0ea0b5e3d6f2a9b0014",
+    "published": false
+  }
+]
