@@ -7,8 +7,20 @@ import { CardCategories } from "../../components/cardCategories";
 import recipe_category from "../../assets/recetas.png";
 import logo_nav from "../../assets/image.png";
 import React from "react";
+import { API_Services } from "../../Services/API_Services";
+const API_Recetas = 'http://localhost:3000/api/recipe/';
+
 
 const UserView = ( ) => {
+
+  const [recetas, setRecetas ] = useState({});
+  
+  React.useEffect(  () => {
+    const fetchData = async () => {
+      console.log( API_Services(API_Recetas));
+    }
+  }, []);
+
   
 
   return (
