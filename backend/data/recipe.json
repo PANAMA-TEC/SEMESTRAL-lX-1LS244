@@ -14,6 +14,7 @@
       { "orden": 2, "descripcion": "Agregar puré de plátano y batir bien." },
       { "orden": 3, "descripcion": "Cocinar la mezcla en sartén antiadherente." }
     ],
+    "time":30,
     "autor": "64c1f0ea0b5e3d6f2a9b0001",
     "published": true
   },
@@ -32,6 +33,8 @@
       { "orden": 2, "descripcion": "Lavar y trocear la lechuga." },
       { "orden": 3, "descripcion": "Mezclar todos los ingredientes y agregar aderezo." }
     ],
+
+    "time":20,
     "autor": "64c1f0ea0b5e3d6f2a9b0002",
     "published": true
   },
@@ -50,6 +53,7 @@
       { "orden": 2, "descripcion": "Saltear las espinacas en un poco de aceite." },
       { "orden": 3, "descripcion": "Verter los huevos y añadir queso, doblar y servir." }
     ],
+    "time":35,
     "autor": "64c1f0ea0b5e3d6f2a9b0003",
     "published": true
   },
@@ -87,6 +91,7 @@
       { "orden": 2, "descripcion": "Batir huevos y azúcar, añadir harina y chocolate." },
       { "orden": 3, "descripcion": "Verter en molde y hornear 25 minutos." }
     ],
+    "time":40,
     "autor": "64c1f0ea0b5e3d6f2a9b0005",
     "published": true
   },
@@ -105,6 +110,7 @@
       { "orden": 2, "descripcion": "Hornear a 200°C durante 40 minutos." },
       { "orden": 3, "descripcion": "Dejar reposar 5 minutos antes de servir." }
     ],
+    "time":45,
     "autor": "64c1f0ea0b5e3d6f2a9b0006",
     "published": false
   },
@@ -124,6 +130,7 @@
       { "orden": 2, "descripcion": "Calentar tortillas y rellenar." },
       { "orden": 3, "descripcion": "Servir con pico de gallo y cilantro." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b0007",
     "published": true
   },
@@ -142,6 +149,7 @@
       { "orden": 2, "descripcion": "Licuar todo con yogur y hielo." },
       { "orden": 3, "descripcion": "Servir inmediatamente." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b0008",
     "published": true
   },
@@ -177,6 +185,7 @@
       { "orden": 2, "descripcion": "Hornear a 180°C por 20 minutos." },
       { "orden": 3, "descripcion": "Espolvorear orégano y servir." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b000a",
     "published": true
   },
@@ -195,6 +204,7 @@
       { "orden": 2, "descripcion": "Triturar con nata hasta obtener crema." },
       { "orden": 3, "descripcion": "Calentar al fuego y sazonar al gusto." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b000b",
     "published": true
   },
@@ -213,6 +223,7 @@
       { "orden": 2, "descripcion": "Freír en aceite hasta dorar." },
       { "orden": 3, "descripcion": "Batir huevos, mezclar con patatas y cuajar." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b000c",
     "published": true
   },
@@ -231,6 +242,7 @@
       { "orden": 2, "descripcion": "Freír la panceta hasta crujir." },
       { "orden": 3, "descripcion": "Mezclar pasta caliente con huevo y queso." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b000d",
     "published": true
   },
@@ -249,6 +261,7 @@
       { "orden": 2, "descripcion": "Formar bolitas y aplastar en bandeja." },
       { "orden": 3, "descripcion": "Hornear a 180°C por 12 minutos." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b000e",
     "published": true
   },
@@ -267,6 +280,7 @@
       { "orden": 2, "descripcion": "Colocar espárragos y mezclar nata con huevo." },
       { "orden": 3, "descripcion": "Hornear 25 minutos hasta dorar." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b000f",
     "published": true
   },
@@ -285,6 +299,7 @@
       { "orden": 2, "descripcion": "Aliñar con aceite, vinagre y sal." },
       { "orden": 3, "descripcion": "Refrigerar 30 minutos antes de servir." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b0010",
     "published": false
   },
@@ -303,6 +318,7 @@
       { "orden": 2, "descripcion": "Añadir arroz y leche de coco." },
       { "orden": 3, "descripcion": "Cocer tapado hasta absorber líquido." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b0011",
     "published": true
   },
@@ -339,6 +355,7 @@
       { "orden": 2, "descripcion": "Enrollar firmemente y cortar por la mitad." },
       { "orden": 3, "descripcion": "Servir con salsa de yogur." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b0013",
     "published": true
   },
@@ -357,6 +374,7 @@
       { "orden": 2, "descripcion": "Añadir canela y mezclar bien." },
       { "orden": 3, "descripcion": "Servir caliente con espuma." }
     ],
+    "time":50,
     "autor": "64c1f0ea0b5e3d6f2a9b0014",
     "published": false
   }
