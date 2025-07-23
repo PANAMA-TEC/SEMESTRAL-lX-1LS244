@@ -1,4 +1,5 @@
 import Fastify from "fastify";
+import crors from "@fastify/cors";
 import dotenv from "dotenv";
 import { connectDB } from "./config/DataBase.js";
 
@@ -7,6 +8,11 @@ const fastify = Fastify({
   logger: {
     level: "info",
   },
+});
+
+fastify.register(crors, {
+  origin: "*", // Permite solicitudes desde cualquier origen
+  methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
 });
 
 //implementacion de datos de prueba
