@@ -1,134 +1,91 @@
-body {
-  margin-top: 150px;
+body{
+
+margin-top: 100px;
+}
+
+
+.contenedor {
+  padding: 20px;
   font-family: Arial, sans-serif;
 
 }
 
-.receta {
-  display: flex;
-  flex-direction: column;
-  gap: 25px; /* Tomamos el mayor de los dos */
-  padding-left: 20px;
-  max-width: 800px;
-}
-
-
-.cuadrantes {
-  display: flex;
-  flex-direction: column;
-  gap: 100px; /* Espacio entre título, descripción y tiempo/cena */
-}
-
-
-
-.cuadrante1 {
-  display: flex;
-  gap: 20px;
-}
-
-.contenido1 {
-  display: flex;
-  flex-direction: column;
-  gap: 40px; /* Espacio entre título, descripción y tiempo/cena */
-}
-
-.imagen-receta {
-  width: 300px;
-  height: 300px;
-  background-color: #ddd;
-  background-size: cover;
-  background-position: center;
-  border-radius: 10px;
-}
-
-.tiempoycena {
-  display: flex;
-  gap: 75px;
-}
-
-.ingredientesypasos {
-  display: flex;
-  gap: 230px;
-
-}
-
-.comentarios {
-  margin-top: 30px;
-  padding-left: 20px; 
-  padding-right: 20px;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background-color: #f5f5f5;
-  border-radius: 10px;
-  max-width: 700px;
-}
-
-.comentarios h3 {
-  margin-bottom: 15px;
-}
-
-.comentario-contenedor,
-.nuevo-comentario-contenedor {
-  display: flex;
-  align-items: flex-start;
-  gap: 15px;
+.titulo {
+  font-size: 24px;
+  font-weight: bold;
   margin-bottom: 20px;
 }
 
-.iconocomentario,
-.iconocomentarionuevo {
-  width: 30px;
-  height: 30px;
-  background-color: #bbb;
-  border-radius: 50%;
-  flex-shrink: 0;
+.tabla-recetas {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
 }
 
-
-.comentario {
-  background-color: white;
-  padding: 10px 15px;
-  border-radius: 10px;
-  max-width: 250px;
-}
-
-
-.nuevo-comentario-datos {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.ComentarioNuevo {
+.tabla-recetas th,
+.tabla-recetas td {
+  border: 1px solid #ccc;
   padding: 10px;
-  border-radius: 5px;
-  border: 1px solid #d78a0e;
-  min-height: 20px;
-  resize: vertical;
 }
 
-button {
-  align-self: flex-start;
-  padding: 8px 90px;
-  background-color: #dd7e19;
-  color: white;
+.tabla-recetas thead {
+  background-color: #f2f2f2;
+}
+
+.btn {
+  padding: 6px 10px;
+  margin: 0 4px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  color: white;
   cursor: pointer;
 }
 
-
-.boton2 {
-  align-self: flex-start;
-  padding: 8px 16px;
-  background-color: #da951f;
-  color: white;
+.btnEditar {
+  background-color: #007bff;
+    padding: 6px 10px;
+  margin: 0 4px;
   border: none;
-  border-radius: 5px;
+  border-radius: 4px;
+  color: white;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #45a049;
+.btnEliminar {
+  background-color: #dc3545;
+    padding: 6px 10px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
 }
+
+.btnVer {
+  background-color: #38dc35;
+    padding: 6px 10px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+.contenedorBton{
+
+
+  text-align: right; /* o center, o left */
+  margin-bottom: 40px;
+
+}
+
+.btnCrear {
+  background-color: #e4b720;
+    padding: 6px 20px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
