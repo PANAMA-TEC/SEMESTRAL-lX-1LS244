@@ -7,8 +7,29 @@ import { CardCategories } from "../../components/cardCategories";
 import recipe_category from "../../assets/recetas.png";
 import logo_nav from "../../assets/image.png";
 import React from "react";
+import { API_Services } from "../../Services/API_Services";
+import { useNavigate } from 'react-router-dom';
+import { useState } from "react";
+
+
+const API_Recetas = 'http://localhost:3000/api/recipe/';
+
 
 const UserView = ( ) => {
+
+  const [recetas, setRecetas ] = useState([]);
+  
+
+  React.useEffect(  () => {
+    const fetchData = async () => {
+      let recetas = await API_Services(API_Recetas);
+      setRecetas(recetas.data);
+    }
+
+    fetchData();
+    
+  }, []);
+
   
 
   return (
@@ -30,15 +51,15 @@ const UserView = ( ) => {
         </CardContent>
 
         <CardContent titulo="Recetas" propiedad1="Propiedad 1" > 
-          <CardRecipes titulo="Receta 1" />
-          <CardRecipes titulo="Receta 2" />
-          <CardRecipes titulo="Receta 3" />
-          <CardRecipes titulo="Receta 4" />   
 
-          <CardRecipes titulo="Receta 1" />
-          <CardRecipes titulo="Receta 2" />
-          <CardRecipes titulo="Receta 3" />
-          <CardRecipes titulo="Receta 4" />  
+          { 
+            recetas.map((element, index) => (
+              <CardRecipes id={ element._id } tittle={ element.title } description={ element.description } category={ element.category } time={ element.time } />
+            ))  
+
+          }
+          
+           
         </CardContent>
       
     </div>
