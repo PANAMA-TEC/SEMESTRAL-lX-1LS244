@@ -30,6 +30,8 @@ const recipeSchema = new Schema(
       },
     ],
 
+    time: { type: Number, default: 0 },
+
     autor: {
       type: Schema.Types.ObjectId,
       ref: "User",
@@ -51,6 +53,7 @@ const recipeSchema = new Schema(
  * @property {String} category - The category of the recipe (e.g., breakfast
  * @property {Array} ingredients - An array of ingredients used in the recipe.
  * @property {Array} step - An array of steps to prepare the recipe.
+ * @property {Number} time - The ID of the user who created the recipe
  * @property {ObjectId} autor - The ID of the user who created the recipe
  * @property {Boolean} published - Indicates if the recipe is published or not.
  * @property {Date} createdAt - The date when the recipe was created.
@@ -83,6 +86,7 @@ export const RecipeSchema = {
         },
       },
     },
+    time: { type: "number", default: 0 },
     autor: { type: "string" },
     published: { type: "boolean" },
     createdAt: { type: "string", format: "date-time" },
