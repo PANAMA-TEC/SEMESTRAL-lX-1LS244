@@ -18,7 +18,7 @@ const API_Recetas = 'http://localhost:3000/api/recipe/';
 const UserView = ( ) => {
 
   const [recetas, setRecetas ] = useState([]);
-  const navigate = useNavigate();
+  
 
   React.useEffect(  () => {
     const fetchData = async () => {
