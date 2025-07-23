@@ -1,30 +1,45 @@
 import './index.css';
 import React from 'react';
 import recetas_prototype from '../../assets/recetas_prototype.png';
+import { useNavigate } from 'react-router-dom';
+let RECIPE_DETAIL_URL = "/detail_recipe"
 
-export const CardRecipes = ({ titulo = "Titulo de Card", propiedad1 }) => {
+export const CardRecipes = ({ 
+    tittle = "Titulo de Card", 
+    description = "Esto es una descripcion por defecto", 
+    category = "other",
+    time = "60",
+    id
+}) => { 
+  
+  const navigate = useNavigate();
+  
+  const handleButtonClick = (Link) => {
+    navigate(Link);
+  }  
+
   return (
     <div className="card-recipe elevation-1">
      
       <img className="image elevation-1" alt="Img" src={recetas_prototype}/>
       
       <div className="body">
-        <div className="titulo-de-card">{titulo}</div>
+        <div className="titulo-de-card">{tittle}</div>
         
         <div className="text">
 
           <p className="text-wrapper">
-            Una receta deliciosa y sencilla para una tarta de manzana.
+            {description}
           </p>
           <div className='mode_details'>
-            <div className="text-wrapper">Categoria: Postre</div>
-            <div className="div">Tiempo: 60 minutos</div>
+            <div className="text-wrapper">Categoria: {category}</div>
+            <div className="div">Tiempo: {time} minutos</div>
 
           </div>
         </div>
 
         <div className="btn-enable">
-          <button className="button">More</button>
+          <button onClick={()=>{ handleButtonClick(`${RECIPE_DETAIL_URL}?id=${id}`) }} className="button">More</button>
         </div>
         
       </div>
