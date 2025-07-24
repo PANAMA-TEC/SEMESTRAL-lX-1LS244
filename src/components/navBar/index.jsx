@@ -21,7 +21,7 @@ const NavBar = ({ logo, links }) => {
 
   return (
     <nav className="nav-bar-main elevation-1">
-      <img src={logo} alt="Logo" className="nav-bar-logo"  width={'100px'}/>
+      <img src={logo} alt="Logo" className="nav-bar-logo"  width={'100px'} onClick={()=>( handleButtonClick("/"))} />
       
       <div className="nav-bar-links">
        
