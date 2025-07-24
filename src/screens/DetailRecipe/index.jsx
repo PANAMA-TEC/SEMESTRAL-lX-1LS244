@@ -2,12 +2,39 @@ import './index.css';
 import { NavBar } from '../../components/navBar';
 import logo_nav from '../../assets/image.png';
 import exampleImage from '../../assets/recetas.png';
+import { useState } from 'react';
 
 import React from 'react';
 import { CardList } from '../../components/cardList';
 import { CommentaryBox } from '../../components/commentaryBox';
+import { API_Services } from '../../Services/API_Services';
+// import { useParams } from 'react-router-dom';
+
+let API_Recetas = 'http://localhost:3000/api/recipe/';
 
 export const DetailRecipe = () =>{
+
+    const [recetas, setRecetas ] = useState([]);
+      
+    
+      React.useEffect(  () => {
+        const fetchData = async () => {
+          // url_ejemplo = http://localhost:5173/detail_recipe?id=6880485640aee6195aa2cef5
+          //Remplazar...
+          
+          const params = new URLSearchParams(window.location.search);
+          const id = params.get('id');
+          if (!id) return;
+
+
+          let recetas = await API_Services(`${API_Recetas}${id}`);
+          console.log(recetas.data);
+          setRecetas(recetas.data);
+        }
+    
+        fetchData();
+        
+      }, []);
 
     return(
         <div className='DetailRecipe'>
@@ -71,7 +98,7 @@ export const DetailRecipe = () =>{
                                 
                             <h3>Ingredientes</h3>
                             
-                            <CardList/>
+                            <CardList ingredients = { recetas.ingredients }/>
 
                         </div>
 
