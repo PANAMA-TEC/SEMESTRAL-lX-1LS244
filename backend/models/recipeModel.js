@@ -13,13 +13,22 @@ const recipeSchema = new Schema(
 
     ingredients: [
       {
-        // implementar la referencia de inggredientes
-        /* ingredient: {
+        ingredient: {
           type: Schema.Types.ObjectId,
           ref: "Ingredient",
+        },
+        name: {
+          type: String,
           required: true,
-        }, */
-        ingredient: { type: String, required: true },
+        },
+        quantity: {
+          type: Number,
+          required: true,
+        },
+        unit: {
+          type: String,
+          required: true,
+        },
       },
     ],
 
