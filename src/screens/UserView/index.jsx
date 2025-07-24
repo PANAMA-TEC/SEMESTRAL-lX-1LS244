@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
 
-const API_Recetas = 'http://localhost:3000/api/recipe/';
+let API_Recetas = 'http://localhost:3000/api/recipe/';
 
 
 const UserView = ( ) => {
@@ -23,6 +23,7 @@ const UserView = ( ) => {
   React.useEffect(  () => {
     const fetchData = async () => {
       let recetas = await API_Services(API_Recetas);
+      console.log(recetas);
       setRecetas(recetas.data);
     }
 
@@ -54,7 +55,14 @@ const UserView = ( ) => {
 
           { 
             recetas.map((element, index) => (
-              <CardRecipes id={ element._id } tittle={ element.title } description={ element.description } category={ element.category } time={ element.time } />
+              <CardRecipes 
+                id={ element._id } 
+                tittle={ element.title } 
+                description={ element.description } 
+                category={ element.category } 
+                time={ element.time } 
+                
+              />
             ))  
 
           }
