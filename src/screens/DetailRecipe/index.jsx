@@ -23,11 +23,15 @@ export const DetailRecipe = () =>{
             // url_ejemplo = http://localhost:5173/detail_recipe?id=6880485640aee6195aa2cef5
             //Remplazar...
 
+
+
             const params = new URLSearchParams(window.location.search);
             const id = params.get('id');
             if (!id) return;
 
+            // Remplazar
 
+            window.scrollTo({ top: 0, behavior: 'smooth' });
             let recetas = await API_Services(`${API_Recetas}${id}`);
             pasos = recetas.data.step;
             console.log(pasos);
