@@ -20,12 +20,12 @@
 .CardContent .list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  
   
   /* border-style: solid; */
   color: black;
   width: 100%;
-  gap: 40px 10PX;
+  gap: 40px 20PX;
   padding: 10px;
  
 }
