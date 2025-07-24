@@ -3,6 +3,8 @@ import { useEffect } from "react";
 import { useState } from "react";
 import { CookHubImage } from "../../Icons/CookHubImage";
 import "./index.css";
+import { NavBar } from "../../components/navBar";
+import logo_nav from '../../assets/image.png';
 
 const Login = () => {
   const [Option, setOption] = React.useState(1);
@@ -14,7 +16,9 @@ const Login = () => {
   }
 
   return (
+
     <div className="login">
+      <NavBar logo={logo_nav}/>
       <div className="login-container elevation-1">
         <div className="login-left">
 
