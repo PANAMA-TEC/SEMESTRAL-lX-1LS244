@@ -31,7 +31,8 @@ const UserView = ( ) => {
     
   }, []);
 
-  
+
+  const categoriasUnicas = [...new Set(recetas.map(receta => receta.category))];
 
   return (
     <div className="UserView">
@@ -44,11 +45,13 @@ const UserView = ( ) => {
         </div>
 
         <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
-          <CardCategories image={recipe_category} titulo="Postres" />
-          <CardCategories image={recipe_category} titulo="Entradas" />
-          <CardCategories image={recipe_category} titulo="Platos Principales" />
-          <CardCategories image={recipe_category} titulo="Platos Principales" />
-          <CardCategories image={recipe_category} titulo="Platos Principales" />
+
+          { 
+            categoriasUnicas.map((categoria, index) => (
+              <CardCategories key={index} image={recipe_category} titulo={categoria} />
+            ))  
+          }
+          
         </CardContent>
 
         <CardContent titulo="Recetas" propiedad1="Propiedad 1" > 
@@ -56,17 +59,15 @@ const UserView = ( ) => {
           { 
             recetas.map((element, index) => (
               <CardRecipes 
+                key={element._id || index}
                 id={ element._id } 
                 tittle={ element.title } 
                 description={ element.description } 
                 category={ element.category } 
                 time={ element.time } 
-                
               />
             ))  
-
           }
-          
            
         </CardContent>
       
