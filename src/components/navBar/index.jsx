@@ -6,10 +6,12 @@ import { useNavigate } from 'react-router-dom';
 const NavBar = ({ logo, links }) => {
   
   const navigate = useNavigate();
+  
   links = links || [
     { name: 'Inicio', href: '/' },
     { name: 'Crear', href: '/login' },
-    { name: 'Iniciar sesion', href: '/login' }
+    { name: 'Iniciar sesion', href: '/login' },
+    { name: 'Admin', href: '/admin' }
     
     
   ]
