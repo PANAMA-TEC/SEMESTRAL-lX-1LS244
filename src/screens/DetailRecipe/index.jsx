@@ -3,11 +3,14 @@ import { NavBar } from '../../components/navBar';
 import logo_nav from '../../assets/image.png';
 import exampleImage from '../../assets/recetas.png';
 import { useState } from 'react';
+import recipe_category from "../../assets/recetas.png";
 
 import React from 'react';
 import { CardList } from '../../components/cardList';
 import { CommentaryBox } from '../../components/commentaryBox';
 import { API_Services } from '../../Services/API_Services';
+
+import { CardCategories } from '../../components/cardCategories';
 // import { useParams } from 'react-router-dom';
 
 let API_Recetas = 'http://localhost:3000/api/recipe/';
@@ -47,87 +50,94 @@ export const DetailRecipe = () =>{
 
             <NavBar logo={logo_nav}/>
             
-            <div className='cuadrantes'>
+            
 
-                <div className='top-container'>
-                    <div className='receta'>
+            <div className='top-container elevation-1'>
+                
+                <div className='receta elevation-1'>
+                        
+                    <img className='imagen-receta elevation-2' src={ exampleImage } /> 
+
+                    <div className='detalles-receta'>
+        
+                        <div className='top'>
+                            <h2> { recetas.title }</h2>
+
+                            <div className='mid'>
+
+                            <h4>Descripción</h4>
+                            { recetas.description}
+
+                        </div>
+
                             
-                        <div className='cuadrante1'>
 
-                            <img className='imagen-receta' src={ exampleImage } /> 
+                        </div>
+            
+                        <div className='tiempoycena'> 
+                            <div> 
+                                <h4>Tiempo</h4>
+                                { recetas.time }
+                            </div>
 
-                            <div className='contenido1'>
-                                <div>
-                                    <h2> { recetas.title }</h2>
-                                </div>
-
-                                <div>
-                                    <h3>Descripción</h3> <br></br>
-                                    { recetas.description}
-                                </div>
-
-                                <div className='tiempoycena'> 
-                                    <div> 
-                                        <h4>Tiempo</h4>
-                                        { recetas.time }
-                                    </div>
-
-                                    <div> 
-                                        <h4>Categoria</h4>
-                                        { recetas.category }
-                                    </div>
-                                        
-                                </div>
-                                    
+                            <div> 
+                                <h4>Categoria</h4>
+                                { recetas.category }
                             </div>
 
                         </div>
 
-                        <div className='pasos' style={{display: 'flex', flexDirection: 'column', gap: '20px'}}>
+                    </div>
+                    
+                </div>
+
+                <div className='contenedor-ingredientes '>
+                    <div className='contenedor-pasos'>
+
+
+                        <h3>Pasos</h3>
+
+                        <div className="paso" style={{display: 'flex', flexDirection: 'column', gap: '10px', textAlign:'justify'}}>
                                 
-                            <h4>Pasos</h4>
-                            
-                            <div className="paso" style={{display: 'flex', flexDirection: 'column', gap: '10px', textAlign:'justify'}}>
+                            {
+                                pasos.map((element, index) => (
+                                    <span>{element.orden}. { element.descripcion }</span>
                                 
-                                {
+                                ))
+                            }
 
-                                    pasos.map((element, index) => (
-                                        <span>{element.orden}. { element.descripcion }</span>
-                                    
-                                    ))
-                                }
+                        </div> 
 
-                               
-
-                                {/* <span>1. Mezcla todos los ingredientes en un bol grande. Asegúrate de que estén bien integrados antes de continuar, esto solo es mas texto.</span>
-                                <span>2. Calienta una sartén a fuego medio y vierte la mezcla poco a poco. Cocina hasta que esté dorado por ambos lados y retira del fuego.</span>
-                                <span>3. Mezcla todos los ingredientes en un bol grande. Puedes añadir especias al gusto para mejorar el sabor, esto solo es mas texto.</span>
-                                <span>4. Mezcla todos los ingredientes en un bol grande. Sirve caliente y acompaña con tu guarnición favorita, esto solo es mas texto.</span>
-                                */}
-                            </div> 
-
-                        </div>
-                            
                     </div>
 
-                    <div className='contenedor-ingredientes'>
-
-                        <div className='lista-ingredientes '>
-                                
-                            <h3>Ingredientes</h3>
+                    <div className='lista-ingredientes'>
                             
-                            <CardList ingredients = { recetas.ingredients }/>
-
-                        </div>
+                        <h3>Ingredientes</h3>
+                        
+                        <CardList ingredients = { recetas.ingredients }/>
 
                         <button className="submit_formulario" type="submit">Comprar Ingredientes</button>
-                        
                     </div>
+
+                    
                 </div>
-                        
-                <CommentaryBox/>
 
             </div>
+
+            <div className='mid-container '>
+                <h3> Listado de productos relacionados: </h3>
+                
+                <div className='productos-relacionados'>
+                    <CardCategories  image={recipe_category} titulo='papas'/>
+                    <CardCategories  image={recipe_category} titulo='papas'/>
+                    <CardCategories  image={recipe_category} titulo='papas'/>
+                    <CardCategories  image={recipe_category} titulo='papas'/>
+                </div>
+            </div>
+                    
+            <CommentaryBox/>
+
+         
 
         </div>        
     )
