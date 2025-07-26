@@ -10,7 +10,7 @@
     "preview": "vite preview",
     "fastify:start": "cd ./backend && node server.js",
     "fastify:dev": "cd ./backend && nodemon server.js",
-    "docker:up": "cd des-soft-ix && docker compose up -d && echo 'Docker levantado 🚀'",
+    "docker:up": "vite build && docker build -t web_server . && cd des-soft-ix && docker compose up -d && echo 'Docker levantado 🚀'",
     "docker:build": "docker build -t web_server .",
     "start:full": "vite build && npm run docker:build && npm run docker:up"
   },
