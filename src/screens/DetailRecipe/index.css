@@ -3,34 +3,22 @@
   padding: 20px;
   width: 70vw;
   display: flex;
-  /* border-style: solid; */
-}
-
-.DetailRecipe .receta {
-  display: flex;
   flex-direction: column;
-  gap: 40px; /* Tomamos el mayor de los dos */
-  padding: 20px;
-
+  gap:60px;
   /* border-style: solid; */
-  width: 100%;
 }
+
 
 .DetailRecipe .cuadrantes {
   display: flex;
   flex-direction: column;
-  gap: 40px; /* Espacio entre título, descripción y tiempo/cena */
+  gap: 60px; /* Espacio entre título, descripción y tiempo/cena */
   width: 100%;
   justify-content: space-between;
-  /* border-style: solid; */
+  /* border-radius: 10px; */
+  border-style: solid;
 }
 
-.DetailRecipe .cuadrante1 {
-  display: flex;
-  gap: 20px ;
-  
-
-}
 
 .DetailRecipe .submit_formulario {
   align-self: flex-start;
@@ -41,37 +29,71 @@
   border-radius: 5px;
   cursor: pointer;
   height: 50px;
+  width: 100%;
+
+  margin-top: 20px;
 
 }
 
 .DetailRecipe .top-container{
   display: flex;
+  flex-direction: column;
+  
+  border-radius: 10px;
+  /* border-style: solid; */
+  
+}
+
+.DetailRecipe .mid-container{
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  border-radius: 10px;
+ 
+  /* border-style: solid; */
+  
+}
+
+.DetailRecipe .mid-container .productos-relacionados {
+  display: flex;
   flex-direction: row;
   gap: 20px;
+  border-radius: 10px;
+  /* border-style: solid; */
+  
+}
 
-  padding-bottom: 50px;
-  max-height: 600px;
+.DetailRecipe .mid-container h3{
+  padding: 20px 0px;
+  border-style: none none solid none;
+}
+
+
+.DetailRecipe .contenedor-ingredientes{
+  display: flex;
+  flex-direction: row;
+  
+  justify-content: space-between;
+  border-radius: 10px;
   
  
 }
 
-.DetailRecipe .contenedor-ingredientes{
+.DetailRecipe .contenedor-pasos {
+  padding:40px;
   display: flex;
   flex-direction: column;
-  /* gap: 20px; */
-  width: 30%;
+  gap: 20px;
+  width: 60%;
 
-  
-  /* border-style: solid; */
-  justify-content: space-between;
-  
- 
 }
 
 .DetailRecipe .lista-ingredientes{
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 40%;
+  padding: 40px;
   
   /* gap: 20px; */
   
@@ -80,9 +102,10 @@
 
 }
 
-.DetailRecipe .lista-ingredientes h3{
+.DetailRecipe .top-container h3{
   padding: 20px 0px;
   border-style: none none solid none;
+
 }
 
 .DetailRecipe .lista-ingredientes li {
@@ -90,26 +113,76 @@
   list-style: none;
   border-style: solid;
   border-color: rgb(235, 235, 235);
+  
 }
 
-.contenido1 {
+
+
+.DetailRecipe .receta {
   display: flex;
-  flex-direction: column;
-  gap: 40px; /* Espacio entre título, descripción y tiempo/cena */
-}
-
-.imagen-receta {
-  width: 300px;
-  height: 300px;
-  background-color: #ddd;
-  background-size: cover;
-  background-position: center;
+  flex-direction: row;
+  gap: 2px;
+  width: 100%;  
   border-radius: 10px;
 }
 
-.tiempoycena {
+
+.DetailRecipe .cuadrante1 {
   display: flex;
+  justify-content: space-around;
+  
+  border-radius: 10px;
+
+}
+
+.DetailRecipe  .detalles-receta {
+  display: flex;
+  flex-direction: column;
+  gap: 40px; /* Espacio entre título, descripción y tiempo/cena */
+  padding: 40px;
+  justify-content: space-between;
+  width: 100%;
+  background-color: none;
+  /* border-style: solid; */
+
+  
+}
+
+.DetailRecipe  .detalles-receta .top{
+  display: flex;
+  flex-direction: column;
+  
+  gap: 60px;
+
+  
+}
+
+.DetailRecipe  .detalles-receta .mid{
+  /* border-style: solid; */
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  gap: 30px;
+  text-align: justify;
+
+  
+}
+
+.DetailRecipe .imagen-receta {
+  width: 60%;
+  height: 500px;
+  background-color: #ddd;
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px 0px 0px 10px;
+
+}
+
+.DetailRecipe .tiempoycena {
+  display: flex;
+  justify-content: space-between;
   gap: 75px;
+ 
 }
 
 .ingredientesypasos {
