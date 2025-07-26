@@ -1,11 +1,7 @@
 import './index.css';
 import { NavBar } from '../../components/navBar';
 import logo_nav from '../../assets/image.png';
-import { CookHubImage } from '../../Icons/CookHubImage';
-import { CardContent } from '../../components/cardContent';
-import { CardRecipes } from '../../components/cardRecipes';
-import { CardCategories } from '../../components/cardCategories';
-import React from 'react';
+
 
 export const AdminPanel = () => {
   
@@ -35,14 +31,11 @@ export const AdminPanel = () => {
         
         <div className='contenedor-opciones'>
 
-          <button className="boton-crear">Crear Receta</button>
-          <button className="boton-crear">Crear Receta</button>
-          <button className="boton-crear">Crear Receta</button>
-          <button className="boton-crear">Crear Receta</button>
-          <button className="boton-crear">Crear Receta</button>
-          <button className="boton-crear">Crear Receta</button>
-          <button className="boton-crear">Crear Receta</button>
-          <button className="boton-crear">Crear Receta</button>
+          <button className="opciones">Crear Receta</button>
+          <button className="opciones">Crear Receta</button>
+          <button className="opciones">Crear Receta</button>
+          <button className="opciones">Crear Receta</button>
+          
 
         </div>
         <table className="tabla-recetas">
@@ -63,17 +56,16 @@ export const AdminPanel = () => {
 
               recetas.map((receta, index) => (
                 <tr key={receta.id}>
-                  
                   <td>{index + 1}</td>
                   <td>{receta.nombre}</td>
                   <td>{receta.autor}</td>
                   <td>{receta.fecha}</td>
                   <td>{receta.ingredientes}</td>
                   
-                  <td>
-                    <button className="btnEditar">Editar</button>
-                    <button className="btnEliminar">Eliminar</button>
-                    <button className="btnVer">Ver</button>
+                  <td className='myEspecial-td'>
+                    <button className="opciones">Editar</button>
+                    <button className="opciones">Eliminar</button>
+                    <button className="opciones">Ver</button>
                   </td>
                 </tr>
               ))

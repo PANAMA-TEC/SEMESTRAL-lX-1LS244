@@ -25,7 +25,7 @@
   /* border-style: solid; */
   color: black;
   width: 100%;
-  gap: 40px 20PX;
+  gap: 20px calc( (100% - (16vw * 4) ) / 3);
   padding: 10px;
  
 }
