@@ -50,13 +50,11 @@ export const DetailRecipe = () =>{
 
             <NavBar logo={logo_nav}/>
             
-            
-
             <div className='top-container elevation-1'>
                 
                 <div className='receta elevation-1'>
                         
-                    <img className='imagen-receta elevation-2' src={ exampleImage } /> 
+                    <img className='imagen-receta elevation-1' src={ exampleImage } /> 
 
                     <div className='detalles-receta'>
         
@@ -91,7 +89,8 @@ export const DetailRecipe = () =>{
                     
                 </div>
 
-                <div className='contenedor-ingredientes '>
+                <div className='contenedor-ingredientes'>
+                   
                     <div className='contenedor-pasos'>
 
 
@@ -117,6 +116,7 @@ export const DetailRecipe = () =>{
                         <CardList ingredients = { recetas.ingredients }/>
 
                         <button className="submit_formulario" type="submit">Comprar Ingredientes</button>
+
                     </div>
 
                     
