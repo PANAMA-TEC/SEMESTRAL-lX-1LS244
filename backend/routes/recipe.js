@@ -4,6 +4,7 @@ import {
   getRecipeId,
   updateRecipe,
   deleteRecipe,
+  getRecipeBySeach,
 } from "../controllers/recipeController.js";
 
 async function recipeRoutes(fastify) {
@@ -20,6 +21,9 @@ async function recipeRoutes(fastify) {
 
   //DELETE a recipe by ID
   fastify.delete("/:id", deleteRecipe);
+
+  //SEARCH recipes by title, description, category and step
+  fastify.get("/search", getRecipeBySeach);
 }
 
 export default recipeRoutes;
