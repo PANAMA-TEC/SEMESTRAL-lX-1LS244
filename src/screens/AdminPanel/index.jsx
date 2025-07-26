@@ -7,7 +7,8 @@ import { CardRecipes } from '../../components/cardRecipes';
 import { CardCategories } from '../../components/cardCategories';
 import React from 'react';
 
-const App = () => {
+export const AdminPanel = () => {
+  
   const recetas = [
     {
       id: 1,
@@ -23,11 +24,12 @@ const App = () => {
       fecha: "2025-07-22",
       ingredientes: "8"
     }
-
   ];
 
   return (
-    <div className="contenedor">
+    
+    <div className="AdminPanel">
+      
       <NavBar logo={logo_nav} />
       <div className='contenedorBton'><button className="btnCrear">Crear Receta</button></div>
    
@@ -66,4 +68,4 @@ const App = () => {
   );
 };
 
-export default App;
+
