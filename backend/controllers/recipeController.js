@@ -3,7 +3,7 @@ import Recipe from "../models/recipeModel.js";
 
 export async function getRecipes(request, reply) {
   try {
-    const recipes = await Recipe.find();
+    const recipes = await Recipe.find().limit(10).lean();
     return { status: "success", data: recipes };
   } catch (error) {
     reply.code(500);
@@ -101,4 +101,26 @@ export async function deleteRecipe(request, reply) {
       .code(500)
       .send({ status: "error", error: "Error al eliminar la receta" });
   }
+}
+
+export async function getRecipeBySeach(request, reply) {
+  const { q } = request.query;
+
+  if (!q || q.trim() === "") {
+    return reply.code(400).send({ error: "Consulta vacía" });
+  }
+
+  const regex = new RegExp(q, "i");
+
+  const recipes = await Recipe.find({
+    $or: [
+      { title: regex },
+      { description: regex },
+      { ingredients: regex },
+      { category: regex },
+      { step: regex },
+    ],
+  }).limit(10);
+
+  return reply.code(200).send({ status: "success", data: recipes });
 }
