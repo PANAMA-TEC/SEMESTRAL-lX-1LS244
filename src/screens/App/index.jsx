@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom'
 import { DetailRecipe } from '../DetailRecipe';
 
 import React from 'react';
+import { AdminPanel } from '../AdminPanel';
 
 const App = () =>{
 
@@ -14,6 +15,7 @@ const App = () =>{
           <Route path="/" element={ <UserView/> } />
           <Route path="/login" element={<Login/>} />
           <Route path="/detail_recipe" element={<DetailRecipe/>} />
+          <Route path="/admin" element={<AdminPanel/>} />
         </Routes>
       </div>    
     )
