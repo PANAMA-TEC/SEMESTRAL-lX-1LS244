@@ -1,6 +1,7 @@
 import './index.css';
 import React from 'react';
 import recetas_prototype from '../../assets/recetas_prototype.png';
+import { ArticuloCarrito } from '../articuloCarrito';
 
 export const SideBar = () => {
   return (
@@ -11,8 +12,24 @@ export const SideBar = () => {
         Revisa tu carrito
 
       </div>
+
+
       <div className='mid'>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
+        <ArticuloCarrito/>
       </div>
+
+
       <div className='bottom'>
         <div className='top'>
         

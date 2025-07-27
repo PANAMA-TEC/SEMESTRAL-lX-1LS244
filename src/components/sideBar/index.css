@@ -28,10 +28,16 @@
 }
 
 .SideBar .mid{
-  border-style: solid;
+  /* border-style: solid; */
   height: 100%;
+  overflow: auto;
+  padding: 15px;
 
   display: flex;
+  flex-direction: column;
+
+  gap:20px;
+ 
 
 }
 
