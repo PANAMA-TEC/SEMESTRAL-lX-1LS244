@@ -43,10 +43,14 @@
 .AdminPanel .myEspecial-td {
   display: flex;
   justify-content: space-between;
+  gap:10px;
 }
 
 .AdminPanel .myEspecial-td .opciones{
   height: 40px;
+  width: 100%;
+
+  text-align: center;
 }
 
 
