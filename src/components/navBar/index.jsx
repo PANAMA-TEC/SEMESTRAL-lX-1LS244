@@ -4,7 +4,7 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AppContext, AppProvider } from '../AppContext';
 
-const NavBar = ({ logo, links }) => {
+export const NavBar = ({ logo, links }) => {
   
   const { openModal , setOpenModal } = React.useContext(AppContext);  
 
@@ -63,5 +63,3 @@ const NavBar = ({ logo, links }) => {
   );
 
 };
-
-export { NavBar };
