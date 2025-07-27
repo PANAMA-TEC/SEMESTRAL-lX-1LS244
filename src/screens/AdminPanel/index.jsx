@@ -27,7 +27,6 @@ export const AdminPanel = () => {
     <div className="AdminPanel">
       <div className='contenedor-tabla'>
 
-        <NavBar logo={logo_nav} />
         
         <div className='contenedor-opciones'>
 

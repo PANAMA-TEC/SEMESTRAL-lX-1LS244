@@ -8,6 +8,8 @@ import { AdminPanel } from '../AdminPanel';
 import { Modal } from '../../Modal';
 import { AppContext, AppProvider } from '../../components/AppContext';
 import { SideBar } from '../../components/sideBar';
+import { NavBar } from '../../components/navBar';
+import logo_nav from "../../assets/image.png";
 
 const App = () =>{
 
@@ -18,6 +20,8 @@ const App = () =>{
     
     
       <div className='App'>  
+
+        <NavBar logo={logo_nav}/>
         
         <Routes>
           <Route path="/" element={ <UserView/> } />

@@ -48,7 +48,7 @@ export const DetailRecipe = () =>{
     return(
         <div className='DetailRecipe'>
 
-            <NavBar logo={logo_nav}/>
+      
             
             <div className='top-container elevation-1'>
                 

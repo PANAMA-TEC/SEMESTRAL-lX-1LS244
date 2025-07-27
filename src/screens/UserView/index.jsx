@@ -37,7 +37,7 @@ const UserView = ( ) => {
   return (
     <div className="UserView">
       
-       <NavBar logo={logo_nav}/>
+       
                 
         <div className="content">
           <img src={logo_nav} alt="CookHub Logo" className="UserView-central-image" />

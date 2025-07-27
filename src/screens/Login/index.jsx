@@ -18,7 +18,7 @@ const Login = () => {
   return (
 
     <div className="login">
-      <NavBar logo={logo_nav}/>
+     
       <div className="login-container elevation-1">
         <div className="login-left">
 

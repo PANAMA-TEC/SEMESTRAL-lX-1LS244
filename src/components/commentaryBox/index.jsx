@@ -33,9 +33,9 @@ export const CommentaryBox = () => {
         
         </div>
 
-        <button className='opciones elevation-1'>Enviar</button>
 
       </div>
+        <button className='opciones elevation-1'>Enviar</button>
 
 
 
