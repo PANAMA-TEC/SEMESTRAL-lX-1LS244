@@ -7,7 +7,7 @@ export const CommentaryBox = () => {
   return (
     <div className="CommentaryBox elevation-1">
    
-      <h3>Comentarios</h3>
+      <h2>Comentarios</h2>
      
       <div className="comentario-contenedor">
         
@@ -28,7 +28,7 @@ export const CommentaryBox = () => {
           
           <div className="nuevo-comentario-datos">
             <h5>Nombre de usuario</h5>
-            <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo"></textarea>
+            <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo elevation-1"></textarea>
           </div>
         
         </div>
