@@ -1,0 +1,89 @@
+.AdminPanel{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  /* border-style: solid; */
+ 
+}
+
+.AdminPanel .contenedor-tabla {
+  margin-top: 20px;
+  width: 70%;
+  /* border-style: solid; */
+  
+}
+
+.AdminPanel .contenedor-opciones {
+  display: flex;
+  justify-content:start;
+  gap: 0px 20px;
+  padding: 20px 0px;
+}
+
+.AdminPanel .opciones {
+  background-color: #e4b720;
+  padding: 6px 20px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  height: 40px;
+  
+  cursor: pointer;
+}
+
+.AdminPanel .titulo {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.AdminPanel .myEspecial-td {
+  display: flex;
+  justify-content: space-between;
+}
+
+.AdminPanel .myEspecial-td .opciones{
+  height: 40px;
+}
+
+
+.tabla-recetas {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.tabla-recetas th,
+.tabla-recetas td {
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+.tabla-recetas thead {
+  background-color: #f2f2f2;
+}
+
+.btn {
+  padding: 6px 10px;
+  margin: 0 4px;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+}
+
+
+
+.contenedorBton{
+
+
+  text-align: right; /* o center, o left */
+  margin-bottom: 40px;
+
+}
+
+
+

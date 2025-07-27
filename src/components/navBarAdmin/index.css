@@ -1,8 +1,3 @@
-.NavBar {
-  height: 12vh;
-  /* border-style: solid; */
-}
-
 .nav-bar-main {
   display: flex;
   align-items: center;
@@ -55,8 +50,4 @@
   gap: 20px;
   
 
-}
-
-.nav-bar-logo{
-  cursor: pointer;
 }

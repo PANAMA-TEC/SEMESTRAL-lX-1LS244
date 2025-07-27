@@ -12,7 +12,7 @@ import { useNavigate } from 'react-router-dom';
 import { useState } from "react";
 
 
-const API_Recetas = 'http://localhost:3000/api/recipe/';
+let API_Recetas = 'http://localhost:3000/api/recipe/';
 
 
 const UserView = ( ) => {
@@ -23,6 +23,7 @@ const UserView = ( ) => {
   React.useEffect(  () => {
     const fetchData = async () => {
       let recetas = await API_Services(API_Recetas);
+      console.log(recetas);
       setRecetas(recetas.data);
     }
 
@@ -30,7 +31,8 @@ const UserView = ( ) => {
     
   }, []);
 
-  
+
+  const categoriasUnicas = [...new Set(recetas.map(receta => receta.category))];
 
   return (
     <div className="UserView">
@@ -43,22 +45,29 @@ const UserView = ( ) => {
         </div>
 
         <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
-          <CardCategories image={recipe_category} titulo="Postres" />
-          <CardCategories image={recipe_category} titulo="Entradas" />
-          <CardCategories image={recipe_category} titulo="Platos Principales" />
-          <CardCategories image={recipe_category} titulo="Platos Principales" />
-          <CardCategories image={recipe_category} titulo="Platos Principales" />
+
+          { 
+            categoriasUnicas.map((categoria, index) => (
+              <CardCategories key={index} image={recipe_category} titulo={categoria} />
+            ))  
+          }
+          
         </CardContent>
 
         <CardContent titulo="Recetas" propiedad1="Propiedad 1" > 
 
           { 
             recetas.map((element, index) => (
-              <CardRecipes id={ element._id } tittle={ element.title } description={ element.description } category={ element.category } time={ element.time } />
+              <CardRecipes 
+                key={element._id || index}
+                id={ element._id } 
+                tittle={ element.title } 
+                description={ element.description } 
+                category={ element.category } 
+                time={ element.time } 
+              />
             ))  
-
           }
-          
            
         </CardContent>
       
