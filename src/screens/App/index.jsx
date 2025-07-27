@@ -7,6 +7,7 @@ import React from 'react';
 import { AdminPanel } from '../AdminPanel';
 import { Modal } from '../../Modal';
 import { AppContext, AppProvider } from '../../components/AppContext';
+import { SideBar } from '../../components/sideBar';
 
 const App = () =>{
 
@@ -25,7 +26,9 @@ const App = () =>{
           <Route path="/admin" element={<AdminPanel/>} />
         </Routes>
 
-        { openModal ? <Modal> Hola mundo </Modal> : ""  }
+        { openModal ? <Modal> 
+          <SideBar/>
+        </Modal> : ""  }
        
 
 
