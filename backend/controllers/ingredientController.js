@@ -101,3 +101,35 @@ export async function deleteIngredient(request, reply) {
       .send({ status: "error", error: "Error al eliminar el ingrediente" });
   }
 }
+
+export async function updateIngredientAvailability(request, reply) {
+  const id = request.params.id;
+  if (!isValidObjectId(id)) {
+    return reply.code(400).send({ status: "error", error: "ID inválido" });
+  }
+
+  try {
+    const updatedIngredient = await Ingredient.findByIdAndUpdate(
+      id,
+      [{ $set: { availableAsProduct: { $not: "$availableAsProduct" } } }],
+      { new: true, runValidators: true }
+    );
+
+    if (!updatedIngredient) {
+      return reply
+        .code(404)
+        .send({ status: "error", error: "Ingrediente no encontrado" });
+    }
+
+    return reply.code(200).send({ status: "success", data: updatedIngredient });
+  } catch (error) {
+    console.error(
+      "Error al actualizar la disponibilidad del ingrediente:",
+      error
+    );
+    return reply.code(500).send({
+      status: "error",
+      error: "Error al actualizar la disponibilidad del ingrediente",
+    });
+  }
+}

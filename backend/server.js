@@ -26,6 +26,10 @@ await fastify.register(import("./routes/recipe.js"), {
   prefix: "/api/recipe",
 });
 
+await fastify.register(import("./routes/ingredients.js"), {
+  prefix: "/api/ingredient",
+});
+
 // Función para iniciar el servidor
 const start = async () => {
   try {
