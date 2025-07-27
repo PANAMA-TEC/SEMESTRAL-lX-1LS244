@@ -1,0 +1,28 @@
+.commentaryElement {
+  display: flex;
+  align-items: center;
+  gap:20px;
+  width: 100%;
+
+}
+
+.commentaryElement .iconocomentario{
+  height: 50px;
+  width: 50px;
+
+}
+
+.commentaryElement .comentario{
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  width: 100%;
+
+  background-color: aliceblue;
+  padding: 20px;
+  border-radius: 10px;
+
+  
+
+}
+
