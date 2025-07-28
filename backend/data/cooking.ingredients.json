@@ -1,0 +1,254 @@
+[{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee309"
+  },
+  "name": "tomate",
+  "unit": "kg",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee30a"
+  },
+  "name": "cebolla",
+  "unit": "kg",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee30b"
+  },
+  "name": "ajo",
+  "unit": "unidad",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee30c"
+  },
+  "name": "pimentón",
+  "unit": "kg",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee30d"
+  },
+  "name": "aceite de oliva",
+  "unit": "l",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee30e"
+  },
+  "name": "sal",
+  "unit": "kg",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee30f"
+  },
+  "name": "pimienta",
+  "unit": "g",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee310"
+  },
+  "name": "harina",
+  "unit": "kg",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee311"
+  },
+  "name": "azúcar",
+  "unit": "kg",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee312"
+  },
+  "name": "leche",
+  "unit": "l",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee313"
+  },
+  "name": "mantequilla",
+  "unit": "g",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee314"
+  },
+  "name": "huevos",
+  "unit": "unidad",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee315"
+  },
+  "name": "queso",
+  "unit": "g",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee316"
+  },
+  "name": "jamón",
+  "unit": "g",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee317"
+  },
+  "name": "pan",
+  "unit": "unidad",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee318"
+  },
+  "name": "arroz",
+  "unit": "kg",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee319"
+  },
+  "name": "pasta",
+  "unit": "kg",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee31a"
+  },
+  "name": "frijoles",
+  "unit": "kg",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee31b"
+  },
+  "name": "lentejas",
+  "unit": "kg",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee31c"
+  },
+  "name": "maíz",
+  "unit": "kg",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee31d"
+  },
+  "name": "yogurt",
+  "unit": "l",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee31e"
+  },
+  "name": "vinagre",
+  "unit": "l",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee31f"
+  },
+  "name": "miel",
+  "unit": "kg",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee320"
+  },
+  "name": "chocolate",
+  "unit": "g",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee321"
+  },
+  "name": "vainilla",
+  "unit": "unidad",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee322"
+  },
+  "name": "orégano",
+  "unit": "g",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee323"
+  },
+  "name": "albahaca",
+  "unit": "g",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee324"
+  },
+  "name": "cilantro",
+  "unit": "g",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee325"
+  },
+  "name": "perejil",
+  "unit": "g",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688678f9b915b81d47fee326"
+  },
+  "name": "romero",
+  "unit": "g",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688680e540cc0473fb982010"
+  },
+  "name": "oregano",
+  "unit": "g",
+  "availableAsProduct": false,
+  "createdAt": {
+    "$date": "2025-07-27T19:41:25.237Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-27T20:14:56.404Z"
+  }
+}]

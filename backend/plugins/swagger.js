@@ -4,10 +4,12 @@ import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
 import { RecipeSchema } from "../models/recipeModel.js";
 import { UserSchema } from "../models/userModel.js";
+import { CommentSchema } from "../models/commentModel.js";
 
-export default fp(async (fastify, opts) => {
+export default fp(async (fastify) => {
   fastify.addSchema(UserSchema);
   fastify.addSchema(RecipeSchema);
+  fastify.addSchema(CommentSchema);
 
   await fastify.register(swagger, {
     swagger: {

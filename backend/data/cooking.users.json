@@ -1,0 +1,19 @@
+[{
+  "_id": {
+    "$oid": "6886c615ac9eb509de32a3a3"
+  },
+  "fullname": "María González",
+  "email": "maria.gonzalez@example.com",
+  "password": "$2b$12$euYMQQvQ5pc6STcCA4UTzeMjYYk8M67eOzsItSWVLHy7KdrFpWTGm",
+  "role": "user",
+  "active": true,
+  "registerDate": {
+    "$date": "2025-07-28T00:36:37.137Z"
+  },
+  "createdAt": {
+    "$date": "2025-07-28T00:36:37.141Z"
+  },
+  "updatedAt": {
+    "$date": "2025-07-28T00:36:37.141Z"
+  }
+}]

@@ -1,12 +1,10 @@
 import { login, register } from "../controllers/userController.js";
 
 async function userRoutes(fastify) {
-  // POST /api/auth/login - Iniciar sesión
   fastify.post("/login", login);
-  // POST /api/auth/register - Registrar nuevo usuario
+
   fastify.post("/register", register);
 
-  // GET /api/auth/me - Obtener información del usuario actual (requiere token)
   fastify.get("/me", async (request, reply) => {
     const authHeader = request.headers.authorization;
 
