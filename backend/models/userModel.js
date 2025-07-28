@@ -51,36 +51,6 @@ const userSchema = new Schema(
 userSchema.index({ active: 1 });
 userSchema.index({ role: 1 });
 
-// Método virtual para obtener nombre completo
-userSchema.virtual("datosCompletos").get(function () {
-  return {
-    id: this._id,
-    fullname: this.fullname,
-    email: this.email,
-    activo: this.active,
-    role: this.role,
-    registerDate: this.registerDate,
-  };
-});
-
-// Método estático para buscar usuarios activos
-userSchema.statics.schearEmail = function (email) {
-  return this.find(email);
-};
-
-// Middleware pre-save para validaciones adicionales
-userSchema.pre("save", function (next) {
-  if (this.isNew) {
-    console.log(`🆕 Creando nuevo usuario: ${this.email}`);
-  }
-  next();
-});
-
-// Middleware post-save para logging
-userSchema.post("save", function (doc) {
-  console.log(`usuario guardado: ${doc.email}`);
-});
-
 /**
  * Represents a User model.
  * @typedef {Object} User

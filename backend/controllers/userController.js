@@ -1,4 +1,6 @@
 import User from "../models/userModel.js";
+import bcrypt from "bcrypt";
+const SALT_ROUNDS = 12;
 
 export async function login(request, reply) {
   try {
@@ -9,26 +11,42 @@ export async function login(request, reply) {
         .send({ status: "error", error: "Username y Password son requeridos" });
     }
 
-    const user = User.find({ email: email });
-    if (!user) {
-      return reply
-        .code(401)
-        .send({ status: "error", error: "Credenciales Invalida" });
-    }
-    const token = Buffer.from(
-      `${user.id}:${user.email}:${Date.now()}`
-    ).toString("base64");
+    try {
+      const user = await User.findOne({ email }).select("+password");
+      if (!user) {
+        return reply
+          .code(401)
+          .send({ status: "error", error: "Credenciales inválidas" });
+      }
 
-    return {
-      mensaje: "Login exitoso",
-      token,
-      usuario: {
-        id: user.id,
-        email: user.email,
-        role: user.role,
-      },
-      status: "success",
-    };
+      const isValid = await bcrypt.compare(password, user.password);
+      if (!isValid) {
+        return reply.code(401).send({
+          status: "error",
+          error: "Credenciales inválidas",
+        });
+      }
+
+      const token = Buffer.from(
+        `${user.id}:${user.email}:${Date.now()}`
+      ).toString("base64");
+
+      return reply.code(200).send({
+        status: "success",
+        mensaje: "Login exitoso",
+        token,
+        usuario: {
+          id: user.id,
+          email: user.email,
+          role: user.role,
+        },
+      });
+    } catch (error) {
+      console.error("Error al buscar el usuario:", error);
+      return reply
+        .code(500)
+        .send({ status: "error", error: "Error al buscar el usuario" });
+    }
   } catch (error) {
     console.error("Error al iniciar sesión:", error);
     return reply
@@ -48,33 +66,35 @@ export async function register(request, reply) {
       });
     }
 
-    const existingUser = await User.findOne({ email });
-    if (!existingUser) {
+    const existingUser = await User.exists({ email });
+    if (existingUser) {
+      console.error("El usuario ya existe:", existingUser);
       return reply.code(400).send({
         status: "error",
         error: "El usuario ya existe",
       });
     }
 
+    const salt = await bcrypt.genSalt(SALT_ROUNDS);
+    const hashedPassword = await bcrypt.hash(password, salt);
+
     const newUser = new User({
       email,
-      password,
+      password: hashedPassword,
       fullname,
     });
 
     await newUser.save();
-    return {
+    return reply.code(201).send({
+      status: "success",
       mensaje: "Usuario registrado exitosamente",
       usuario: newUser.datosCompletos,
-      status: "success",
-    };
+    });
   } catch (error) {
     console.error("Error al registrar el usuario:", error);
-    reply.code(500);
-    return {
-      status: "error",
-      error: "Error al registrar el usuario",
-    };
+    return reply
+      .code(500)
+      .send({ status: "error", error: "Error al registrar el usuario" });
   }
 }
 

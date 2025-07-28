@@ -30,6 +30,10 @@ await fastify.register(import("./routes/ingredients.js"), {
   prefix: "/api/ingredient",
 });
 
+await fastify.register(import("./routes/comment.js"), {
+  prefix: "/api/comment",
+});
+
 // Función para iniciar el servidor
 const start = async () => {
   try {
