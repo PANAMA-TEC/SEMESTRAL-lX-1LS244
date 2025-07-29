@@ -30,9 +30,11 @@ const Login = () => {
 
     let response = await API_Services(API_Login_URL,'POST', data );
 
-    response.status == 'success' ? setUser(response.token) : setUser("");
-    console.log("Login: " + user);
+    response.status == 'success' ? setUser(await response.token) : setUser(null);
 
+    // console.log(await response.status);
+    
+  
   }
 
    const handle_Register = async (data) => {
@@ -43,8 +45,9 @@ const Login = () => {
     }
 
     let response = await API_Services(API_Register_URL,'POST', data );
-    response.status == 'success' ? setUser(response.token) : setUser("");
-    console.log("Login: " + user);
+    response.status == 'success' ? setUser(await response.token) : setUser(null);
+    setOption(1)
+    
   }
 
   const handleLogin_register = (e) => {
@@ -70,7 +73,7 @@ const Login = () => {
       <div className="login-container elevation-1">
         <div className="login-left">
           <div className="top">
-            <h2>Inicio de Sessión</h2>
+            <h2>Inicio de Sesión</h2>
           </div>
           <form className="content" onSubmit={handleSubmit}>
             <div className="option-container">
@@ -100,6 +103,7 @@ const Login = () => {
                   type="password"
                   placeholder="Agrega tu contraseña"
                   value={password}
+                  autoComplete="current-password"
                   onChange={e => setPassword(e.target.value)}
                 />
               </div>
@@ -108,6 +112,7 @@ const Login = () => {
                   Repetir contraseña
                   <input
                     type="password"
+                    autoComplete="new-password"
                     placeholder="Repite tu contraseña"
                     value={repeatPassword}
                     onChange={e => setRepeatPassword(e.target.value)}

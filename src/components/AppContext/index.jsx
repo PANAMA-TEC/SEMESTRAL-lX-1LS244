@@ -6,7 +6,7 @@ const AppProvider =( {children} )=> {
     
   
     const [ openModal, setOpenModal ] = useState(false);
-    const [ user, setUser ] = useState("")
+    const [ user, setUser ] = useState(null)
 
     // const openModal = true ;
     // const setOpenModal =()=>{
