@@ -1,15 +1,16 @@
-// src/plugins/swagger.js
 import fp from "fastify-plugin";
 import swagger from "@fastify/swagger";
 import swaggerUI from "@fastify/swagger-ui";
 import { RecipeSchema } from "../models/recipeModel.js";
 import { UserSchema } from "../models/userModel.js";
 import { CommentSchema } from "../models/commentModel.js";
+import { CartItemSchema } from "../models/cartItemModel.js";
 
 export default fp(async (fastify) => {
   fastify.addSchema(UserSchema);
   fastify.addSchema(RecipeSchema);
   fastify.addSchema(CommentSchema);
+  fastify.addSchema(CartItemSchema);
 
   await fastify.register(swagger, {
     swagger: {
