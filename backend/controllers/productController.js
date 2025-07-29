@@ -1,5 +1,5 @@
 import Product from "../models/productModel.js";
-import { isValidObjectId } from "mongoose";
+import { isValidObjectId, ObjectId } from "mongoose";
 
 // Obtener todos los productos
 export async function getProducts(request, reply) {
@@ -37,6 +37,30 @@ export async function getProductById(request, reply) {
       .send({ status: "error", error: "Error al obtener el producto" });
   }
 }
+//Get product by ingredients
+export const getProductByIngredients = async (request, reply) => {
+  try {
+    const { ingredient } = request.params;
+
+    if (!isValidObjectId(ingredient)) {
+      return reply
+        .code(400)
+        .send({ status: "error", error: "ID de ingrediente inválido" });
+    }
+    const products = await Product.find().lean();
+
+    if (!products) {
+      return reply
+        .code(404)
+        .send({ status: "error", error: "No se encontraron productos" });
+    }
+
+    return reply.code(200).send({ status: "success", products });
+  } catch (error) {
+    console.error("Error en getProductByIngredients:", error);
+    reply.code(500).send({ error: "Error interno del servidor" });
+  }
+};
 
 // Crear un nuevo producto
 export async function createProduct(request, reply) {

@@ -1,0 +1,180 @@
+[{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce0"
+  },
+  "name": "Leche Entera",
+  "description": "Leche liquida pasteurizada.",
+  "price": 1.25,
+  "stock": 100,
+  "presentation": {
+    "value": 1,
+    "unit": "L"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee312"
+  ],
+  "image": "https://example.com/images/leche.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce1"
+  },
+  "name": "Harina de Trigo",
+  "description": "Harina blanca para todo uso.",
+  "price": 0.85,
+  "stock": 50,
+  "presentation": {
+    "value": 1,
+    "unit": "kg"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee310"
+  ],
+  "image": "https://example.com/images/harina.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce2"
+  },
+  "name": "Huevos de Granja",
+  "description": "Huevos frescos en presentacion de 12 unidades.",
+  "price": 2.4,
+  "stock": 200,
+  "presentation": {
+    "value": 1,
+    "unit": "pack"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee314"
+  ],
+  "image": "https://example.com/images/huevos.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce3"
+  },
+  "name": "Azucar Blanca",
+  "description": "Azucar refinada en presentacion de 1 kg.",
+  "price": 1.1,
+  "stock": 80,
+  "presentation": {
+    "value": 1,
+    "unit": "kg"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee311"
+  ],
+  "image": "https://example.com/images/azucar.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce4"
+  },
+  "name": "Mantequilla sin Sal",
+  "description": "Mantequilla sin sal en barra de 200g.",
+  "price": 0.9,
+  "stock": 40,
+  "presentation": {
+    "value": 200,
+    "unit": "g"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee313"
+  ],
+  "image": "https://example.com/images/mantequilla.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce5"
+  },
+  "name": "Aceite de Oliva Extra Virgen",
+  "description": "Aceite de oliva de alta calidad.",
+  "price": 3.5,
+  "stock": 70,
+  "presentation": {
+    "value": 500,
+    "unit": "ml"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee30d"
+  ],
+  "image": "https://example.com/images/aceite.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce6"
+  },
+  "name": "Pan Blanco",
+  "description": "Pan blanco fresco en presentacion de 1 unidad.",
+  "price": 0.6,
+  "stock": 120,
+  "presentation": {
+    "value": 1,
+    "unit": "unidad"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee317"
+  ],
+  "image": "https://example.com/images/pan.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce7"
+  },
+  "name": "Queso Rallado",
+  "description": "Queso fresco rallado para cocinar.",
+  "price": 2,
+  "stock": 60,
+  "presentation": {
+    "value": 250,
+    "unit": "g"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee315"
+  ],
+  "image": "https://example.com/images/queso.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce8"
+  },
+  "name": "Arroz Blanco",
+  "description": "Arroz blanco grano largo.",
+  "price": 0.95,
+  "stock": 90,
+  "presentation": {
+    "value": 1,
+    "unit": "kg"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee318"
+  ],
+  "image": "https://example.com/images/arroz.jpg",
+  "active": true
+},
+{
+  "_id": {
+    "$oid": "6889199108d14fac54609ce9"
+  },
+  "name": "Sal Marina",
+  "description": "Sal marina fina para cocinar.",
+  "price": 0.55,
+  "stock": 150,
+  "presentation": {
+    "value": 1,
+    "unit": "kg"
+  },
+  "ingredients": [
+    "688678f9b915b81d47fee30e"
+  ],
+  "image": "https://example.com/images/sal.jpg",
+  "active": true
+}]

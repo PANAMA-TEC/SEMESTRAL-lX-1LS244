@@ -4,6 +4,7 @@ import {
   createProduct,
   updateProduct,
   deleteProduct,
+  getProductByIngredients,
 } from "../controllers/productController.js";
 
 export default async function ProductRoutes(fastify) {
@@ -11,7 +12,8 @@ export default async function ProductRoutes(fastify) {
   fastify.get("/", getProducts);
   //GET a specific recipe by ID
   fastify.get("/:id", getProductById);
-
+  //GET products by ingredients
+  fastify.get("/ingredients/:ingredient", getProductByIngredients);
   //POST a new recipe
   fastify.post("/", {
     schema: {

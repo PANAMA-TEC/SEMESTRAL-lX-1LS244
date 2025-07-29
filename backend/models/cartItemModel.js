@@ -47,9 +47,9 @@ export const CartItemSchema = {
       description: "Lista de recetas en el carrito",
       items: {
         type: "object",
-        required: ["recipeID"],
+        required: ["recipe"],
         properties: {
-          recipeID: {
+          recipe: {
             type: "string",
             format: "uuid",
             description: "ID de la receta agregada",
