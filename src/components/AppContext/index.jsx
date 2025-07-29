@@ -6,6 +6,7 @@ const AppProvider =( {children} )=> {
     
   
     const [ openModal, setOpenModal ] = useState(false);
+    const [ user, setUser ] = useState(null)
 
     // const openModal = true ;
     // const setOpenModal =()=>{
@@ -14,7 +15,7 @@ const AppProvider =( {children} )=> {
 
     return(
         
-        <AppContext.Provider value={{ openModal, setOpenModal } }>
+        <AppContext.Provider value={{ openModal, setOpenModal, setUser, user } }>
             {children}
         </AppContext.Provider>
 
