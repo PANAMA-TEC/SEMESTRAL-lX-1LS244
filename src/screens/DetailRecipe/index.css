@@ -57,7 +57,7 @@
 .DetailRecipe .mid-container .productos-relacionados {
   display: flex;
   flex-direction: row;
-  gap: 20px calc( (100% - (11vw * 4) ) / 3);
+  gap: 20px calc( ( 100% - ( 16vw * 4) ) / 3);
   border-radius: 10px;
   /* border-style: solid; */
   

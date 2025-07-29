@@ -20,6 +20,7 @@
 .CardContent .list {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   
   
   /* border-style: solid; */
