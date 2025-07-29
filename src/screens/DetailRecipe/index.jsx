@@ -21,29 +21,29 @@ export const DetailRecipe = () =>{
     const [recetas, setRecetas ] = useState([]);
       
     
-      React.useEffect(  () => {
-        const fetchData = async () => {
-            // url_ejemplo = http://localhost:5173/detail_recipe?id=6880485640aee6195aa2cef5
-            //Remplazar...
+    React.useEffect(  () => {
+    const fetchData = async () => {
+        // url_ejemplo = http://localhost:5173/detail_recipe?id=6880485640aee6195aa2cef5
+        //Remplazar...
 
 
 
-            const params = new URLSearchParams(window.location.search);
-            const id = params.get('id');
-            if (!id) return;
+        const params = new URLSearchParams(window.location.search);
+        const id = params.get('id');
+        if (!id) return;
 
-            // Remplazar
+        // Remplazar
 
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-            let recetas = await API_Services(`${API_Recetas}${id}`);
-            pasos = recetas.data.step;
-            console.log(pasos);
-            setRecetas(recetas.data);
-        }
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+        let recetas = await API_Services(`${API_Recetas}${id}`);
+        pasos = recetas.data.step;
+        console.log(pasos);
+        setRecetas(recetas.data);
+    }
+
+    fetchData();
     
-        fetchData();
-        
-      }, []);
+    }, []);
 
     return(
         <div className='DetailRecipe'>
