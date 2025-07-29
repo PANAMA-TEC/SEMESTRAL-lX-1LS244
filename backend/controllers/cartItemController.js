@@ -4,9 +4,9 @@ import CartItem from "../models/cartItemModel.js";
 
 export const addToCart = async (request, reply) => {
   try {
-    const { userID, recipeID } = request.body;
+    const { userID, recipe } = request.body;
 
-    if (!isValidObjectId(userID) || !isValidObjectId(recipeID)) {
+    if (!isValidObjectId(userID) || !isValidObjectId(recipe)) {
       return reply
         .code(400)
         .send({ status: "error", error: "userID o recipeID inválido" });
@@ -17,7 +17,7 @@ export const addToCart = async (request, reply) => {
     if (!cart) {
       cart = new CartItem({
         userID,
-        items: [{ recipe: recipeID }],
+        items: [{ recipe: recipe }],
       });
       await cart.save();
       return reply.code(201).send({ status: "success", cart });
@@ -25,7 +25,7 @@ export const addToCart = async (request, reply) => {
 
     // Si ya existe el carrito, verificamos si la receta ya está
     const alreadyExists = cart.items.some(
-      (item) => item.recipe.toString() === recipeID
+      (item) => item.recipe.toString() === recipe
     );
 
     if (alreadyExists) {
@@ -35,7 +35,7 @@ export const addToCart = async (request, reply) => {
       });
     }
 
-    cart.items.push({ recipeID });
+    cart.items.push({ recipe });
     await cart.save();
 
     return reply.code(200).send({ status: "success", cart });

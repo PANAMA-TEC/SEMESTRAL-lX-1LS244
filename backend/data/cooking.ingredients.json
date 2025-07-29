@@ -14,14 +14,7 @@
   "unit": "kg",
   "availableAsProduct": false
 },
-{
-  "_id": {
-    "$oid": "688678f9b915b81d47fee30b"
-  },
-  "name": "ajo",
-  "unit": "unidad",
-  "availableAsProduct": true
-},
+
 {
   "_id": {
     "$oid": "688678f9b915b81d47fee30c"
@@ -66,7 +59,7 @@
   "_id": {
     "$oid": "688678f9b915b81d47fee311"
   },
-  "name": "azúcar",
+  "name": "azucar",
   "unit": "kg",
   "availableAsProduct": false
 },

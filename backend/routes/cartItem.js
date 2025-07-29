@@ -15,15 +15,20 @@ export default async function CartItemRouter(fastify) {
       summary: "Agregar una receta al carrito del usuario",
       body: {
         type: "object",
-        required: ["userID", "recipeID"],
+        required: ["userID", "recipe"],
         properties: {
           userID: {
             type: "string",
             description: "ID del usuario",
           },
-          recipeID: {
-            type: "string",
-            description: "ID de la receta que se agregará",
+          items: {
+            type: "array",
+            items: {
+              type: "object",
+              properties: {
+                recipeID: { type: "string" },
+              },
+            },
           },
         },
       },

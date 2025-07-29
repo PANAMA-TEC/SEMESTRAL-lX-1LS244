@@ -13,7 +13,8 @@
       "unit": null
     },
     {
-      "ingredient": "68866ff9b915b81d47fee2db",
+      
+      "ingredient": "688678f9b915b81d47fee312",
       "name": "leche",
       "quantity": 1,
       "unit": "l"
@@ -55,11 +56,10 @@
       "availableAsProduct": true
     },
     {
-      "ingredient": "64c1e612b345c5d6e7f8a013",
+      "ingredient": "688678f9b915b81d47fee309",
       "name": "tomate",
       "quantity": 2,
-      "unit": "kg",
-      "availableAsProduct": true
+      "unit": "kg"
     },
     {
       "ingredient": "64c1e623c456c5d6e7f8a014",
@@ -96,7 +96,7 @@
   "category": "almuerzo",
   "ingredients": [
     {
-      "ingredient": "64c1e634d567c5d6e7f8a015",
+      "ingredient": "688678f9b915b81d47fee319",
       "name": "pasta",
       "quantity": 0.5,
       "unit": "kg",
@@ -117,14 +117,14 @@
       "availableAsProduct": true
     },
     {
-      "ingredient": "64c1e667g890c5d6e7f8a018",
+      "ingredient": "688678f9b915b81d47fee315",
       "name": "queso",
       "quantity": 50,
       "unit": "g",
       "availableAsProduct": true
     },
     {
-      "ingredient": "64c1e678h901c5d6e7f8a019",
+      "ingredient": "688678f9b915b81d47fee30d",
       "name": "ajo",
       "quantity": 2,
       "unit": "dientes",
@@ -158,7 +158,7 @@
   "category": "desayuno",
   "ingredients": [
     {
-      "ingredient": "64c1e689i012c5d6e7f8a01A",
+      "ingredient": "688678f9b915b81d47fee317",
       "name": "pan",
       "quantity": 2,
       "unit": "unidad"
@@ -170,7 +170,7 @@
       "unit": "unidad"
     },
     {
-      "ingredient": "64c1e6abc234c5d6e7f8a01C",
+      "ingredient": "688678f9b915b81d47fee30e",
       "name": "sal",
       "quantity": 1,
       "unit": "kg"
@@ -252,13 +252,13 @@
       "unit": "unidad"
     },
     {
-      "ingredient": "64c1e612b345c5d6e7f8a013",
+      "ingredient": "688678f9b915b81d47fee309",
       "name": "tomate",
       "quantity": 1,
       "unit": "kg"
     },
     {
-      "ingredient": "64c1e634d567c5d6e7f8a015",
+      "ingredient": "688678f9b915b81d47fee319",
       "name": "cebolla",
       "quantity": 0.5,
       "unit": "kg"
@@ -334,13 +334,13 @@
   "category": "almuerzo",
   "ingredients": [
     {
-      "ingredient": "64c1e612b345c5d6e7f8a013",
+      "ingredient": "688678f9b915b81d47fee309",
       "name": "tomate",
       "quantity": 2,
       "unit": "kg"
     },
     {
-      "ingredient": "64c1e634d567c5d6e7f8a015",
+      "ingredient": "688678f9b915b81d47fee319",
       "name": "cebolla",
       "quantity": 1,
       "unit": "kg"
@@ -375,13 +375,13 @@
       "unit": "kg"
     },
     {
-      "ingredient": "64c1e612b345c5d6e7f8a013",
+      "ingredient": "688678f9b915b81d47fee309",
       "name": "tomate",
       "quantity": 1,
       "unit": "kg"
     },
     {
-      "ingredient": "64c1e634d567c5d6e7f8a015",
+      "ingredient": "688678f9b915b81d47fee319",
       "name": "cebolla",
       "quantity": 0.5,
       "unit": "kg"
