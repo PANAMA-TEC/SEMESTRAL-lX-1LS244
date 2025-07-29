@@ -33,6 +33,9 @@ await fastify.register(import("./routes/ingredients.js"), {
 await fastify.register(import("./routes/comment.js"), {
   prefix: "/api/comment",
 });
+await fastify.register(import("./routes/cartItem.js"), {
+  prefix: "/api/cartItem",
+});
 
 // Función para iniciar el servidor
 const start = async () => {
