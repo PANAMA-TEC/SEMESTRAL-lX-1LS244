@@ -23,7 +23,7 @@ const UserView = ( ) => {
   React.useEffect(  () => {
     const fetchData = async () => {
       let recetas = await API_Services(API_Recetas);
-      console.log(recetas);
+      // console.log(recetas);
       setRecetas(recetas.data);
     }
 

@@ -30,9 +30,9 @@ const Login = () => {
 
     let response = await API_Services(API_Login_URL,'POST', data );
 
-    response.status == 'success' ? setUser(await response.token) : setUser(null);
+    response.status == 'success' ? setUser(await response ) : setUser(null);
 
-    // console.log(await response.status);
+    console.log(await response);
     
   
   }
@@ -45,7 +45,7 @@ const Login = () => {
     }
 
     let response = await API_Services(API_Register_URL,'POST', data );
-    response.status == 'success' ? setUser(await response.token) : setUser(null);
+    response.status == 'success' ? setUser(await response ) : setUser(null);
     setOption(1)
     
   }
@@ -126,7 +126,7 @@ const Login = () => {
             <div className="register-option">
               {option == 1 ? (
                 <label>
-                  ¿No tienes cuenta? <a onClick={handleLogin_register}>Regístrate aquí</a>
+                  ¿No tienes cuenta? <a onClick={() => setOption(2)}>Regístrate aquí</a>
                 </label>
               ) : (
                 <label>

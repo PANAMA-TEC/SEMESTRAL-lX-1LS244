@@ -33,6 +33,8 @@ const App = () =>{
         { openModal ? <Modal> 
           <SideBar/>
         </Modal> : ""  }
+
+        
        
 
 
