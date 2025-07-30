@@ -1,3 +1,10 @@
 .CardList { 
   overflow: auto;
 }
+
+.CardList .ingrediente{ 
+  overflow: auto;
+  display: flex;
+  justify-content: space-between;
+  
+}

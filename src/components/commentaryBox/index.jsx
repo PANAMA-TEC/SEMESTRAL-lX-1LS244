@@ -1,13 +1,17 @@
 import './index.css';
 import React from 'react';
 import recetas_prototype from '../../assets/recetas_prototype.png';
+import { useState } from 'react';
+
 import { CommentaryElement } from '../commentaryElement';
 import { useContext } from 'react';
 import { AppContext } from '../AppContext';
 
-export const CommentaryBox = () => {
+export const CommentaryBox = ( commentaries ) => {
+
 
   const { user } = useContext(AppContext)
+  const [ nuevoComentario, setNuevoComentario ] = useState(null)
 
   return (
     <div className="CommentaryBox elevation-1">
@@ -17,30 +21,33 @@ export const CommentaryBox = () => {
       <div className="comentario-contenedor">
         
         <CommentaryElement/>
-        <CommentaryElement/>
-
-        <CommentaryElement/>
-
-        <CommentaryElement/>
-        <CommentaryElement/>
-
-      </div>
-
-      <div className="nuevo-comentario-contenedor elevation-1 ">
-        <div className='top'>
         
-          <div className="iconocomentarionuevo"></div>
+      </div>
+      
+      { user ? 
+
+
+
+        <div className="nuevo-comentario-contenedor elevation-1 ">
+          <div className='top'>
           
-          <div className="nuevo-comentario-datos">
-            <h5>{ user.usuario.email }</h5>
-            <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo elevation-1"></textarea>
+            <div className="iconocomentarionuevo"></div>
+            
+            <div className="nuevo-comentario-datos">
+              <h5>{ user ? user.usuario.fullname : ""}</h5>
+              <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo elevation-1"></textarea>
+            </div>
+          
           </div>
-        
+
+
+          <button className='opciones elevation-1'>Enviar</button>
         </div>
+        
 
+          : ""
 
-      </div>
-        <button className='opciones elevation-1'>Enviar</button>
+      }
 
 
 

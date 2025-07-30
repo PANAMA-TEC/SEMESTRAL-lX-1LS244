@@ -11,7 +11,13 @@ export const CardList = ({ ingredients = [] }) => {
           {
             ingredients.map((element, index) => (
               
-              <li key={index}>{element.name} { element.quantity }  { element.unit }</li>
+              <li key={index} className='ingrediente'>
+                
+                <div> {element.name} </div> 
+                <div> { element.quantity }  <b>{ element.unit ? element.unit : "unidad" } </b> </div>
+              
+              </li>
+
 
             ))
           }
