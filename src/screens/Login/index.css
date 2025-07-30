@@ -1,12 +1,10 @@
 .login {
+  align-self: center;
+  justify-self: center;
   display: flex;
   flex-direction: column;
   margin-top: 5vh;
- 
-
-  width: 100%;
-  
-
+  /* width: 100%; */
   background-color: var(--colecci-n-de-variables-background-color);
 }
 .login-container{

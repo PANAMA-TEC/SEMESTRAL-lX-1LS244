@@ -57,15 +57,17 @@ const UserView = () => {
       </div>
 
       <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
-        {categoriasUnicas.map((categoria, index) => (
-          <CardCategories
-            key={index}
-            image={recipe_category}
-            titulo={categoria}
-            onClick={handleCategoriaClick}
-            activa={categoria === categoriaSeleccionada}
-          />
-        ))}
+        {
+          categoriasUnicas.map((categoria, index) => (
+            <CardCategories
+              key={index}
+              image={recipe_category}
+              titulo={categoria}
+              onClick={handleCategoriaClick}
+              activa={ categoria === categoriaSeleccionada }
+            />
+          ))
+        }
       </CardContent>
 
       <CardContent titulo="Recetas" propiedad1="Propiedad 1">
