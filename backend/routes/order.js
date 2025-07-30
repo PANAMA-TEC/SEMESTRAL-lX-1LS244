@@ -26,7 +26,6 @@ export default async function orderRoutes(fastify) {
     schema: {
       tags: ["Order"],
       sumary: "Agregar nuevo Order por usuario",
-      body: OrderSchema,
     },
     handler: createOrder,
   });
