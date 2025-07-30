@@ -6,6 +6,8 @@
 
   width: 100%;
   
+  align-items: center;
+  
 
   background-color: var(--colecci-n-de-variables-background-color);
 }
