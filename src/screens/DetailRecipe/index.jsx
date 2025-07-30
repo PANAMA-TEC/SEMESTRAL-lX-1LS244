@@ -22,7 +22,8 @@ export const DetailRecipe = () =>{
       
     
     React.useEffect(  () => {
-    const fetchData = async () => {
+    
+        const fetchData = async () => {
         // url_ejemplo = http://localhost:5173/detail_recipe?id=6880485640aee6195aa2cef5
         //Remplazar...
 
