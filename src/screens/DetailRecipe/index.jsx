@@ -38,7 +38,7 @@ export const DetailRecipe = () =>{
         window.scrollTo({ top: 0, behavior: 'smooth' });
         let recetas = await API_Services(`${API_Recetas}${id}`);
         pasos = recetas.data.step;
-        console.log(pasos);
+        // console.log(pasos);
         setRecetas(recetas.data);
     }
 
@@ -101,7 +101,7 @@ export const DetailRecipe = () =>{
                                 
                             {
                                 pasos.map((element, index) => (
-                                    <span>{element.orden}. { element.descripcion }</span>
+                                    <span key={index}>{element.orden}. { element.descripcion }</span>
                                 
                                 ))
                             }
