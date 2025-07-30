@@ -48,7 +48,7 @@ export const CommentaryBox = ( commentaries ) => {
   React.useEffect(() => {
     const fetchComments = async () => {
       setComments(await API_Services(`${API_Commentary_PUSH}\\${recipeId}`, "GET", {}));
-      console.log(comments)
+      // console.log(comments)
     };
 
     fetchComments();
@@ -67,7 +67,7 @@ export const CommentaryBox = ( commentaries ) => {
           comments.comments ? 
          
           comments.comments.map((element, index) => (
-            <CommentaryElement usuario={element.userID.fullname} comentario={element.content} index={index}/>
+            <CommentaryElement usuario={element.userID.fullname} comentario={element.content} key={index}/>
             
           ))  
           : ""
