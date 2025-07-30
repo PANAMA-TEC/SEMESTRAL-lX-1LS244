@@ -10,8 +10,7 @@ import { API_Services } from '../../Services/API_Services';
 
 
 const API_Commentary_PUSH = "http://localhost:3000/api/comment";
-const params = new URLSearchParams(window.location.search);
-let recipeId = params.get('id');
+
 
 
 let commentaries = [];
@@ -26,6 +25,8 @@ export const CommentaryBox = ( commentaries ) => {
 
   const handle_commentary_push = async () => {
     
+    let params = new URLSearchParams(window.location.search);
+    let recipeId = params.get('id');
 
     API_Services(`${API_Commentary_PUSH}\\${recipeId}`, "POST", 
 
@@ -47,8 +48,12 @@ export const CommentaryBox = ( commentaries ) => {
 
   React.useEffect(() => {
     const fetchComments = async () => {
+
+      let params = new URLSearchParams(window.location.search);
+      let recipeId = params.get('id');
+
       setComments(await API_Services(`${API_Commentary_PUSH}\\${recipeId}`, "GET", {}));
-      // console.log(comments)
+      
     };
 
     fetchComments();
