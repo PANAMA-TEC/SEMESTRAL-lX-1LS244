@@ -4,7 +4,7 @@ import React from 'react';
 export const CardCategories = ({ titulo = "Titulo de Card", image, onClick, activa = false }) => {
   return (
     <div
-      className={`card-category elevation-1 ${activa ? 'activa' : ''}`}
+      className={`card-category ${activa ? 'elevation-2' : 'elevation-1'}`}
       onClick={() => onClick(titulo)}
     >
       <img src={image} alt={titulo} className="image elevation-1" />
