@@ -1,7 +1,8 @@
 import Fastify from "fastify";
 import crors from "@fastify/cors";
 import dotenv from "dotenv";
-import { connectDB } from "./config/DataBase.js";
+import "./config/dotenv.js";
+import { connectDB } from "./config/database.js";
 
 dotenv.config();
 const fastify = Fastify({
@@ -15,9 +16,11 @@ fastify.register(crors, {
   methods: ["GET", "POST", "PUT", "DELETE"], // Métodos permitidos
 });
 
-//implementacion de datos de prueba
+//Register Plugins
 await fastify.register(import("./plugins/swagger.js"));
+await fastify.register(import("./plugins/stripe.js"));
 
+// Resgister Router
 await fastify.register(import("./routes/user.js"), {
   prefix: "/api/user",
 });
@@ -43,6 +46,14 @@ await fastify.register(import("./routes/product.js"), {
 
 await fastify.register(import("./routes/checkout.js"), {
   prefix: "/api/checkout",
+});
+
+await fastify.register(import("./routes/order.js"), {
+  prefix: "/api/order",
+});
+
+await fastify.register(import("./routes/payment.js"), {
+  prefix: "/api/payment",
 });
 
 // Función para iniciar el servidor
