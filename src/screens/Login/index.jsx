@@ -32,7 +32,7 @@ const Login = () => {
 
     response.status == 'success' ? setUser(await response ) : setUser(null);
 
-    console.log(await response);
+    // console.log(await response);
     
   
   }
