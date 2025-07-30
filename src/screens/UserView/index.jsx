@@ -15,6 +15,7 @@ let API_Recetas = 'http://localhost:3000/api/recipe/';
 const UserView = () => {
   const [recetas, setRecetas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
+  const [categoriaSeleccionada, setCategoriaSeleccionada] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,11 +28,20 @@ const UserView = () => {
 
   const categoriasUnicas = [...new Set(recetas.map(receta => receta.category))];
 
-  const recetasFiltradas = recetas.filter((receta) =>
-    receta.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    receta.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    receta.category.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  const handleCategoriaClick = (categoria) => {
+    setCategoriaSeleccionada(categoria === categoriaSeleccionada ? "" : categoria);
+  };
+
+  const recetasFiltradas = recetas.filter((receta) => {
+    const coincideBusqueda =
+      receta.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      receta.description.toLowerCase().includes(searchTerm.toLowerCase());
+
+    const coincideCategoria =
+      categoriaSeleccionada === "" || receta.category === categoriaSeleccionada;
+
+    return coincideBusqueda && coincideCategoria;
+  });
 
   return (
     <div className="UserView">
@@ -46,13 +56,17 @@ const UserView = () => {
         />
       </div>
 
-      {searchTerm === "" && (
-        <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
-          {categoriasUnicas.map((categoria, index) => (
-            <CardCategories key={index} image={recipe_category} titulo={categoria} />
-          ))}
-        </CardContent>
-      )}
+      <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
+        {categoriasUnicas.map((categoria, index) => (
+          <CardCategories
+            key={index}
+            image={recipe_category}
+            titulo={categoria}
+            onClick={handleCategoriaClick}
+            activa={categoria === categoriaSeleccionada}
+          />
+        ))}
+      </CardContent>
 
       <CardContent titulo="Recetas" propiedad1="Propiedad 1">
         {recetasFiltradas.map((element, index) => (
