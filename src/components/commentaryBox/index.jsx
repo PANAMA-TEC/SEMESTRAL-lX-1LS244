@@ -34,7 +34,7 @@ export const CommentaryBox = ( commentaries ) => {
             <div className="iconocomentarionuevo"></div>
             
             <div className="nuevo-comentario-datos">
-              <h5>{ user ? user.usuario.fullname : ""}</h5>
+              <h5>{ user ? user.usuario.email : ""}</h5>
               <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo elevation-1"></textarea>
             </div>
           
