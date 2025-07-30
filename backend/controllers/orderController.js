@@ -21,14 +21,14 @@ export async function getOrder(request, reply) {
 
 export async function createOrder(request, reply) {
   const { userID } = request.params;
-  const { items, total, status } = request.body;
-  if (!userID || !items || !total || !status) {
+  const { items, total, subtotal } = request.body;
+  if (!userID || !items || !total || !subtotal) {
     return reply
       .code(400)
       .send({ status: "error", error: "UserID is required" });
   }
   try {
-    const order = await Order.create({ userID, items, total, status });
+    const order = await Order.create({ userID, items, total, subtotal });
     return reply.code(200).send({ status: "success", data: order });
   } catch (error) {
     console.error("Error al crear la orden:", error);
