@@ -65,8 +65,10 @@ export async function register(request, reply) {
         error: "Email, password y fullname son requeridos",
       });
     }
-
+    
     const existingUser = await User.exists({ email });
+
+
     if (existingUser) {
       console.error("El usuario ya existe:", existingUser);
       return reply.code(400).send({
