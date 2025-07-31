@@ -39,7 +39,7 @@ export const CardRecipes = ({
         </div>
 
         <div className="btn-enable">
-          <button onClick={()=>{ handleButtonClick(`${RECIPE_DETAIL_URL}?id=${id}`) }} className="button">More</button>
+          <button onClick={()=>{ handleButtonClick(`${RECIPE_DETAIL_URL}?id=${id}`) }} className="button">Más</button>
         </div>
         
       </div>

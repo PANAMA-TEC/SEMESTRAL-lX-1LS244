@@ -96,10 +96,10 @@ const Login = () => {
                 </div>
               ) : ""}
               <div className="input-container">
-                Nombre de usuario
+                Correo Electrónico
                 <input
                   type="username"
-                  placeholder="Ingresa tu nombre de usuario"
+                  placeholder="Ingresa tu correo electrónico"
                   value={email}
                   onChange={e => setEmail(e.target.value)}
                 />
