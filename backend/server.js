@@ -3,12 +3,19 @@ import crors from "@fastify/cors";
 import dotenv from "dotenv";
 import "./config/dotenv.js";
 import { connectDB } from "./config/database.js";
-
+import FastifyStatic from "@fastify/static";
+import path, { dirname } from "path";
+import { fileURLToPath } from "url";
 dotenv.config();
+
 const fastify = Fastify({
   logger: {
     level: "info",
   },
+});
+fastify.register(FastifyStatic, {
+  root: path.join(dirname(fileURLToPath(import.meta.url)), "uploads"),
+  prefix: "/uploads",
 });
 
 fastify.register(crors, {

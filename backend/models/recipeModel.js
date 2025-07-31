@@ -47,6 +47,10 @@ const recipeSchema = new Schema(
     },
 
     published: { type: Boolean, default: true },
+    imageUrl: {
+      type: String,
+      default: "",
+    },
   },
   {
     timestamps: true,

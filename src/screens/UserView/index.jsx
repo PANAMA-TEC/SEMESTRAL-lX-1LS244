@@ -79,6 +79,7 @@ const UserView = () => {
             description={element.description}
             category={element.category}
             time={element.time}
+            imageUrl={element.imageUrl}
           />
         ))}
       </CardContent>
