@@ -16,7 +16,7 @@ export const DetailRecipe = () => {
   const [pasos, setPasos] = useState([]);
 
   const { user } = useContext(AppContext);
-  const userID = user?.usuario?.id; 
+  const userID = user?.id; 
 
   useEffect(() => {
     const fetchData = async () => {
@@ -39,6 +39,7 @@ export const DetailRecipe = () => {
   }, []);
 
   const handleComprarIngredientes = async () => {
+    
     console.log("Usuario desde contexto:", user);
     console.log("userID:", userID);
     console.log("recetaID:", recetas._id);

@@ -14,7 +14,7 @@ export const SideBar = () => {
   // Cargar carrito al montar componente
   useEffect(() => {
     const cargarCarrito = async () => {
-      if (!user?.usuario?.id) return;
+      if (!user?.id) return;
 
       const response = await API_Services(`${API_Carrito}/${user.id}`);
       if (response?.cartItems?.items) {

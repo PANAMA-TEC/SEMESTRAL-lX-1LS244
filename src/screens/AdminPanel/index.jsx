@@ -12,7 +12,7 @@ export const AdminPanel = () => {
   const [ ordenes , setOrdenes ] = useState([])
   const { API_Services, setUser, user, Navigate, localStorageManager } = useContext(AppContext);
   const API_Orden = "http://localhost:3000/api/order";
-  const API_Success = "http://localhost:3000/api/payment/success/";
+  const API_Success = "http://localhost:3000/api/payment/success";
 
   const handlePagar = async (id) => {
     
@@ -22,14 +22,15 @@ export const AdminPanel = () => {
   };
 
   const fetchOrdenes = async () => {
+    
     try {
-      // console.log(user)
+      console.log("actualizando ordenes");
       const response = await API_Services(`${API_Orden}/${ user.id }`, "GET", {});
       setOrdenes(response.data);
     } catch (error) {
       // Navigate("/login");
-      // console.log("usuario", error.message);
-      // console.log("Error al cargar las ordenes", error.message);
+      console.log("usuario", error.message);
+      console.log("Error al cargar las ordenes", error.message);
     }
   };
 
@@ -77,10 +78,15 @@ export const AdminPanel = () => {
       
       if (sessionId) {
         // Aquí puedes manejar la lógica si session_id está presente en el URL
-        const response = await API_Services(`${API_Success}}/${sessionId}`, "POST", {})
+        const response = await API_Services(`${API_Success}/${sessionId}`, "POST", {})
+        sessionId ? fetchOrdenes() : null;
+        return;
+
+            console.log(sessionId);
+        console.log("Orden exitosa:", response);
+        
         
         try {
-          fetchOrdenes();
         
         }catch (error) {
           console.error("Error al manejar el éxito de la orden:", error);
@@ -92,7 +98,6 @@ export const AdminPanel = () => {
     }
 
     handleSuccess();
-
 
   }, []);
 
