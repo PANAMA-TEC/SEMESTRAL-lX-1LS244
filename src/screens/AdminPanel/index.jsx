@@ -65,8 +65,8 @@ export const AdminPanel = () => {
             {ordenes && ordenes.map((orden) => (
               <tr key={orden._id}>
                 <td>{orden._id}</td>
-                <td>{orden.subtotal}</td>
-                <td>{orden.total}</td>
+                <td>{orden.subtotal.toFixed(2)}</td>
+                <td>{orden.total.toFixed(2)}</td>
                 <td>{orden.status}</td>
                 <td className='myEspecial-td'>
                   {
