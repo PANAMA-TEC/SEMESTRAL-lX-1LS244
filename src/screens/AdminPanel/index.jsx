@@ -1,6 +1,4 @@
 import './index.css';
-import { NavBar } from '../../components/navBar';
-import logo_nav from '../../assets/image.png';
 import { useContext } from 'react';
 import { AppContext } from '../../components/AppContext';
 import { useEffect } from 'react';
@@ -12,7 +10,7 @@ const API_Pagar = "http://localhost:3000/api/payment/checkout";
 export const AdminPanel = () => {
 
   const [ ordenes , setOrdenes ] = useState([])
-  const { API_Services, user, Navigate } = useContext(AppContext);
+  const { API_Services, setUser, user, Navigate, localStorageManager } = useContext(AppContext);
   const API_Orden = "http://localhost:3000/api/order";
 
   const handlePagar = async (id) => {
@@ -20,35 +18,65 @@ export const AdminPanel = () => {
     const response = await API_Services(`${API_Pagar}/${id}`, "POST", {});
     window.location.href = response.url;
       
-      
-    
   };
 
   useEffect(() => {
-    if (!user ) {
-      Navigate('/login');
-      return;
-    }
+      
+      if ( !user ) {
 
-    const fetchOrdenes = async () => {
-      try {
-        const response = await API_Services(`${API_Orden}/${user.usuario.id}`, "GET", {});
-        setOrdenes(response.data);
-      } catch (error) {
-        // Manejar error si es necesario
-      }
-    };
+        // Navigate("/login");
+        
+        try {
+          
+          const userData = localStorageManager.getItem("user");
+          
+          if ( userData ) {
+            setUser(userData);
+            
+          }
 
-    fetchOrdenes();
-  }, []);
-   
+        } catch (error) {
+          console.error("Error al obtener el usuario de localStorage:", error);
+          // Navigate("/login");
+          // Si no hay usuario en localStorage, redirigir al login
+          alert("No se encontró usuario, redirigiendo al login.");
+          return;
+        }
+
+      } 
+      
+      // console.log(user);
+            
+  }, [user]);
+
+  useEffect(() => {
+
+      const fetchOrdenes = async () => {
+        try {
+          // console.log(user)
+          const response = await API_Services(`${API_Orden}/${ user.id }`, "GET", {});
+          setOrdenes(response.data);
+        } catch (error) {
+          // Navigate("/login");
+          // console.log("usuario", error.message);
+          // console.log("Error al cargar las ordenes", error.message);
+        }
+      };
+
+    
+      fetchOrdenes();
+
+  }, [user]);
+
+
+
   return (
     <div className="AdminPanel">
 
       
       <div className='contenedor-tabla'>
 
-        <div className='title'> Area de ordenes <b> { user ? user.usuario.email : "" } </b> </div>
+        <div className='title'> Area de ordenes <b> { user ? user.email : "" } </b> </div>
 
         <table className="tabla-recetas">
           
@@ -65,8 +93,8 @@ export const AdminPanel = () => {
             {ordenes && ordenes.map((orden) => (
               <tr key={orden._id}>
                 <td>{orden._id}</td>
-                <td>{orden.subtotal}</td>
-                <td>{orden.total}</td>
+                <td>{orden.subtotal.toFixed(2)}</td>
+                <td>{orden.total.toFixed(2)}</td>
                 <td>{orden.status}</td>
                 <td className='myEspecial-td'>
                   {

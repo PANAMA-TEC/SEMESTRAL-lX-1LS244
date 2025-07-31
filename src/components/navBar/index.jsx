@@ -29,11 +29,6 @@ export const NavBar = ({ logo, links }) => {
     navigate('/');
   }
 
-  React.useEffect(() => {
-    if (user) {
-      navigate("./");
-    }
-  }, [user]);
 
   return (
     

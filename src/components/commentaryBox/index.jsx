@@ -31,7 +31,7 @@ export const CommentaryBox = ( commentaries ) => {
     API_Services(`${API_Commentary_PUSH}\\${recipeId}`, "POST", 
 
       {
-        "userID": user.usuario.id,
+        "userID": user.id,
         "content": nuevoComentario
       }
 
@@ -91,7 +91,7 @@ export const CommentaryBox = ( commentaries ) => {
             <div className="iconocomentarionuevo"></div>
             
             <div className="nuevo-comentario-datos">
-              <h5>{ user ? user.usuario.email : ""}</h5>
+              <h5>{ user ? user.email : ""}</h5>
               <textarea placeholder="Escribe tu comentario..." className="ComentarioNuevo elevation-1" onChange={ e => setNuevoComentario( e.target.value ) } value={nuevoComentario}></textarea>
 
             </div>
