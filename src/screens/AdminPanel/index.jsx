@@ -5,7 +5,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 
 const API_Pagar = "http://localhost:3000/api/payment/checkout";
-
+const status = ["","Pendiente", "Pagado", "Cancelado"];
 
 export const AdminPanel = () => {
 
@@ -81,18 +81,6 @@ export const AdminPanel = () => {
         const response = await API_Services(`${API_Success}/${sessionId}`, "POST", {})
         sessionId ?  window.location.href = "./user_panel" : null;
         return;
-
-            console.log(sessionId);
-        console.log("Orden exitosa:", response);
-        
-        
-        try {
-        
-        }catch (error) {
-          console.error("Error al manejar el éxito de la orden:", error);
-          // Aquí puedes manejar el error, por ejemplo, redirigiendo al usuario o mostrando un mensaje
-        }
-        // Por ejemplo, podrías mostrar un mensaje, actualizar estado, etc.
       }
 
     }
@@ -125,7 +113,7 @@ export const AdminPanel = () => {
                 <td>{orden._id}</td>
                 <td>{orden.subtotal.toFixed(2)}</td>
                 <td>{orden.total.toFixed(2)}</td>
-                <td>{orden.status}</td>
+                <td>{status[orden.status]}</td>
                 <td className='myEspecial-td'>
                   {
                     orden.status === 1 ?
