@@ -1,5 +1,6 @@
 import { isValidObjectId } from "mongoose";
 
+import { getCartItemsbyUserID } from "../service/productService.js";
 import CartItem from "../models/cartItemModel.js";
 
 export const addToCart = async (request, reply) => {
@@ -54,19 +55,12 @@ export const getCart = async (request, reply) => {
         .code(400)
         .send({ status: "error", error: "userID inválido" });
     }
+    const cartItems = await getCartItemsbyUserID(userID);
 
-    const cart = await CartItem.findOne({ userID }).populate({
-      path: "items.recipe",
-      select: "title ingredients",
+    return reply.code(200).send({
+      status: "success",
+      cartItems,
     });
-
-    if (!cart) {
-      return reply
-        .code(404)
-        .send({ status: "error", error: "Carrito no encontrado" });
-    }
-
-    return reply.code(200).send({ status: "success", cart });
   } catch (error) {
     console.error("Error en getCart:", error);
     reply.code(500).send({ error: "Error interno del servidor" });

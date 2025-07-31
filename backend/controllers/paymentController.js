@@ -14,9 +14,9 @@ export async function createStripeSession(req, reply) {
     mode: "payment",
     line_items: order.items.map((item) => ({
       price_data: {
-        currency: "usd",
+        currency: "pab",
         product_data: {
-          name: item.name || "Producto",
+          name: item.name,
         },
         unit_amount: Math.round(item.price * 100),
       },

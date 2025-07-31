@@ -26,7 +26,7 @@ export async function getProductsFromRecipe(recipeId) {
   return products;
 }
 
-export async function getCheckoutSummary(userID) {
+export async function getCartItemsbyUserID(userID) {
   if (!isValidObjectId(userID)) {
     throw new Error("ID de usuario inválido");
   }
@@ -49,10 +49,22 @@ export async function getCheckoutSummary(userID) {
   const uniqueIngredientIds = [
     ...new Set(allIngredientIds.map((id) => id.toString())),
   ];
+  const counts = {};
+  allIngredientIds.forEach((id) => {
+    counts[id] = (counts[id] || 0) + 1;
+  });
 
-  const ingredientsDetails = await Ingredient.find({
+  const ingredients = await Ingredient.find({
     _id: { $in: uniqueIngredientIds },
   }).select("name unit");
+
+  const items = ingredients.map((ing) => ({
+    ingredient: ing._id.toString(),
+    name: ing.name,
+    unit: ing.unit,
+    quantity: counts[ing._id.toString()] || 0,
+    price: 0,
+  }));
 
   const products = await Product.find({
     ingredients: { $in: uniqueIngredientIds },
@@ -70,8 +82,10 @@ export async function getCheckoutSummary(userID) {
   }
 
   return {
-    recipes,
-    ingredientsDetails,
-    productsByIngredient,
+    //recipes,
+    items,
+    subtotal: 0,
+    total: 0,
+    //productsByIngredient,
   };
 }

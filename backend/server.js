@@ -44,10 +44,6 @@ await fastify.register(import("./routes/product.js"), {
   prefix: "/api/product",
 });
 
-await fastify.register(import("./routes/checkout.js"), {
-  prefix: "/api/checkout",
-});
-
 await fastify.register(import("./routes/order.js"), {
   prefix: "/api/order",
 });
