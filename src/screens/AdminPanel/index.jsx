@@ -70,7 +70,7 @@ export const AdminPanel = () => {
                 <td>{orden.status}</td>
                 <td className='myEspecial-td'>
                   {
-                    orden.status === "2" ?
+                    orden.status === 1 ?
                     <button className='option elevation-1' onClick={() => handlePagar(orden._id)}>Pagar</button>   : 
                     "Sin opciones disponibles"
 
