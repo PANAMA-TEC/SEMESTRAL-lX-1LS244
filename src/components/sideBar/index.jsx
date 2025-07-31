@@ -16,7 +16,7 @@ export const SideBar = () => {
     const cargarCarrito = async () => {
       if (!user?.usuario?.id) return;
 
-      const response = await API_Services(`${API_Carrito}/${user.usuario.id}`);
+      const response = await API_Services(`${API_Carrito}/${user.id}`);
       if (response?.cartItems?.items) {
         setCarrito(response.cartItems.items);
 
@@ -36,7 +36,7 @@ export const SideBar = () => {
       total: subtotal // puedes agregar impuestos si quieres
     };
 
-    const response = await API_Services(`${API_Orden}/${user.usuario.id}`, "POST", DATA);
+    const response = await API_Services(`${API_Orden}/${user.id}`, "POST", DATA);
     if (response.status === "success") Navigate("/user_panel");
   };
 

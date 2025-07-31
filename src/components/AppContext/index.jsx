@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from 'react-router-dom';
-import { useLocalStorage } from "../../hooks/useLocalStorage";
+
 
 const AppContext = React.createContext();
 
@@ -14,6 +14,7 @@ const AppProvider =( {children} )=> {
     
 
    const API_Services = async (URL, method = 'GET', body = null) => {
+        
         try {
             const options = {
                 method,
@@ -27,12 +28,14 @@ const AppProvider =( {children} )=> {
             const response = await fetch(URL, options);
             const data = await response.json();
             return data;
+
         } catch (error) {
+
             console.error('Error:', error);
             return null;
         }
-    };
 
+    };
 
     const localStorageManager = {
        
@@ -63,9 +66,6 @@ const AppProvider =( {children} )=> {
         }
     };
     
-
-    
-
     return(
         
         <AppContext.Provider value={{ openModal, setOpenModal, setUser, user, API_Services, Navigate, localStorageManager } }>
