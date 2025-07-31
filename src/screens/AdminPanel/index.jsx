@@ -13,34 +13,32 @@ export const AdminPanel = () => {
   const { API_Services, user, Navigate } = useContext(AppContext);
   const API_Orden = "http://localhost:3000/api/order";
 
-  useEffect(() => {
-    const init = async ()  => {
-      
-      
-      if ( !user ){
-        Navigate("./");
-        return
-      }
-      
-      let response = await API_Services(`${ API_Orden }\\${ user.usuario.id }`, "GET", {});
-      response = response.data;
-      setOrdenes(response);
-      
-      
-
-    
-    } 
-
-    init();
-    
-  }, []);
   
+  useEffect(() => {
+    if (!user ) {
+      Navigate('/login');
+      return;
+    }
+
+    const fetchOrdenes = async () => {
+      try {
+        const response = await API_Services(`${API_Orden}/${user.usuario.id}`, "GET", {});
+        setOrdenes(response.data);
+      } catch (error) {
+        // Manejar error si es necesario
+      }
+    };
+
+    fetchOrdenes();
+  }, []);
+   
   return (
-    
     <div className="AdminPanel">
+
+      
       <div className='contenedor-tabla'>
 
-        <div className='title'> Area de ordenes <b> { user.usuario.email } </b> </div>
+        <div className='title'> Area de ordenes <b> { user ? user.usuario.email : "" } </b> </div>
 
         <table className="tabla-recetas">
           
@@ -51,9 +49,7 @@ export const AdminPanel = () => {
               <th>Total</th>
               <th>Status</th>
               {
-                user.usuario.rol == 'admin' ?
-                <th>Opciones</th> : ""
-
+                user ? user.usuario.rol == 'admin' ? <th>Opciones</th> : "" : ""
               }
             </tr>
           </thead>
@@ -64,13 +60,12 @@ export const AdminPanel = () => {
                 <td>{orden.subtotal}</td>
                 <td>{orden.total}</td>
                 <td>{orden.status}</td>
+                
                 {
-                user.usuario.rol == 'admin' ?
-                <td>
-                  <button>Ver</button>
-                </td> : ""
 
-              }
+                  user ? user.usuario.rol == 'admin' ? <td> <button>Ver</button>  </td>  : "" : ""
+              
+                }
                 
                 
               </tr>
