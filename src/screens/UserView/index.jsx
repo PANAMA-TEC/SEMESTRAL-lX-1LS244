@@ -88,3 +88,5 @@ const UserView = () => {
 };
 
 export { UserView };
+
+// ${element.title.replaceAll(" ", "_").toLowerCase()}.png
