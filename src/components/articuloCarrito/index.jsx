@@ -1,33 +1,26 @@
 import './index.css';
 import React from 'react';
-import recetas_prototype from '../../assets/recetas_prototype.png';
 
-export const ArticuloCarrito = ( { data }) => {
-
-
-  data = {
-    disponibilidad: 0,
-    nombre: "Nombre por defecto",
-    descripcion_corta: "Receta: Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  }
+export const ArticuloCarrito = ({ data }) => {
+  const totalProducto = (data?.price || 0) * (data?.quantity || 1);
 
   return (
-    <div className='ArticuloCarrito elevation-1' >
+    <div className='ArticuloCarrito elevation-1'>
       <div className='left'></div>
-     
       <div className='right'>
-       
-        <h4>
-          { data.nombre }
-        </h4>
-       
+        <h4>{data?.name || "Producto sin nombre"}</h4>
+
         <p>
-         { data.descripcion_corta }
+          Unidad: {data?.unit || "-"} <br />
+          Cantidad: {data?.quantity || 1} <br />
+          Precio unitario: ${data?.price?.toFixed(2) || "0.00"} <br />
+          <strong>Total: ${totalProducto.toFixed(2)}</strong>
         </p>
 
-        <div className='options'> <label> - </label> { data.disponibilidad } <label> + </label> </div>
-
-      </div>  
+        <div className='options'>
+          <label>-</label> {data?.quantity || 1} <label>+</label>
+        </div>
+      </div>
     </div>
   );
 };

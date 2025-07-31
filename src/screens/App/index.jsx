@@ -11,9 +11,21 @@ import { SideBar } from '../../components/sideBar';
 import { NavBar } from '../../components/navBar';
 import logo_nav from "../../assets/image.png";
 
+
 const App = () =>{
 
-  const { openModal } = React.useContext(AppContext);  
+  const { openModal, localStorageManager, setUser } = React.useContext(AppContext);  
+
+  React.useEffect(() => {
+    const user = localStorageManager.getItem("user");
+    
+    if (user) {
+      setUser(JSON.parse(user));
+    } else {
+      setUser(null);
+    }
+    
+  }, []);
 
   return(
 
