@@ -4,16 +4,27 @@
   align-items: center;
 
   width: 100vw;
+  padding-top: 40px;
+  padding-bottom: 40px;
   /* border-style: solid; */
- 
  
 }
 
 .AdminPanel .contenedor-tabla {
+  display: flex;
+  gap: 40px;
+  flex-direction: column;
   margin-top: 20px;
   width: 70%;
   /* border-style: solid; */
   
+}
+
+.AdminPanel .contenedor-tabla .title{
+  font-size: 32px;
+  padding-bottom: 20px;
+  border-style: none none solid none;
+  margin-bottom: 20px;
 }
 
 .AdminPanel .contenedor-opciones {

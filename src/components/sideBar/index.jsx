@@ -49,6 +49,7 @@ export const SideBar = () => {
   }
 
   return (
+    
     <div className="SideBar">
 
       <div className='top'>

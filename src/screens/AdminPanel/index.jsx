@@ -25,7 +25,7 @@ export const AdminPanel = () => {
       let response = await API_Services(`${ API_Orden }\\${ user.usuario.id }`, "GET", {});
       response = response.data;
       setOrdenes(response);
-      console.log(response);
+      
       
 
     
@@ -36,16 +36,25 @@ export const AdminPanel = () => {
   }, []);
   
   return (
+    
     <div className="AdminPanel">
       <div className='contenedor-tabla'>
+
+        <div className='title'> Area de ordenes <b> { user.usuario.email } </b> </div>
+
         <table className="tabla-recetas">
+          
           <thead>
             <tr>
               <th>OrderID</th>
               <th>Subtotal</th>
               <th>Total</th>
               <th>Status</th>
-              <th>Opciones</th>
+              {
+                user.usuario.rol == 'admin' ?
+                <th>Opciones</th> : ""
+
+              }
             </tr>
           </thead>
           <tbody>
@@ -55,16 +64,23 @@ export const AdminPanel = () => {
                 <td>{orden.subtotal}</td>
                 <td>{orden.total}</td>
                 <td>{orden.status}</td>
+                {
+                user.usuario.rol == 'admin' ?
                 <td>
-                  {/* Aquí puedes agregar botones u opciones, por ejemplo: */}
                   <button>Ver</button>
-                </td>
+                </td> : ""
+
+              }
+                
+                
               </tr>
             ))}
           </tbody>
+
         </table>
       </div>
     </div>
+
   );
 
 };
