@@ -56,7 +56,7 @@ const UserView = () => {
         />
       </div>
 
-{searchTerm.trim() === "" && (
+{searchTerm.trim() === "" ? (
   <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
     {categoriasUnicas.map((categoria, index) => (
       <CardCategories
@@ -68,6 +68,17 @@ const UserView = () => {
       />
     ))}
   </CardContent>
+) : (
+  categoriaSeleccionada && (
+    <CardContent titulo="Categoría seleccionada" propiedad1="Filtrando por" overflow="true">
+      <CardCategories
+        image={recipe_category}
+        titulo={categoriaSeleccionada}
+        onClick={handleCategoriaClick}
+        activa={true}
+      />
+    </CardContent>
+  )
 )}
 
       <CardContent titulo="Recetas" propiedad1="Propiedad 1">
