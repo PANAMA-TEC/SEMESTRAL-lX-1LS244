@@ -2,8 +2,52 @@ import './index.css';
 import React from 'react';
 import recetas_prototype from '../../assets/recetas_prototype.png';
 import { ArticuloCarrito } from '../articuloCarrito';
+import { useContext } from 'react';
+import { AppContext } from '../AppContext';
 
 export const SideBar = () => {
+
+  const {API_Services, user, Navigate } = useContext( AppContext);
+  const API_Orden = "http://localhost:3000/api/order";
+  let response = "";
+  
+  const handle_Ordenar = async ( DATA ) => {
+   
+    DATA = {
+      "items": [
+          {
+              "ingredient": "688678f9b915b81d47fee309",
+              "name": "tomate",
+              "unit": "kg",
+              "quantity":30,
+              "price": 0
+          },
+          {
+              "ingredient": "688678f9b915b81d47fee312",
+              "name": "leche",
+              "unit": "l",
+              "quantity": 2,
+              "price": 0
+          },
+          {
+              "ingredient": "688678f9b915b81d47fee319",
+              "name": "pasta",
+              "unit": "kg",
+              "quantity": 2,
+              "price": 0
+
+          }
+      ],
+      "subtotal": 0.00,
+      "total": 0.00
+    }
+
+    response = await API_Services( `${API_Orden}/${user.usuario.id}`,"POST", DATA );
+    response.status == "success" ? Navigate("/user_panel") : ""
+
+
+  }
+
   return (
     <div className="SideBar">
 
@@ -44,7 +88,7 @@ export const SideBar = () => {
         
         </div>
 
-        <button className='button elevation-1'>
+        <button className='button elevation-1' onClick={() => user ? handle_Ordenar() : "" }>
           Terminar Compra
         </button>
 
@@ -56,4 +100,5 @@ export const SideBar = () => {
     </div>
 
   );
+
 };
