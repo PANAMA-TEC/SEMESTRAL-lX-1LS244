@@ -56,19 +56,30 @@ const UserView = () => {
         />
       </div>
 
-      <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
-        {
-          categoriasUnicas.map((categoria, index) => (
-            <CardCategories
-              key={index}
-              image={recipe_category}
-              titulo={categoria}
-              onClick={handleCategoriaClick}
-              activa={ categoria === categoriaSeleccionada }
-            />
-          ))
-        }
-      </CardContent>
+{searchTerm.trim() === "" ? (
+  <CardContent titulo="Categorías" propiedad1="Propiedad 1" overflow="true">
+    {categoriasUnicas.map((categoria, index) => (
+      <CardCategories
+        key={index}
+        image={recipe_category}
+        titulo={categoria}
+        onClick={handleCategoriaClick}
+        activa={categoria === categoriaSeleccionada}
+      />
+    ))}
+  </CardContent>
+) : (
+  categoriaSeleccionada && (
+    <CardContent titulo="Categoría seleccionada" propiedad1="Filtrando por" overflow="true">
+      <CardCategories
+        image={recipe_category}
+        titulo={categoriaSeleccionada}
+        onClick={handleCategoriaClick}
+        activa={true}
+      />
+    </CardContent>
+  )
+)}
 
       <CardContent titulo="Recetas" propiedad1="Propiedad 1">
         {recetasFiltradas.map((element, index) => (
