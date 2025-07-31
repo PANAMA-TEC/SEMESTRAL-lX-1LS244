@@ -13,8 +13,8 @@ export const NavBar = ({ logo, links }) => {
   links = links || [
     
     { name: 'Inicio', action: (option) => handleButtonClick('./'), className: "nav-bar-button" },
-    { name: 'Crear', action: () => handleButtonClick('/'), className: "nav-bar-button" },
-    { name: 'Admin',  action: () => handleButtonClick('/admin'), className: "nav-bar-button" },
+    // { name: 'Crear', action: () => handleButtonClick('/'), className: "nav-bar-button" },
+    { name: 'Ordenes',  action: () => handleButtonClick('/user_panel'), className: "nav-bar-button" },
     { name: `${ user ? 'Cerrar Sesión' : 'Iniciar sesion' }`, action: user ? () => setUser(null) : () => handleButtonClick('/login') , className: ` ${ user ? "nav-bar-button logged" : "nav-bar-button no-logged" }` }
   
   ]
@@ -42,7 +42,6 @@ export const NavBar = ({ logo, links }) => {
         <div className="nav-bar-links">
         
           {
-            
               links.map( (element, index) => (
                 <button className={ element.className } to={element.href} onClick={ element.action } key={index} >
                   { element.name }
