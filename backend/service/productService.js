@@ -30,10 +30,14 @@ export async function getCartItemsbyUserID(userID) {
   if (!isValidObjectId(userID)) {
     throw new Error("ID de usuario inválido");
   }
-
   const cart = await Cart.findOne({ userID }).lean();
+
   if (!cart?.items || cart.items.length === 0) {
-    throw new Error("Carrito vacío o no encontrado");
+    return {
+      status: "empty",
+      message: "El carrito está vacío",
+      cartItems: [],
+    };
   }
 
   const recipeIds = cart.items.map((item) => item.recipe);
@@ -56,14 +60,14 @@ export async function getCartItemsbyUserID(userID) {
 
   const ingredients = await Ingredient.find({
     _id: { $in: uniqueIngredientIds },
-  }).select("name unit");
+  }).select("name unit price");
 
   const items = ingredients.map((ing) => ({
     ingredient: ing._id.toString(),
     name: ing.name,
     unit: ing.unit,
     quantity: counts[ing._id.toString()] || 0,
-    price: 0,
+    price: ing.price,
   }));
 
   const products = await Product.find({

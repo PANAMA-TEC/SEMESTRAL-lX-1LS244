@@ -22,8 +22,8 @@ export async function createStripeSession(req, reply) {
       },
       quantity: item.quantity,
     })),
-    success_url: `http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}`,
-    cancel_url: `http://localhost:3000/cancel`,
+    success_url: `http://localhost:5173/user_panel?session_id={CHECKOUT_SESSION_ID}`,
+    cancel_url: `http://localhost:5173/user_panel`,
     metadata: {
       orderId: order._id.toString(),
     },
@@ -42,7 +42,7 @@ export async function handleStripeSuccess(req, reply) {
 
     if (session.payment_status === "paid") {
       const orderId = session.metadata.orderId;
-      await Order.findByIdAndUpdate(orderId, { status: "pagado" });
+      await Order.findByIdAndUpdate(orderId, { status: 2 });
 
       return reply.send({ status: "updated", orderId });
     } else {

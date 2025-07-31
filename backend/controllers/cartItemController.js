@@ -47,9 +47,8 @@ export const addToCart = async (request, reply) => {
 };
 
 export const getCart = async (request, reply) => {
+  const { userID } = request.params;
   try {
-    const { userID } = request.params;
-
     if (!isValidObjectId(userID)) {
       return reply
         .code(400)
@@ -57,6 +56,13 @@ export const getCart = async (request, reply) => {
     }
     const cartItems = await getCartItemsbyUserID(userID);
 
+    if (!cartItems || cartItems.length === 0) {
+      return reply.code(200).send({
+        status: "empty",
+        message: "El carrito está vacío",
+        cartItems: [],
+      });
+    }
     return reply.code(200).send({
       status: "success",
       cartItems,

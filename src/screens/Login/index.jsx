@@ -18,7 +18,7 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
 
-  const { setUser, user } = React.useContext(AppContext);  
+  const { setUser, user, localStorageManager, Navigate } = React.useContext(AppContext);  
 
   const handle_Login = async (data) => {
     
@@ -30,11 +30,18 @@ const Login = () => {
 
     let response = await API_Services(API_Login_URL,'POST', data );
 
-    response.status == 'success' ? setUser(await response ) : setUser(null);
+    if ( response.status == 'success' ) {
+      
+      setUser( await response.usuario );
+      localStorageManager.setItem("user", JSON.stringify(response.usuario) );
+      Navigate('/');
+      
+    } else {
 
-    // console.log(await response);
+      setUser(null);
     
-  
+    } 
+    
   }
 
    const handle_Register = async (data) => {

@@ -37,9 +37,8 @@ const orderSchema = new Schema(
       type: Number,
     },
     status: {
-      type: String,
-      enum: ["pendiente", "pagado", "cancelado"],
-      default: "pendiente",
+      type: Number,
+      default: 1,
     },
   },
   {

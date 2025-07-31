@@ -11,36 +11,42 @@ import { SideBar } from '../../components/sideBar';
 import { NavBar } from '../../components/navBar';
 import logo_nav from "../../assets/image.png";
 
+
 const App = () =>{
 
-  const { openModal } = React.useContext(AppContext);  
+  const { openModal, localStorageManager, setUser } = React.useContext(AppContext);  
+
+  React.useEffect(() => {
+    const user = localStorageManager.getItem("user");
+    
+    if (user) {
+      setUser(JSON.parse(user));
+    } else {
+      setUser(null);
+    }
+    
+  }, []);
 
   return(
 
-    
-    
-      <div className='App'>  
+    <div className='App'>  
 
-        <NavBar logo={logo_nav}/>
-        
-        <Routes>
-          <Route path="/" element={ <UserView/> } />
-          <Route path="/login" element={<Login/>} />
-          <Route path="/detail_recipe" element={<DetailRecipe/>} />
-          <Route path="/admin" element={<AdminPanel/>} />
-        </Routes>
+      <NavBar logo={logo_nav}/> 
+      
+      <Routes>
+        <Route path="/" element={ <UserView/> } />
+        <Route path="/login" element={<Login/>} />
+        <Route path="/detail_recipe" element={<DetailRecipe/>} />
+        <Route path="/user_panel" element={<AdminPanel/>} />
+      </Routes>
 
-        { openModal ? <Modal> 
-          <SideBar/>
-        </Modal> : ""  }
+      { 
+        openModal ?  <Modal> <SideBar/> </Modal> : "" 
+      }
 
-        
-       
+    </div>   
 
-
-      </div>   
-
-    )
+  )
 }
 
 export default App;
