@@ -9,7 +9,8 @@ export const CardRecipes = ({
     description = "Esto es una descripcion por defecto", 
     category = "other",
     time = "60",
-    id
+    id,
+    imageUrl
 }) => { 
   
   const navigate = useNavigate();
@@ -21,7 +22,7 @@ export const CardRecipes = ({
   return (
     <div className="card-recipe elevation-1">
      
-      <img className="image elevation-1" alt="Img" src={recetas_prototype}/>
+      <img className="image elevation-1" alt="Img" src={imageUrl}/>
       
       <div className="body">
         <div className="titulo-de-card">{tittle}</div>
