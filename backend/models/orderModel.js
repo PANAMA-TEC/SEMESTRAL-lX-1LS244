@@ -6,7 +6,6 @@ const orderSchema = new Schema(
     userID: {
       type: Schema.Types.ObjectId,
       ref: "User",
-      required: true,
     },
     items: [
       {
@@ -24,7 +23,6 @@ const orderSchema = new Schema(
         },
         price: {
           type: Number,
-          required: true,
         },
       },
     ],
@@ -33,11 +31,9 @@ const orderSchema = new Schema(
     },
     total: {
       type: Number,
-      required: true,
     },
     status: {
       type: String,
-      required: true,
       enum: ["pendiente", "pagado", "cancelado"],
       default: "pendiente",
     },
