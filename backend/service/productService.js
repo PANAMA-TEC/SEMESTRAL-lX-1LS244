@@ -56,14 +56,14 @@ export async function getCartItemsbyUserID(userID) {
 
   const ingredients = await Ingredient.find({
     _id: { $in: uniqueIngredientIds },
-  }).select("name unit");
+  }).select("name unit price");
 
   const items = ingredients.map((ing) => ({
     ingredient: ing._id.toString(),
     name: ing.name,
     unit: ing.unit,
     quantity: counts[ing._id.toString()] || 0,
-    price: 0,
+    price: ing.price,
   }));
 
   const products = await Product.find({
