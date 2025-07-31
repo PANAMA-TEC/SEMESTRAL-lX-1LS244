@@ -17,6 +17,10 @@ const orderSchema = new Schema(
           type: Schema.Types.ObjectId,
           ref: "Ingredient",
         },
+        name: {
+          type: String,
+        },
+
         quantity: {
           type: Number,
           required: true,
