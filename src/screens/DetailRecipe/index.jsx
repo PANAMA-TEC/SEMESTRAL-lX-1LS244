@@ -108,13 +108,29 @@ export const DetailRecipe = () => {
           <div className='lista-ingredientes'>
             <h3>Ingredientes</h3>
             <CardList ingredients={recetas.ingredients} />
-            <button 
-              className="submit_formulario" 
-              type="button" 
-              onClick={handleComprarIngredientes}
-            >
-              Comprar Ingredientes
-            </button>
+
+
+            
+{user ? (
+  <button 
+    className="submit_formulario" 
+    type="button" 
+    onClick={handleComprarIngredientes}
+  >
+    Comprar Ingredientes
+  </button>
+) : (
+  <button 
+    className="submit_formulario" 
+    type="button" 
+    onClick={() => window.location.href = "/login"}
+  >
+    Iniciar sesión para comprar ingredientes
+  </button>
+)}  
+
+
+            
           </div>
         </div>
       </div>
