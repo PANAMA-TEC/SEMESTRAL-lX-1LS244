@@ -18,7 +18,7 @@ export const ArticuloCarrito = ({ data }) => {
         </p>
 
         <div className='options'>
-          <label>-</label> {data?.quantity || 1} <label>+</label>
+          <label>Cantidad:</label> {data?.quantity || 1}
         </div>
       </div>
     </div>
