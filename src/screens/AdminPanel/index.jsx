@@ -6,6 +6,8 @@ import { AppContext } from '../../components/AppContext';
 import { useEffect } from 'react';
 import { useState } from 'react';
 
+const API_Pagar = "http://localhost:3000/api/payment/checkout";
+
 
 export const AdminPanel = () => {
 
@@ -13,7 +15,15 @@ export const AdminPanel = () => {
   const { API_Services, user, Navigate } = useContext(AppContext);
   const API_Orden = "http://localhost:3000/api/order";
 
-  
+  const handlePagar = async (id) => {
+    
+    const response = await API_Services(`${API_Pagar}/${id}`, "POST", {});
+    window.location.href = response.url;
+      
+      
+    
+  };
+
   useEffect(() => {
     if (!user ) {
       Navigate('/login');
@@ -48,9 +58,7 @@ export const AdminPanel = () => {
               <th>Subtotal</th>
               <th>Total</th>
               <th>Status</th>
-              {
-                user ? user.usuario.rol == 'admin' ? <th>Opciones</th> : "" : ""
-              }
+              <th>Opciones</th>
             </tr>
           </thead>
           <tbody>
@@ -60,14 +68,15 @@ export const AdminPanel = () => {
                 <td>{orden.subtotal}</td>
                 <td>{orden.total}</td>
                 <td>{orden.status}</td>
-                
-                {
+                <td className='myEspecial-td'>
+                  {
+                    orden.status === "2" ?
+                    <button className='option elevation-1' onClick={() => handlePagar(orden._id)}>Pagar</button>   : 
+                    "Sin opciones disponibles"
 
-                  user ? user.usuario.rol == 'admin' ? <td> <button>Ver</button>  </td>  : "" : ""
-              
-                }
-                
-                
+                  }
+                </td>
+
               </tr>
             ))}
           </tbody>
