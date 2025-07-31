@@ -79,7 +79,7 @@ export const AdminPanel = () => {
       if (sessionId) {
         // Aquí puedes manejar la lógica si session_id está presente en el URL
         const response = await API_Services(`${API_Success}/${sessionId}`, "POST", {})
-        sessionId ? fetchOrdenes() : null;
+        sessionId ?  window.location.href = "./user_panel" : null;
         return;
 
             console.log(sessionId);
@@ -104,8 +104,6 @@ export const AdminPanel = () => {
 
   return (
     <div className="AdminPanel">
-
-      
       <div className='contenedor-tabla'>
 
         <div className='title'> Area de ordenes <b> { user ? user.email : "" } </b> </div>
