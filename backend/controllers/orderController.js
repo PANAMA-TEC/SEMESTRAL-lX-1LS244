@@ -1,4 +1,5 @@
 import Order from "../models/orderModel.js";
+import { deleteCartItemByUserId } from "../service/cartItemService.js";
 
 export async function getOrder(request, reply) {
   const { userID } = request.params;
@@ -31,6 +32,7 @@ export async function createOrder(request, reply) {
   }
   try {
     const order = await Order.create({ userID, items, total, subtotal });
+    await deleteCartItemByUserId(userID);
     return reply.code(200).send({ status: "success", data: order });
   } catch (error) {
     console.error("Error al crear la orden:", error);

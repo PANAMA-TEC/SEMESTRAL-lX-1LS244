@@ -30,10 +30,14 @@ export async function getCartItemsbyUserID(userID) {
   if (!isValidObjectId(userID)) {
     throw new Error("ID de usuario inválido");
   }
-
   const cart = await Cart.findOne({ userID }).lean();
+
   if (!cart?.items || cart.items.length === 0) {
-    throw new Error("Carrito vacío o no encontrado");
+    return {
+      status: "empty",
+      message: "El carrito está vacío",
+      cartItems: [],
+    };
   }
 
   const recipeIds = cart.items.map((item) => item.recipe);
