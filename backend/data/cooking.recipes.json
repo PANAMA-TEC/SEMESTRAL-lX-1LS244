@@ -7,20 +7,19 @@
   "category": "desayuno",
   "ingredients": [
     {
-      "ingredient": null,
+      "ingredient": "688a9ef645fbf7893165e598",
       "name": "Avena",
       "quantity": 1,
       "unit": null
     },
     {
-      
       "ingredient": "688678f9b915b81d47fee312",
       "name": "leche",
       "quantity": 1,
       "unit": "l"
     },
     {
-      "ingredient": "64c1e5aab1234c5d6e7f8a01",
+      "ingredient": "688a9ef645fbf7893165e599",
       "name": "platano",
       "quantity": 1,
       "unit": "unidad"
@@ -38,7 +37,8 @@
   ],
   "time": 15,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -49,7 +49,7 @@
   "category": "almuerzo",
   "ingredients": [
     {
-      "ingredient": "64c1e5fab234c5d6e7f8a012",
+      "ingredient": "688a9ef645fbf7893165e59a",
       "name": "lechuga",
       "quantity": 1,
       "unit": "unidad",
@@ -62,7 +62,7 @@
       "unit": "kg"
     },
     {
-      "ingredient": "64c1e623c456c5d6e7f8a014",
+      "ingredient": "688a9ef645fbf7893165e59b",
       "name": "pepino",
       "quantity": 1,
       "unit": "unidad",
@@ -85,7 +85,8 @@
   ],
   "time": 20,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -103,14 +104,14 @@
       "availableAsProduct": false
     },
     {
-      "ingredient": "64c1e645e678c5d6e7f8a016",
+      "ingredient": "688678f9b915b81d47fee323",
       "name": "albahaca",
       "quantity": 20,
       "unit": "g",
       "availableAsProduct": false
     },
     {
-      "ingredient": "64c1e656f789c5d6e7f8a017",
+      "ingredient": "688678f9b915b81d47fee30d",
       "name": "aceite de oliva",
       "quantity": 0.1,
       "unit": "l",
@@ -124,7 +125,7 @@
       "availableAsProduct": true
     },
     {
-      "ingredient": "688678f9b915b81d47fee30d",
+      "ingredient": "688a9ef645fbf7893165e59d",
       "name": "ajo",
       "quantity": 2,
       "unit": "dientes",
@@ -147,7 +148,8 @@
   ],
   "time": 25,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -164,7 +166,7 @@
       "unit": "unidad"
     },
     {
-      "ingredient": "64c1e69aj123c5d6e7f8a01B",
+      "ingredient": "688a9ef645fbf7893165e59c",
       "name": "aguacate",
       "quantity": 1,
       "unit": "unidad"
@@ -192,7 +194,8 @@
   ],
   "time": 10,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -203,25 +206,25 @@
   "category": "desayuno",
   "ingredients": [
     {
-      "ingredient": "64c1e5aab1234c5d6e7f8a01",
+      "ingredient": "688a9ef645fbf7893165e599",
       "name": "platano",
       "quantity": 1,
       "unit": "unidad"
     },
     {
-      "ingredient": null,
+      "ingredient": "688678f9b915b81d47fee31f",
       "name": "miel",
       "quantity": 1,
       "unit": null
     },
     {
-      "ingredient": "68866ff9b915b81d47fee2db",
+      "ingredient": "688678f9b915b81d47fee312",
       "name": "leche",
       "quantity": 0.5,
       "unit": "l"
     },
     {
-      "ingredient": null,
+      "ingredient": "688a9ef645fbf7893165e598",
       "name": "avena",
       "quantity": 0.25,
       "unit": null
@@ -235,7 +238,8 @@
   ],
   "time": 5,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -246,7 +250,7 @@
   "category": "almuerzo",
   "ingredients": [
     {
-      "ingredient": "64c1e69aj123c5d6e7f8a01B",
+      "ingredient": "688a9ef645fbf7893165e59c",
       "name": "aguacate",
       "quantity": 2,
       "unit": "unidad"
@@ -258,13 +262,13 @@
       "unit": "kg"
     },
     {
-      "ingredient": "688678f9b915b81d47fee319",
+      "ingredient": "688678f9b915b81d47fee30a",
       "name": "cebolla",
       "quantity": 0.5,
       "unit": "kg"
     },
     {
-      "ingredient": "64c1e656f789c5d6e7f8a017",
+      "ingredient": "688678f9b915b81d47fee30d",
       "name": "aceite de oliva",
       "quantity": 0.05,
       "unit": "l"
@@ -286,7 +290,8 @@
   ],
   "time": 15,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -297,19 +302,19 @@
   "category": "desayuno",
   "ingredients": [
     {
-      "ingredient": null,
+      "ingredient": "688a9ef645fbf7893165e59e",
       "name": "fresas",
       "quantity": 200,
       "unit": "g"
     },
     {
-      "ingredient": "64c1e5fab234c5d6e7f8a012",
+      "ingredient": "688678f9b915b81d47fee31d",
       "name": "yogurt",
       "quantity": 0.2,
       "unit": "l"
     },
     {
-      "ingredient": "68866ff9b915b81d47fee2db",
+      "ingredient": "688678f9b915b81d47fee312",
       "name": "leche",
       "quantity": 0.3,
       "unit": "l"
@@ -323,7 +328,8 @@
   ],
   "time": 10,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -340,7 +346,7 @@
       "unit": "kg"
     },
     {
-      "ingredient": "688678f9b915b81d47fee319",
+      "ingredient": "688678f9b915b81d47fee30a",
       "name": "cebolla",
       "quantity": 1,
       "unit": "kg"
@@ -358,7 +364,8 @@
   ],
   "time": 30,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -369,7 +376,7 @@
   "category": "almuerzo",
   "ingredients": [
     {
-      "ingredient": "64c1e6bcd012c5d6e7f8a01D",
+      "ingredient": "688a9ef645fbf7893165e59f",
       "name": "pollo",
       "quantity": 0.5,
       "unit": "kg"
@@ -381,13 +388,13 @@
       "unit": "kg"
     },
     {
-      "ingredient": "688678f9b915b81d47fee319",
+      "ingredient": "688678f9b915b81d47fee30a",
       "name": "cebolla",
       "quantity": 0.5,
       "unit": "kg"
     },
     {
-      "ingredient": "64c1e623c456c5d6e7f8a014",
+      "ingredient": "688a9ef645fbf7893165e59b",
       "name": "pepino",
       "quantity": 0.25,
       "unit": "unidad"
@@ -409,7 +416,8 @@
   ],
   "time": 25,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
-  "published": true
+  "published": true,
+  "imageUrl": "http://localhost:3000/uploads/"
 },
 {
   "_id": {
@@ -420,9 +428,7 @@
   "category": "desayuno",
   "ingredients": [
     {
-      "ingredient": {
-        "$oid": "688680e540cc0473fb982010"
-      },
+      "ingredient": "688680e540cc0473fb982010",
       "name": "oregano",
       "quantity": 5,
       "unit": "g",
@@ -454,5 +460,6 @@
   },
   "updatedAt": {
     "$date": "2025-07-27T20:17:22.917Z"
-  }
+  },
+  "imageUrl": "http://localhost:3000/uploads/"
 }]

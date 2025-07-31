@@ -22,6 +22,12 @@ const ingredientSchema = new Schema(
       type: Boolean,
       default: false,
     },
+
+    price: {
+      type: Number,
+      default: 0,
+      min: 0,
+    },
   },
   {
     timestamps: true,
