@@ -38,7 +38,7 @@
   "time": 15,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/panqueques_de_avena.png"
 },
 {
   "_id": {
@@ -86,7 +86,7 @@
   "time": 20,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/ensalada-verde-recipe.jpg"
 },
 {
   "_id": {
@@ -149,7 +149,7 @@
   "time": 25,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/images.jpeg"
 },
 {
   "_id": {
@@ -195,7 +195,7 @@
   "time": 10,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/tostada-aguagate.jpeg"
 },
 {
   "_id": {
@@ -239,7 +239,7 @@
   "time": 5,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/707_108.jpg"
 },
 {
   "_id": {
@@ -291,7 +291,7 @@
   "time": 15,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/Guacamole_650x433_wm.jpg"
 },
 {
   "_id": {
@@ -329,7 +329,7 @@
   "time": 10,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/smoothie_de_frutos_rojos.png"
 },
 {
   "_id": {
@@ -365,7 +365,7 @@
   "time": 30,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/panqueques_de_avena.png"
+  "imageUrl": "http://localhost:3000/uploads/sopaTomate.jpeg"
 },
 {
   "_id": {
@@ -417,7 +417,7 @@
   "time": 25,
   "autor": "64c1f0ea0b5e3d6f2a9b0002",
   "published": true,
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/777-scaled.jpg"
 },
 {
   "_id": {
@@ -461,5 +461,5 @@
   "updatedAt": {
     "$date": "2025-07-27T20:17:22.917Z"
   },
-  "imageUrl": "http://localhost:3000/uploads/"
+  "imageUrl": "http://localhost:3000/uploads/pan-frito-oregano.jpg"
 }]

@@ -73,7 +73,7 @@ export const DetailRecipe = () => {
     <div className='DetailRecipe'>
       <div className='top-container elevation-1'>
         <div className='receta elevation-1'>
-          <img className='imagen-receta elevation-1' src={exampleImage} alt="Imagen Receta" />
+          <img className='imagen-receta elevation-1' src={recetas.imageUrl} alt="Imagen Receta" />
           <div className='detalles-receta'>
             <div className='top'>
               <h2>{recetas.title}</h2>
