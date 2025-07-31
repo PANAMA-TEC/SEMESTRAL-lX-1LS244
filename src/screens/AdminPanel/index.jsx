@@ -1,83 +1,72 @@
 import './index.css';
 import { NavBar } from '../../components/navBar';
 import logo_nav from '../../assets/image.png';
+import { useContext } from 'react';
+import { AppContext } from '../../components/AppContext';
+import { useEffect } from 'react';
+import { useState } from 'react';
 
 
 export const AdminPanel = () => {
-  
-  const recetas = [
-    {
-      id: 1,
-      nombre: "Spaghetti Bolognese",
-      autor: "Juan Pérez",
-      fecha: "2025-07-23",
-      ingredientes: "5"
-    },
-    {
-      id: 2,
-      nombre: "Tortilla Española",
-      autor: "Ana Gómez",
-      fecha: "2025-07-22",
-      ingredientes: "8"
-    }
-  ];
 
-  return (
+  const [ ordenes , setOrdenes ] = useState([])
+  const { API_Services, user, Navigate } = useContext(AppContext);
+  const API_Orden = "http://localhost:3000/api/order";
+
+  useEffect(() => {
+    const init = async ()  => {
+      
+      
+      if ( !user ){
+        Navigate("./");
+        return
+      }
+      
+      let response = await API_Services(`${ API_Orden }\\${ user.usuario.id }`, "GET", {});
+      response = response.data;
+      setOrdenes(response);
+      console.log(response);
+      
+
     
+    } 
+
+    init();
+    
+  }, []);
+  
+  return (
     <div className="AdminPanel">
       <div className='contenedor-tabla'>
-
-        
-        <div className='contenedor-opciones'>
-
-          <button className="opciones">Crear Receta</button>
-          <button className="opciones">Crear Receta</button>
-          <button className="opciones">Crear Receta</button>
-          <button className="opciones">Crear Receta</button>
-          
-
-        </div>
         <table className="tabla-recetas">
           <thead>
             <tr>
-              <th>#</th>
-              <th>Nombre de la Receta</th>
-              <th>Autor</th>
-              <th>Fecha de Creación</th>
-              <th>Ingredientes</th>
-              <th>Acciones</th>
+              <th>OrderID</th>
+              <th>Subtotal</th>
+              <th>Total</th>
+              <th>Status</th>
+              <th>Opciones</th>
             </tr>
           </thead>
-          
           <tbody>
-            
-            { 
-
-              recetas.map((receta, index) => (
-                <tr key={receta.id}>
-                  <td>{index + 1}</td>
-                  <td>{receta.nombre}</td>
-                  <td>{receta.autor}</td>
-                  <td>{receta.fecha}</td>
-                  <td>{receta.ingredientes}</td>
-                  
-                  <td className='myEspecial-td'>
-                    <button className="opciones">Editar</button>
-                    <button className="opciones">Eliminar</button>
-                    <button className="opciones">Ver</button>
-                  </td>
-                </tr>
-              ))
-            
-            }
+            {ordenes && ordenes.map((orden) => (
+              <tr key={orden._id}>
+                <td>{orden._id}</td>
+                <td>{orden.subtotal}</td>
+                <td>{orden.total}</td>
+                <td>{orden.status}</td>
+                <td>
+                  {/* Aquí puedes agregar botones u opciones, por ejemplo: */}
+                  <button>Ver</button>
+                </td>
+              </tr>
+            ))}
           </tbody>
-          
         </table>
-
       </div>
-
     </div>
   );
+
 };
 
 
