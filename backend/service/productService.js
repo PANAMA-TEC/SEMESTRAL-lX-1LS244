@@ -1,4 +1,5 @@
 import Recipe from "../models/recipeModel.js";
+import Ingredient from "../models/ingredientModel.js";
 import Product from "../models/productModel.js";
 import Cart from "../models/cartItemModel.js";
 import { isValidObjectId } from "mongoose";
@@ -49,6 +50,10 @@ export async function getCheckoutSummary(userID) {
     ...new Set(allIngredientIds.map((id) => id.toString())),
   ];
 
+  const ingredientsDetails = await Ingredient.find({
+    _id: { $in: uniqueIngredientIds },
+  }).select("name unit");
+
   const products = await Product.find({
     ingredients: { $in: uniqueIngredientIds },
   }).populate("ingredients");
@@ -66,7 +71,7 @@ export async function getCheckoutSummary(userID) {
 
   return {
     recipes,
-    ingredientIds: uniqueIngredientIds,
+    ingredientsDetails,
     productsByIngredient,
   };
 }

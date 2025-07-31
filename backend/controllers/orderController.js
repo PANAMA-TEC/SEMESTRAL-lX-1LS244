@@ -9,7 +9,9 @@ export async function getOrder(request, reply) {
   }
 
   try {
-    const order = await Order.find({ userID }).lean();
+    const order = await Order.find({ userID })
+      .populate("items.ingredient")
+      .lean();
     return reply.code(200).send({ status: "success", data: order });
   } catch (error) {
     console.error("Error al obtener la order:", error);
@@ -22,7 +24,7 @@ export async function getOrder(request, reply) {
 export async function createOrder(request, reply) {
   const { userID } = request.params;
   const { items, total, subtotal } = request.body;
-  if (!userID || !items || !total || !subtotal) {
+  if (!userID || !items) {
     return reply
       .code(400)
       .send({ status: "error", error: "UserID is required" });
@@ -40,16 +42,16 @@ export async function createOrder(request, reply) {
 
 export async function updateOrder(request, reply) {
   const { orderID } = request.params;
-  const { items, total, status } = request.body;
+  const { items, total, subtotal, status } = request.body;
   if (!orderID || !items || !total || !status) {
     return reply
       .code(400)
-      .send({ status: "error", error: "OrderID is required" });
+      .send({ status: "error", error: "OrderID y items son requeridos" });
   }
   try {
     const order = await Order.findByIdAndUpdate(
       orderID,
-      { items, total, status },
+      { items, total, subtotal, status },
       { new: true }
     );
     return reply.code(200).send({ status: "success", data: order });

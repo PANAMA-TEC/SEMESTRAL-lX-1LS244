@@ -14,7 +14,6 @@
   "unit": "kg",
   "availableAsProduct": false
 },
-
 {
   "_id": {
     "$oid": "688678f9b915b81d47fee30c"
@@ -244,4 +243,68 @@
   "updatedAt": {
     "$date": "2025-07-27T20:14:56.404Z"
   }
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e598"
+  },
+  "name": "avena",
+  "unit": "kg",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e599"
+  },
+  "name": "platano",
+  "unit": "unidad",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e59a"
+  },
+  "name": "lechuga",
+  "unit": "unidad",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e59b"
+  },
+  "name": "pepino",
+  "unit": "unidad",
+  "availableAsProduct": false
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e59c"
+  },
+  "name": "aguacate",
+  "unit": "unidad",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e59d"
+  },
+  "name": "ajo",
+  "unit": "dientes",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e59e"
+  },
+  "name": "fresas",
+  "unit": "g",
+  "availableAsProduct": true
+},
+{
+  "_id": {
+    "$oid": "688a9ef645fbf7893165e59f"
+  },
+  "name": "pollo",
+  "unit": "kg",
+  "availableAsProduct": true
 }]

@@ -30,11 +30,10 @@ export default async function orderRoutes(fastify) {
     handler: createOrder,
   });
 
-  fastify.put("/:id", {
+  fastify.put("/:orderID", {
     schema: {
       tags: ["Order"],
       sumary: "Actualizar orden por ID",
-      body: OrderSchema,
       params: {
         type: "object",
         properties: {
