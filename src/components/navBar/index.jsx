@@ -15,12 +15,18 @@ export const NavBar = ({ logo, links }) => {
     { name: 'Inicio', action: (option) => handleButtonClick('./'), className: "nav-bar-button" },
     // { name: 'Crear', action: () => handleButtonClick('/'), className: "nav-bar-button" },
     { name: 'Ordenes',  action: () => handleButtonClick('/user_panel'), className: "nav-bar-button" },
-    { name: `${ user ? 'Cerrar Sesión' : 'Iniciar sesion' }`, action: user ? () => setUser(null) : () => handleButtonClick('/login') , className: ` ${ user ? "nav-bar-button logged" : "nav-bar-button no-logged" }` }
+    { name: `${ user ? 'Cerrar Sesión' : 'Iniciar sesion' }`, action: user ? () => handle_logout() : () => handleButtonClick('/login') , className: ` ${ user ? "nav-bar-button logged" : "nav-bar-button no-logged" }` }
   
   ]
 
   const handleButtonClick = (Link) => {
     navigate(Link);
+  }
+
+  const handle_logout = () => {
+    setUser(null);
+    localStorage.removeItem("user");
+    navigate('/');
   }
 
   React.useEffect(() => {
