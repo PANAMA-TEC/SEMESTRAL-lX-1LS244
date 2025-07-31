@@ -12,6 +12,7 @@ export const AdminPanel = () => {
   const [ ordenes , setOrdenes ] = useState([])
   const { API_Services, setUser, user, Navigate, localStorageManager } = useContext(AppContext);
   const API_Orden = "http://localhost:3000/api/order";
+  const API_Success = "http://localhost:3000/api/payment/success/";
 
   const handlePagar = async (id) => {
     
@@ -19,6 +20,19 @@ export const AdminPanel = () => {
     window.location.href = response.url;
       
   };
+
+  const fetchOrdenes = async () => {
+    try {
+      // console.log(user)
+      const response = await API_Services(`${API_Orden}/${ user.id }`, "GET", {});
+      setOrdenes(response.data);
+    } catch (error) {
+      // Navigate("/login");
+      // console.log("usuario", error.message);
+      // console.log("Error al cargar las ordenes", error.message);
+    }
+  };
+
 
   useEffect(() => {
       
@@ -50,24 +64,37 @@ export const AdminPanel = () => {
   }, [user]);
 
   useEffect(() => {
-
-      const fetchOrdenes = async () => {
-        try {
-          // console.log(user)
-          const response = await API_Services(`${API_Orden}/${ user.id }`, "GET", {});
-          setOrdenes(response.data);
-        } catch (error) {
-          // Navigate("/login");
-          // console.log("usuario", error.message);
-          // console.log("Error al cargar las ordenes", error.message);
-        }
-      };
-
-    
+   
       fetchOrdenes();
 
   }, [user]);
 
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    const sessionId = params.get('session_id');
+
+    const handleSuccess = async () => {
+      
+      if (sessionId) {
+        // Aquí puedes manejar la lógica si session_id está presente en el URL
+        const response = await API_Services(`${API_Success}}/${sessionId}`, "POST", {})
+        
+        try {
+          fetchOrdenes();
+        
+        }catch (error) {
+          console.error("Error al manejar el éxito de la orden:", error);
+          // Aquí puedes manejar el error, por ejemplo, redirigiendo al usuario o mostrando un mensaje
+        }
+        // Por ejemplo, podrías mostrar un mensaje, actualizar estado, etc.
+      }
+
+    }
+
+    handleSuccess();
+
+
+  }, []);
 
 
   return (
