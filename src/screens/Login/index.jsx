@@ -44,7 +44,8 @@ const Login = () => {
     
   }
 
-   const handle_Register = async (data) => {
+  const handle_Register = async (data) => {
+    
     data = {
       email: email,
       password: password,
@@ -52,7 +53,8 @@ const Login = () => {
     }
 
     let response = await API_Services(API_Register_URL,'POST', data );
-    response.status == 'success' ? setUser(await response ) : setUser(null);
+    response.status == 'success' ? Navigate('login') : "";
+    
     setOption(1)
     
   }
