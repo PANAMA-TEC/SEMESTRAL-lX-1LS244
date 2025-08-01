@@ -134,7 +134,7 @@ export const DetailRecipe = () => {
           </div>
         </div>
       </div>
-
+  {/*
       <div className='mid-container'>
         <h3>Listado de productos relacionados:</h3>
         <div className='productos-relacionados'>
@@ -144,7 +144,7 @@ export const DetailRecipe = () => {
           <CardCategories image={recipe_category} titulo='papas' />
         </div>
       </div>
-
+  */}
       <CommentaryBox />
     </div>
   );
