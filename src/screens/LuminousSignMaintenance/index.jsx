@@ -2,6 +2,18 @@ import React from "react";
 import "./index.css";
 
 const LuminousSignMaintenance = () => {
+  const handleCTAClick = () => {
+    const contactSection = document.querySelector('.contact-section');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    alert('Gracias por tu solicitud. Nos pondremos en contacto contigo pronto.');
+  };
+
   return (
     <div className="LuminousSignMaintenance">
       {/* Hero Section */}
@@ -12,7 +24,7 @@ const LuminousSignMaintenance = () => {
             Servicios profesionales de instalación, reparación y mantenimiento
             para mantener tu negocio brillante las 24 horas
           </p>
-          <button className="cta-button">Solicitar Cotización</button>
+          <button className="cta-button" onClick={handleCTAClick}>Solicitar Cotización</button>
         </div>
         <div className="hero-image-container">
           <img
@@ -91,6 +103,8 @@ const LuminousSignMaintenance = () => {
             loop
             muted
             playsInline
+            aria-label="Video mostrando ejemplos de letreros luminosos instalados en diferentes negocios"
+            title="Ejemplos de trabajos realizados con letreros luminosos"
           >
             <source
               src="https://cdn.coverr.co/videos/coverr-neon-lights-in-the-city-at-night-7198/1080p.mp4"
@@ -256,7 +270,7 @@ const LuminousSignMaintenance = () => {
 
           <div className="contact-form-container">
             <h3 className="contact-subtitle">Solicitar Cotización</h3>
-            <form className="contact-form">
+            <form className="contact-form" onSubmit={handleFormSubmit}>
               <input
                 type="text"
                 placeholder="Nombre completo"
